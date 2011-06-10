@@ -1,0 +1,20 @@
+<scripts>
+<script type="text/javascript" src="/system/components/javascript/jquery-1.4.2.js">  </script>
+<script type="text/javascript" src="/system/components/javascript/jquery.fancybox/jquery.fancybox-1.2.1.js">   </script>
+<script type="text/javascript" src="/system/components/javascript/jquery.form.js">   </script>
+<script type="text/javascript" src="/system/components/javascript/jquery.livequery.js">   </script>
+<script type="text/javascript" src="/system/components/javascript/jquery-ui-1.8.4.custom.min.js">   </script>
+<script type="text/javascript" src="/system/components/javascript/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="/system/components/javascript/jquery.jplayer.js"></script>
+<script type="text/javascript" src="/system/components/javascript/jquery.jcarousel/jquery.jcarousel.js"></script>
+<script type="text/javascript" src="/system/components/javascript/jquery.imgareaselect-0.9.1.js"></script>
+<script type="text/javascript" src="/system/components/javascript/prettycomments.js"></script>
+<script type="text/javascript" src="/system/components/javascript/jquery.history.js"></script>
+<script type="text/javascript" src="/system/components/javascript/jquery.dropshadow.js"></script>
+<script type="text/javascript" src="/system/components/javascript/validateandedit.js"></script>
+<script type="text/javascript" src="/system/components/javascript/oepopup.js">     </script> 
+<script type="text/javascript" src="/system/components/javascript/resultshover.js">     </script>
+<script type="text/javascript" src="/system/components/javascript/gotopage.js">     </script>
+<script type="text/javascript" src="$home/${applicationid}/tools/entermedia.js">     </script>
+<script type="text/javascript" src="/system/components/javascript/jquery-validate/jquery.validate.js"></script>
+</scripts>

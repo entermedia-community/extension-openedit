@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<bean id="velocity" class="org.openedit.entermedia.generators.ToolbarGenerator" >
+		<property name="headerPath"><value>/system/components/openedit/html/toolbar.html</value></property>
+		<property name="footerPath"><value>/system/components/openedit/html/footer.html</value></property>
+		<property name="pageManager"><ref bean="pageManager"/></property>
+		<property name="wraps"><ref bean="velocityGenerator"/></property>
+	</bean>
+
+<bean id="admintoolbarGenerator" class="org.openedit.entermedia.generators.AdminToolBarGenerator" >
+		<property name="headerPath"><value>/system/components/openedit/toolbar/admintoolbarselector.html</value></property>
+		<property name="search"><value>&lt;body</value></property>
+		<property name="pageManager"><ref bean="pageManager"/></property>
+		<property name="moduleManager"><ref bean="moduleManager"/></property>
+		<property name="wraps"><ref bean="velocityGenerator"/></property>
+	</bean>
+</beans>
