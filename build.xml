@@ -165,7 +165,7 @@
 		  
 			<!-- publish results to anthill -->
 		 	<copy file="${deployDir}/builds/openedit.zip" overwrite="true"
-		        tofile="${deployDir}/openedit.zip"/>
+		        tofile="${deployDir}/extopenedit.zip"/>
 		 	<copy file="${etc}/install.xml" overwrite="true"
 		        tofile="${deployDir}/install.xml"/>
 
