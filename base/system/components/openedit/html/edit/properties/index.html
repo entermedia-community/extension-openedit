@@ -6,7 +6,7 @@
 <input name="editPath" type="hidden" value="$!editPath" />
 <input name="origURL" type="hidden" value="$!origlURL" />
 
-<div style="height: 400px;">
+<div >
 
 <h2>File Properties: $editPage.path</h2>
 
@@ -16,6 +16,10 @@
 		[[Last Edited]]:
 		#end	
 		$editPage.getLastModified("MM/dd/yy h:mm a") <br>	[[File Size]]: $filesize.inEnglish( $editPage.path )
+
+[[Layout]] : $!editPage.getLayout()<br>
+
+[[Inner Layout]] : $!editPage.getInnerLayout()<br>
 
 <h2>Fall Backs</h2>
 
@@ -38,6 +42,17 @@
 	</td>  
    </tr>   
    </table>
+	
+<h2>Properties</h2>
+
+<table>
+#foreach( $property in $editPage.getPageSettings().getAllProperties() )
+	<tr>
+	<td>	$property.name </td>
+	<td>	$property.value </td>
+	</tr>
+#end
+</table>
 	
 </div>
 

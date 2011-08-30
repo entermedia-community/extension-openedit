@@ -8,5 +8,6 @@
 	<classpathentry combineaccessrules="false" kind="src" path="/entermedia-server"/>
 	<classpathentry kind="lib" path="lib/compile/jakarta-servlet-api-4.jar"/>
 	<classpathentry kind="lib" path="lib/compile/junit-4.0.jar"/>
+	<classpathentry exported="true" kind="con" path="GROOVY_DSL_SUPPORT"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
