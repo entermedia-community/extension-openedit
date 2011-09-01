@@ -51,7 +51,7 @@
       <fileset dir="./lib" includes="openedit**.jar"/>
     </delete>
     <copy todir="./lib" overwrite="false" preservelastmodified="true">
-      <fileset file="${build}/unpacked/WEB-INF/lib/openedit*.jar"/>
+      <fileset file="${build}/unpacked/lib/openedit*.jar"/>
     </copy>
 
     <delete failonerror="false">
