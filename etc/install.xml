@@ -36,61 +36,29 @@
 	<target name="update-dependencies" depends="clean">
 		<mkdir dir="${build}"/>
 
-		<get src="http://dev.entermediasoftware.com/projects/scout/ROOT.war" dest="${build}/ROOT.war" />	
+		<get src="http://dev.entermediasoftware.com/jenkins/job/extension-openedit/lastSuccessfulBuild/artifact/deploy/extension-openedit.zip" dest="${build}/openedit.zip" />	
 	  
   </target>
     
   <target name="unwar">
   	<mkdir dir="${build}/unpacked"/>
-    <unwar dest="${build}/unpacked">
-      <fileset dir="${build}">
-        <include name="ROOT.war"/>
-      </fileset>
-    </unwar>
+    <unzip dest="${build}/unpacked" src="${build}/openedit.zip" />
   </target>
   
   <target name="upgrade">
   	<echo>Delete old open edit libs</echo>
     <delete>
-      <fileset dir="./lib" includes="openedit-search**.jar"/>
+      <fileset dir="./lib" includes="openedit**.jar"/>
     </delete>
-    <delete>
-      <fileset dir="./lib" includes="nutch**.jar"/>
-    </delete>
-    <delete>
-      <fileset dir="./lib" includes="jakarta-oro**.jar"/>
-    </delete>
-    <delete>
-      <fileset dir="./lib" includes="jericho-html**.jar"/>
-    </delete>
-    <delete>
-      <fileset dir="./lib" includes="PDFBox**.jar"/>
-    </delete>
-    <delete>
-      <fileset dir="./lib" includes="FontBox**.jar"/>
-    </delete>
-
     <copy todir="./lib" overwrite="false" preservelastmodified="true">
-      <fileset file="${build}/unpacked/WEB-INF/lib/openedit-search*.jar"/>
-    </copy>
-    <copy todir="./lib" overwrite="false" preservelastmodified="true">
-      <fileset file="${build}/unpacked/WEB-INF/lib/jericho-html*.jar"/>
-    </copy>
-    <copy todir="./lib" overwrite="false" preservelastmodified="true">
-      <fileset file="${build}/unpacked/WEB-INF/lib/PDFBox*.jar"/>
-    </copy>
-    <copy todir="./lib" overwrite="false" preservelastmodified="true">
-      <fileset file="${build}/unpacked/WEB-INF/lib/FontBox*.jar"/>
+      <fileset file="${build}/unpacked/WEB-INF/lib/openedit*.jar"/>
     </copy>
 
     <delete failonerror="false">
-      <fileset dir="../base/search"/>
+      <fileset dir="../WEB-INF/base/system/components/openedit/"/>
     </delete>
-    <delete failonerror="false">
-      <fileset dir="../WEB-INF/base/search"/>
-    </delete>
-    <copy todir="../WEB-INF/base/search" preservelastmodified="true">
-      <fileset dir="${build}/unpacked/WEB-INF/base/search"/>
+    <copy todir="../WEB-INF/base/system/components/openedit" preservelastmodified="true">
+      <fileset dir="${build}/unpacked/WEB-INF/base/system/components/openedit"/>
     </copy>
 
     <delete dir="${build}"/>
