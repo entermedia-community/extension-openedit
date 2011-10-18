@@ -1,0 +1,27 @@
+#set( $catalog = $context.getRequestParameter('uploadcatalog') )
+#set( $sourcepath = "users/$!{user.userName}/" )
+<form id="uploadform" name="wizard" method="post" enctype="multipart/form-data" action="$home/${applicationid}/components/upload/types/simple/finish.html?sourcepath=$sourcepath">
+		<h2>[[Device Name]]</h2>
+		<input type="hidden" name="field" value="devicename"/>
+		<input type="text" name="devicename.value" style="width: 320px;" />	<br/><br/>
+		<input type="file" size="50"  style="color: white; background-color: #2D2C2C;" name="file.0">
+	
+		
+		<br/><br/>
+		
+		<input type="button" id="finishbutton"value="[[Upload]]" onclick="doUpload('uploadform');">
+</form>
+
+<div id="waiting" style="display:none;">
+	<div><img src='$home/system/images/toolbar/spinner.gif'/><br/>[[Uploading, please wait...]]</div>
+</div>
+
+
+<script type="text/javascript" >
+ 	doUpload =  function()
+ 	{
+ 	 	jQuery("#finishbutton").attr('disabled','disabled');
+		jQuery("#waiting").show();
+		jQuery("#uploadform").submit();
+ 	}
+</script>

@@ -1,0 +1,6 @@
+<page>
+<path-action name="MediaArchiveModule.uploadAsset"/>
+	<path-action name="AssetEditModule.replaceOriginal"/>
+	
+	
+	</page>

@@ -1,0 +1,18 @@
+  .buttonrow { background:#d0d0d0; color:#333; }
+  .buttonrow th { background:#d0d0d0; color:#333; }
+  
+  .buttonrow Hover:HOVER { background:#d0d0d0; color:#333; }
+  .buttonrow a { background:#d0d0d0; color:#333; }
+  
+  .buttonrow ul {
+  margin: 0;
+  }
+  
+  
+  .buttonrow ul li {
+  	list-style: none;
+    display: inline;
+  
+  }
+  
+  
