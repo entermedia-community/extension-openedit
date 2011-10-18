@@ -670,3 +670,8 @@ div.auto_complete ul strong.highlight {
   padding:0;
 }
 
+
+.oemenu ul {
+	list-style: none;
+	
+}

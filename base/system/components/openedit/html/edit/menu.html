@@ -1,6 +1,6 @@
 
 
-#set( $sections = ["htmledit","text","preview", "seo","versions","styles","scripts", "properties","actions"] )
+#set( $sections = ["htmledit","text","preview", "seo","versions","styles","scripts", "properties"] )
 #set( $thissection = $content.section )
 #set($origURL = $context.getRequestParameter('origURL'))
 #foreach( $section in $sections )
@@ -16,7 +16,7 @@
 				  <b class="spiffythree5"></b></b>
   				  <div class="spiffyfgthree">
   			#end
-			#set( $img = "$home/system/components/openedit/html/theme/images/${section}.png")
+			#set( $img = "/system/components/openedit/html/theme/images/${section}.png")
 			#set( $link = "$home/system/components/openedit/html/edit/${section}/index.html?width=1000&editPath=$context.getRequestParameter('editPath')&textheight=500px&origURL=$!origURL")
 			<a href="$link" ><img border=0 src="$img"> $context.getText($content.get($section))</a>
 			#if($thissection == $section)

@@ -13,6 +13,5 @@
 <property name="styles">Styles</property>
 <property name="scripts">Scripts</property>
 <property name="preview">Preview</property>
-<property name="actions">Actions</property>
 
 </page>
