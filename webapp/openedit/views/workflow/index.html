@@ -60,7 +60,7 @@
 	
 	#set( $orig = $workflow.getOriginalPage($page) )
 
-	<td style="leftlinned" ><a href="$home$orig.path" >$orig.path</a></td>
+	<td style="leftlinned" ><a target="_blank" class="emdialog" href="$home$orig.path" >$orig.path</a></td>
 	<td>$!orig.title</td>
 	#set( $version = $workflow.getLastVersion($page) )
 	<td>$!version.message</td>

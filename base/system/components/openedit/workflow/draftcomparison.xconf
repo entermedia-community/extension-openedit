@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page>
+    <property name="title">Show Revision</property>
+	<property name="group">welcome</property>
+	<!--layout /-->
+	<inner-layout />
+	<page-action name="WorkFlow.showDraftComparison" />
+	<property name='text.draftcomparison'>
+        	<value>DRAFT COMPARISON</value>
+		<value locale="es">COMPARACIÓN DE BORRADORES</value>
+    	</property>
+	<property name='text.currentversion'>
+        	<value>Current Production Version</value>
+		<value locale="es">Versión Actual de Producción</value>
+    	</property>
+	<property name='text.cancel'>
+        	<value>Cancel</value>
+		<value locale="es">Cancelar</value>
+    	</property>
+	<property name='text.draftversion'>
+        	<value>Draft Version</value>
+		<value locale="es">Versión del Borrador</value>
+    	</property>
+	<property name='text.approvethisdraft'>
+        	<value>Approve This Draft</value>
+		<value locale="es">Aprobar este borrador</value>
+    	</property>
+	<property name='text.draftinfo'>
+        	<value>Draft Information</value>
+		<value locale="es">Información del Borrador</value>
+    	</property>
+
+	<property name='text.Setup Data'>
+        	<value>Setup Data</value>
+		<value locale="es">Datos de Configuración</value>
+    	</property>
+	<property name='text.Path'>
+        	<value>Path</value>
+		<value locale="es">Ruta</value>
+    	</property>
+
+	<property name='text.Author'>
+        	<value>Author</value>
+		<value locale="es">Autor</value>
+    	</property>
+
+	<property name='text.Message'>
+        	<value>Message</value>
+		<value locale="es">Mensaje</value>
+    	</property>
+
+	<property name='text.Version'>
+        	<value>Version</value>
+		<value locale="es">Versión</value>
+    	</property>
+	<property name='text.Size'>
+        	<value>Size</value>
+		<value locale="es">Tamaño</value>
+    	</property>
+	<property name='text.Blank Page'>
+        	<value>Blank Page</value>
+		<value locale="es">Página en Blanco</value>
+    	</property>
+
+
+</page>

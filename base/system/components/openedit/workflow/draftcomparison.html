@@ -1,0 +1,124 @@
+ <form method="post" name="wizard">
+<table cellspacing="0" width="100%" class="oestandard-table">
+<tr>
+<td bgcolor="black" nowrap>
+<div class="oe-module-title">$context.getPageProperty('text.draftcomparison'):: <font class="oemodule-select">$livepage.path</font>
+</div>
+</td><td align="right" bgcolor="black">
+<table cellpadding="5" cellspacing="5" border="0">
+<tr>
+	<td>
+	  <input onclick="approve()" value="$context.getPageProperty('text.approvethisdraft')" name="Approve This Draft" type="button" class="oestandard-button">
+	</td>
+	<td>
+	  <input onclick="window.close();" value=" $context.getPageProperty('text.cancel') " name="Cancel" type="button" class="oestandard-button">
+	</td>
+</tr>
+</table>
+</td>
+</tr>	
+<tr>
+<td colspan="2" align="center">
+<br>
+        
+<table width="100%" class="oestandard-table">
+<tr>
+<td valign="top">
+          
+<table height="100%" class="oedivided-box" cellspacing="0" cellpadding="0">
+<tr>
+<td class="oedivided-box-title" colspan="2">$context.getPageProperty('text.draftinfo')</td>
+</tr>
+<tr>
+<td class="oedivided-box-blue" height="100%" valign="top" colspan="2">
+          		
+	<table width="100%">
+
+#set( $revision = $revisions.selectedRevision )	          		  
+	<tr>        		  
+	  <td width="25%" style="color: white;">[[Path]]:</td>
+	  <td bgcolor="white">$draftpage.path</td>      		  
+	</tr> 
+	          		  
+	<tr>        		  
+	  <td width="25%" style="color: white;">[[Author]]:</td>
+	  <td bgcolor="white">$!draftcontent.author</td>      		  
+	</tr> 
+	         		  
+	<tr>          		  
+	  <td width="25%" style="color: white;">[[Message]]:</td>
+	  <td bgcolor="white">$!draftcontent.message</td>        		  
+	</tr> 
+	          		  
+	<tr>
+	  <td width="25%" style="color: white;">[[Version]]:</td>
+	  <td bgcolor="white">$!draftcontent.version</td>        		  
+	</tr>          		  
+	          		
+	</table>
+          	
+</td>
+</tr>
+</table>
+
+<link rel="stylesheet" type="text/css" href="$home/_styles.css"/>
+
+          
+<table height="100%" class="oedivided-box" cellspacing="0" cellpadding="0">
+<tr>
+<td class="oedivided-box-title" colspan="2">$context.getPageProperty('text.currentversion'):</td>
+<td class="oedivided-box-title" colspan="2">$context.getPageProperty('text.draftversion'):</td>
+</tr>
+<tr>
+<td class="oedivided-box-blue" height="100%" valign="top" colspan="2">
+      <div class="oelist-box">
+	#if( !$livepage.exists() )
+		[[Blank Page]]
+	#else
+ 	  	#if( $livepage.isHtml() )
+ 	  		$livepage.content
+		#elseif( $livepage.isImage() )
+		  	<img src="$home$livepage.path?cache=false" />
+	    #elseif ( $livepage.isBinary() )
+			[[Size]]: $livepage.contentItem.length  		
+		#else
+		<pre>$url_util.xmlEscape($livepage.content)</pre>    
+	  	#end
+	#end
+      </div>    
+</td>
+<td class="oedivided-box-blue" height="100%" valign="top" colspan="2">
+      <div class="oelist-box">
+  #if( $draftpage.isHtml() )
+	$draftpage.content
+  #elseif( $draftpage.isImage() )
+  	<img src="$home$revisions.editPath?cache=false" />
+  #elseif( !$draftpage.isBinary() )
+		<pre>$url_util.xmlEscape($draftpage.content)</pre>    
+  #else
+	Size: $draftpage.contentItem.length  		
+  #end
+      </div>    
+</td>
+
+</tr>
+</table>
+      
+</td>
+</tr>
+</table>
+</form>
+  
+ 
+<script language="JavaScript">
+  function approve()
+  {
+    document.approveForm.submit();
+	window.close();
+  }
+</script>
+    
+<form name="approveForm" method="post" target="$parentName" action="$home/openedit/workflow/approve-finished.html">
+	<input type="hidden" name="editPath" value="$draftpage.path" />
+	<input type="hidden" name="origURL" value="$!origURL" />
+</form>
