@@ -6,11 +6,11 @@
 	<li><a href="$home/index.html" target="_parent"><img border="0" src="$home/system/components/openedit/images/toolbar/home.gif" title="[[Home]]"/> [[Home]]</a></li>
 	
 	<li><a href="$home/media/settings/filemanager/index.html" target="_parent"><img border="0" src="$home/system/components/openedit/images/toolbar/filemanager.gif" title="[[filemanager]]"/> [[filemanager]]</a></li>
-	 #if ($pages.canView("/system/components/openedit/links/index.html"))
-		<li><a href="$home/system/components/openedit/links/index.html?path=$!path" target="_parent"><img border="0" src="$home/system/components/openedit/images/toolbar/links.gif" title="[[editlinks]]" /> [[editlinks]]</a></li>
+	 #if ($pages.canView("/openedit/views/links/index.html"))
+		<li><a href="$home/openedit/views/links/index.html?path=$!path" target="_parent"><img border="0" src="$home/system/components/openedit/images/toolbar/links.gif" title="[[editlinks]]" /> [[editlinks]]</a></li>
 	#end
-	#if ( $pages.canView( "/system/components/openedit/workflow/index.html" ) ) 
-		<li><a href="$home/system/components/openedit/workflow/index.html" target="_parent"><img border="0" src="$home/system/components/openedit/images/toolbar/workflow.gif" title="[[workflow]]" /> [[workflow]]</a></li>
+	#if ( $pages.canView( "/openedit/views/workflow/index.html" ) ) 
+		<li><a href="$home/openedit/views/workflow/index.html" target="_parent"><img border="0" src="$home/openedit/images/toolbar/workflow.gif" title="[[workflow]]" /> [[workflow]]</a></li>
 	#end
 		
 #if( $oeadminmode.size() == 0)
