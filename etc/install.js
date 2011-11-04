@@ -29,7 +29,7 @@ files.copyFileByMatch( tmp + "/base/system/components/openedit/", web + "/base/s
 
 
 files.deleteMatch( web + "/openedit/")
-files.copyFileByMatch( tmp + "/openedit/", "/openedit/");
+files.copyFileByMatch( tmp + "/openedit/", root + "/openedit/");
 
 
 
