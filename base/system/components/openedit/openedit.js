@@ -1,6 +1,6 @@
 jQuery(document).ready(function() 
 { 
-	jQuery("a.openeditdialog").livequery(
+	jQuery("a.openeditdialog").click(
 		function() 
 		{
 			var height  = jQuery(window).height();
@@ -22,7 +22,7 @@ jQuery(document).ready(function()
 
 
 
-jQuery(".oethumbholder").livequery(
+jQuery(".oethumbholder").click(
 		function()
 		{
 			jQuery(this).mouseleave(
@@ -97,7 +97,7 @@ jQuery(".oethumbholder").livequery(
 	);
 
 
-jQuery("form.oeajaxform").livequery('submit',	
+jQuery("form.oeajaxform").bind('submit',	
 		function() 
 		{
 			var targetdiv = jQuery(this).attr("targetdiv");
