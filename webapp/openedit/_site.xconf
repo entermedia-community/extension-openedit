@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <page>
-
+	<permission name="edit"> 
+			<not />
+	</permission>
 
   <property name="fallbackdirectory">/WEB-INF/base/emfrontend</property>
   <property name="title">OpenEdit</property>
@@ -26,6 +28,8 @@
 	
 	<style 	id="grids" href="${themeprefix}/styles/layout_grids.css" />
 	
+	<!-- style id="openedit" href="/openedit/components/html/theme/style.css" / -->
+	<style id="tools" href="${themeprefix}/styles/filemanager/tools.css" />
 
 
 	<path-action bean="pageManager" name="PageValue.loadPageVariable" allowduplicates="true" />
@@ -43,12 +47,14 @@
 	<script id="jquery-form" src="/${applicationid}/components/javascript/jquery.form.js" />
 	<script id="jquery-livequery" src="/${applicationid}/components/javascript/jquery.livequery.js" />
 	
+	<script id="jquery-livequery" src="/${applicationid}/components/javascript/jquery.livequery.js" />
 	
 	<script id="jquery-autocomplete" src="/${applicationid}/components/javascript/jquery.autocomplete.js"/>
 	<script id="jquery-validate"  src="/${applicationid}/components/javascript/jquery.validate.js"/>
 	<!--
 	<script id="jquery-select"  src="/${applicationid}/components/javascript/ui.selectmenu.js"/>
 	-->
+	<script id="openedit" src="/${applicationid}/components/javascript/openedit.js">     </script>	
 	<script id="entermedia" src="/${applicationid}/components/javascript/entermedia.js">     </script>	
 	
 </page>

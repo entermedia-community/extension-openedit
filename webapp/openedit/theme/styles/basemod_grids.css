@@ -41,7 +41,6 @@
 
   /* (en) Centering layout in old IE-versions */
   /* (de) Zentrierung des Layouts in alten IE-versionen */
-  body { text-align: center; }
   .page_margins { text-align:left; margin: 0 auto; }
 
   /* (en) Layout: width, background, borders */

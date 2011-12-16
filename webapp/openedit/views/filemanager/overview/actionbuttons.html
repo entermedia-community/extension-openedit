@@ -45,11 +45,11 @@
 	| <a href="#" onclick="openDialog('$home${page.filerootpath}/permissions/index.html?editPath=$editPath',2);">
 	 [[Set Permissions]]</a>
 	 
-#if($pages.doesExist("/system/components/openedit/"))	 
+#if($pages.doesExist("/openedit/components/"))	 
 |	 
-	<a  href="#" onclick="openDialog('$home/system/components/openedit/html/edit/htmledit/index.html?editPath=$editPath&path=$editPath&textheight=480px&origURL=$content.path',1)" >Visual Editor</a>
+	<a  href="#" onclick="openDialog('$home/openedit/components/html/edit/htmledit/index.html?editPath=$editPath&path=$editPath&textheight=480px&origURL=$content.path',1)" >Visual Editor</a>
 	#if( $editPath.isDraft() )
-				$pages.include("/system/components/openedit/html/workflow/approvetoolbar.html", $context)
+				$pages.include("/openedit/components/html/workflow/approvetoolbar.html", $context)
 				#end
 #end		
 

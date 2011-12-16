@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="$home/${applicationid}/settings/filemanager/folders/actionbar.css"/>
+<link rel="stylesheet" href="$home/${applicationid}/views/filemanager/folders/actionbar.css"/>
 
 #set ( $nodeID = $context.getRequestParameter("nodeID") )
 #set( $editNode = $pageTree.getModel().getChildById($nodeID))
@@ -33,25 +33,25 @@ $context.putPageValue("editPage", $editPage)
 	#if (!($canusenewmenu == false))
 		#if( $pages.canEdit($editPath) || $caneditallfiles)
 			<td>
-				$pages.include("${page.filerootpath}/layout/menuitem.html?id=1st&icon=$home/${applicationid}/tools/images/toolbar/new.gif&label=[[New]]&input=${page.filerootpath}/folders/newactions.html", $context)
+				$pages.include("${page.filerootpath}/layout/menuitem.html?id=1st&icon=$home$themeprefix/images/toolbar/new.gif&label=[[New]]&input=${page.filerootpath}/folders/newactions.html", $context)
 			</td>
 		#end
 	#end
 	
 	#if (!($canuseeditmenu == false))
 	<td>
-		$pages.include("${page.filerootpath}/layout/menuitem.html?id=2st&icon=$home/${applicationid}/tools/images/toolbar/modeediting.gif&label=[[Edit]]&input=${page.filerootpath}/folders/editactions.html", $context)
+		$pages.include("${page.filerootpath}/layout/menuitem.html?id=2st&icon=$home$themeprefix/images/toolbar/modeediting.gif&label=[[Edit]]&input=${page.filerootpath}/folders/editactions.html", $context)
 	</td>
 	#end
 	#if (!($canuseloadmenu == false))
 	<td>
-		$pages.include("${page.filerootpath}/layout/menuitem.html?id=3rd&icon=$home/${applicationid}/tools/images/toolbar/uploadfile.gif&label=[[Upload/Download]]&input=${page.filerootpath}/folders/loadactions.html", $context)
+		$pages.include("${page.filerootpath}/layout/menuitem.html?id=3rd&icon=$home$themeprefix/images/toolbar/uploadfile.gif&label=[[Upload/Download]]&input=${page.filerootpath}/folders/loadactions.html", $context)
 	</td>
 	#end
 	#if (!($canusetoolsmenu == false))
 		#if( $pages.canEdit($editPath))
 			<td>
-				$pages.include("${page.filerootpath}/layout/menuitem.html?id=4th&icon=$home/${applicationid}/tools/images/toolbar/text.gif&label=[[Tools]]&input=${page.filerootpath}/folders/toolmenu.html", $context)
+				$pages.include("${page.filerootpath}/layout/menuitem.html?id=4th&icon=$home$themeprefix/images/toolbar/text.gif&label=[[Tools]]&input=${page.filerootpath}/folders/toolmenu.html", $context)
 			</td>
 		#end	
 	#end

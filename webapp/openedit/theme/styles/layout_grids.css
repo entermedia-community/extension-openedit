@@ -23,11 +23,9 @@
 
 
 @import url(basemod_grids.css);
-@import url(content.css);
 
 /* import print layout | Druck-Layout einbinden */
 @import url(../yaml/print/print_draft.css);
 
 @import url("pages/results.css");
 @import url("theme.css");
-@import url("tools.css");

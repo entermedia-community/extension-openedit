@@ -22,17 +22,17 @@
 
 	#if($context.getPageProperty("usemultiplelanguages") && "true" == $context.getPageProperty("usemultiplelanguages") && $user.hasPermission("translations") )	
 		<li>
-		 <a  href="$home/${applicationid}/settings/filemanager/translations/translate.html?path=$!{editPath}"><span>[[Translate]] $type</span></a>		
+		 <a  href="$home/${applicationid}/views/filemanager/translations/translate.html?path=$!{editPath}"><span>[[Translate]] $type</span></a>		
 		</li>
 	#end
 	#if( $editPage.isFolder())
 		<li>
-				<a href="#" onclick="showpath('oework', '$home${page.filerootpath}/mount/edit.html?path=$!{editPath}&nodeID=$nodeID',1);"><span><img src="$home/${applicationid}/tools/images/toolbar/mount.gif" border="0" title="[[Mount External Folders]]" /> [[Mount]] </span></a>		
+				<a href="#" onclick="showpath('oework', '$home${page.filerootpath}/mount/edit.html?path=$!{editPath}&nodeID=$nodeID',1);"><span><img src="$home$themeprefix/images/toolbar/mount.gif" border="0" title="[[Mount External Folders]]" /> [[Mount]] </span></a>		
 		</li>		
 		#if( $user.hasPermission("oe.edit.update") )
 		
 		<li>
-				<a href="$home/${applicationid}/settings/filemanager/update/pushdirectory.html?path=$editPath"><span><img src="$home/${applicationid}/tools/images/toolbar/add.gif" border="0" title="$context.getPageProperty('text.pushdirectory')" /> $context.getPageProperty('text.pushdirectory')</span></a>
+				<a href="$home/${applicationid}/views/filemanager/update/pushdirectory.html?path=$editPath"><span><img src="$home$themeprefix/images/toolbar/add.gif" border="0" title="$context.getPageProperty('text.pushdirectory')" /> $context.getPageProperty('text.pushdirectory')</span></a>
 		</li>
 		
 		#end

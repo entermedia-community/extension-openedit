@@ -9,13 +9,15 @@
 		<property name="renderleaves">false</property>
 	</path-action>
 
+	<property name='showdebug'>false</property>
+
 	<property name='tab'>managerviewer</property>
 	<property name='showcontent'>false</property>
 	<property name="tree-name">pageTree</property>
 	<property name="root">/</property>
 	<property name="excludes">.bash*, *CVS*</property>
 	<property name="tablistname">tablist</property>
-	<property name="filerootpath">/${applicationid}/components/filemanager</property>
+	<property name="filerootpath">/${applicationid}/views/filemanager</property>
 	<property name="tab">filemanager</property>
 
 	<property name="sectiontitle">
@@ -169,7 +171,7 @@
 		<value locale="es">Enviar Directorio</value> 
    	</property>
     
-     <property name="iconhome">${themeprefix}/entermedia/images/tree/</property>
+     <property name="iconhome">${themeprefix}/images/tree/</property>
      
     	<generator name="velocityGenerator" mimetypes="text/html"/>
     

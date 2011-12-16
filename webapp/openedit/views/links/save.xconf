@@ -1,4 +1,4 @@
 <page>
-<inner-layout>/system/components/openedit/links/listinnerlayout.html</inner-layout>
+<inner-layout>/${applicationid}/views/links/listinnerlayout.html</inner-layout>
 	<path-action name="LinkTree.saveLink"/>
 </page>
