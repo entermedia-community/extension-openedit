@@ -99,7 +99,7 @@
 			
 			<zipfileset dir="${deployDir}/builds/" includes="${appname}-${version}.jar" prefix="lib"/>
 			<zipfileset dir="${base}" prefix="base" />
-			<zipfileset dir="${webapp}/openedit" prefix="openedit" />
+			<zipfileset dir="${webapp}/openedit" prefix="base/openedit" />
 
 		</zip>
   </target>

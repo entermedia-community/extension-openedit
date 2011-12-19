@@ -61,6 +61,14 @@
       <fileset dir="${build}/unpacked/base/system/components/openedit"/>
     </copy>
 
+    <delete failonerror="false">
+       <fileset dir="../WEB-INF/base/openedit/"/>
+     </delete>
+     <copy todir="../WEB-INF/base/openedit" preservelastmodified="true">
+       <fileset dir="${build}/unpacked/base/openedit"/>
+     </copy>
+
+  	
     <delete dir="${build}"/>
     
   </target>

@@ -24,7 +24,6 @@ files.deleteMatch( web + "/lib/openedit*.jar");
 files.copyFileByMatch( tmp + "/lib/openedit*.jar", web + "/lib/");
 
 files.deleteMatch( web + "/system/components/openedit/")
-files.copyFileByMatch( tmp + "/base/system/components/openedit/", web + "/base/system/components/openedit/");
 
 
 
