@@ -27,8 +27,8 @@ files.deleteMatch( web + "/system/components/openedit/")
 
 
 
-files.deleteMatch( web + "/openedit/")
-files.copyFileByMatch( tmp + "/openedit/", root + "/openedit/");
+files.deleteMatch( web + "/WEB-INF/base/openedit/")
+files.copyFileByMatch( tmp + "/base/openedit/", root + "/WEB-INF/base/openedit/");
 
 
 
