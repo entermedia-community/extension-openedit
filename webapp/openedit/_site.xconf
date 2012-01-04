@@ -14,17 +14,16 @@
   <property name="mastergroup">video</property>
   	<property name="showaddselections">true</property>
 	<property name="showremoveselections">false</property>
+	<property name="editable">false</property>
+	
+  <generator mimetypes="text/html" name="velocityGenerator"/>
+	
   <property name="section" >activity</property>
   <!-- 
   <property name="contentsiteroot">http://s3.amazonaws.com/emtube</property 
   -->
 	<path-action name="MediaSearchModule.searchCategories" cancel="true"/>
 
-	<style 	id="baseem" href="${themeprefix}/styles/baseem.css" />
-
-	<style 	id="mediaplayer" href="${themeprefix}/styles/pages/mediaplayer.css" />
-	<style 	id="results" href="${themeprefix}/styles/pages/results.css" />
-	<style 	id="categorypicker" href="${themeprefix}/styles/pages/categorypicker.css" />
 	
 	<style 	id="grids" href="${themeprefix}/styles/layout_grids.css" />
 	
@@ -39,13 +38,11 @@
 	<script id="jquery-ui" src="/${applicationid}/theme/jqueryUI/${jquery-theme}/js/jquery-ui-1.8.13.custom.min.js" />
 	<style  id="jquery-ui-css" href="/${applicationid}/theme/jqueryUI/${jquery-theme}/css/${jquery-theme}/jquery-ui-1.8.13.custom.css"/>
 	
-	
 
 	<script id="jquery-fancybox" src="/${applicationid}/components/javascript/jquery.fancybox/jquery.fancybox-1.2.1.js" />
 	<style 	id="jquery-fancybox-css" href="/${applicationid}/components/javascript/jquery.fancybox/jquery.fancybox.css" />
 	<script id="jquery-prettycomments" src="/${applicationid}/components/javascript/prettycomments.js"/>
 	<script id="jquery-form" src="/${applicationid}/components/javascript/jquery.form.js" />
-	<script id="jquery-livequery" src="/${applicationid}/components/javascript/jquery.livequery.js" />
 	
 	<script id="jquery-livequery" src="/${applicationid}/components/javascript/jquery.livequery.js" />
 	
@@ -56,5 +53,9 @@
 	-->
 	<script id="openedit" src="/${applicationid}/components/javascript/openedit.js">     </script>	
 	<script id="entermedia" src="/${applicationid}/components/javascript/entermedia.js">     </script>	
-	
+
+	 <property name="themeprefix">/openedit/theme</property>
+  	<inner-layout>${themeprefix}/layouts/layout.html</inner-layout>	
+
+
 </page>
