@@ -33,10 +33,10 @@
   	</permission>
 
 
-	<link rel="stylesheet" href="$home$themeprefix/entermedia/styles/dtree.css" />
-	<link rel="stylesheet" href="$home$themeprefix/entermedia/styles/filemanager/tools.css" />
-	<script type="text/javascript" src="$home/${applicationid}/javascript/validateandedit.js"> </script>
-	<script type="text/javascript" src="$home/${applicationid}/settings/filemanager/javascript/oepopup.js"> </script>
+	<link rel="stylesheet" href="${themeprefix}/entermedia/styles/dtree.css" />
+	<link rel="stylesheet" href="${themeprefix}/entermedia/styles/filemanager/tools.css" />
+	<script type="text/javascript" src="/${applicationid}/javascript/validateandedit.js"> </script>
+	<script type="text/javascript" src="/${applicationid}/components/javascript/oepopup.js"> </script>
 
 	<script id="jquery-fancybox" src="/${applicationid}/components/javascript/jquery.fancybox/jquery.fancybox-1.2.1.js" />
 	<style 	id="jquery-fancybox-css" href="/${applicationid}/components/javascript/jquery.fancybox/jquery.fancybox.css" />
