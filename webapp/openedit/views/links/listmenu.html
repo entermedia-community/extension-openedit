@@ -38,6 +38,7 @@ adminLinkTree.lastselected = "";
 adminLinkTree.name = "adminLinkTree";
 adminLinkTree.jumpToNode = function(inUrl, inNodeId)
 {
+	
 	this.selectRow( inNodeId );
 	//new Ajax.Updater(this.name + "treerow"+inNodeId, '$home/openedit/editors/links/select.html', { parameters: {nodeID: inNodeId, path: inUrl, origURL: "$content.path",  linkpath: "$!path"} });
 	//document.location = "$home/${applicationid}/views/links/linkeditor.html?linkpath=$!path&linkid=" + inNodeId;

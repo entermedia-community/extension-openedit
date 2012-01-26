@@ -23,7 +23,7 @@ $context.putPageValue("showcaption", "true")
 			$context.putPageValue("type", $type)
 			#set ($sourcepath = $hit.sourcepath)
 			
-			#set( $click = "$home$oehome/html/browse/details.html?sourcepath=${sourcepath}&hitssessionid=$rootid" )
+			#set( $click = "$home/openedit/components/html/browse/details.html?sourcepath=${sourcepath}&hitssessionid=$rootid" )
 			
 			<div class="emthumbimage em$thumbsize " 
 				#if( $showcaption ) style="vertical-align:bottom;" #end 

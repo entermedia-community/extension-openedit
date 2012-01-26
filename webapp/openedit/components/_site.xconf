@@ -8,4 +8,6 @@
 	
 	<generator mimetypes="text/html" name="velocityGenerator"/>
 	
+	<script id="openedit" src="/${applicationid}/components/javascript/openedit.js" />
+
 </page>
