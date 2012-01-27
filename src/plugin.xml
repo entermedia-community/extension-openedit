@@ -10,6 +10,13 @@
 		<property name="wraps"><ref bean="velocityGenerator"/></property>
 	</bean>
 
+	<bean id="wiki" class="org.openedit.entermedia.generators.ToolbarGenerator" >
+		<property name="headerPath"><value>/openedit/components/html/toolbar.html</value></property>
+		<property name="footerPath"><value>/openedit/components/html/footer.html</value></property>
+		<property name="pageManager"><ref bean="pageManager"/></property>
+		<property name="wraps"><ref bean="wikiGenerator"/></property>
+	</bean>
+
 <bean id="admintoolbarGenerator" class="org.openedit.entermedia.generators.AdminToolBarGenerator" >
 		<property name="headerPath"><value>/openedit/components/toolbar/admintoolbarselector.html</value></property>
 		<property name="search"><value>&lt;body</value></property>
