@@ -47,7 +47,8 @@ Choose Format:
 		jQuery("#selectbutton").bind("click", function () {
 			var html = jQuery("#preview").html();
 			
-			parent.CKEDITOR.instances.content.insertHtml(html);
+			//parent.CKEDITOR.instances.content.insertHtml(html);
+			window.parent.CKEDITOR.instances.content.insertHtml(html);
 			//jQuery("a.openeditdialog").fancybox.close();
 			//	jQuery(this).first().fancybox.close();
 			//var fancybox = jQuery(document).fancybox;
