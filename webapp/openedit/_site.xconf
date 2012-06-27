@@ -53,6 +53,7 @@
 	-->
 	<script id="openedit" src="/${applicationid}/components/javascript/openedit.js">     </script>	
 	<script id="entermedia" src="/${applicationid}/components/javascript/entermedia.js">     </script>	
+	<script id="entermedia" src="/${applicationid}/components/javascript/tabs.js">     </script>
 
 	 <property name="themeprefix">/openedit/theme</property>
   	<inner-layout>${themeprefix}/layouts/layout.html</inner-layout>	
