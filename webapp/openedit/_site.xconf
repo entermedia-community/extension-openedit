@@ -47,7 +47,7 @@
 	<script id="jquery-livequery" src="/${applicationid}/components/javascript/jquery.livequery.js" />
 	
 	<script id="jquery-autocomplete" src="/${applicationid}/components/javascript/jquery.autocomplete.js"/>
-	<script id="jquery-validate"  src="/${applicationid}/components/javascript/jquery.validate.js"/>
+	<script id="jquery-validate"  src="/${applicationid}/components/javascript/validateandedit.js"/>
 	<!--
 	<script id="jquery-select"  src="/${applicationid}/components/javascript/ui.selectmenu.js"/>
 	-->
