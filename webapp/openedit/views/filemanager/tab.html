@@ -29,7 +29,8 @@ openDialog = function(inUrl, inLevel)
 {
 	if(!inLevel) var inLevel = 1;
 	jQuery("#em_fmcontent").hide();
-	jQuery("#em_fmdialog").load(inUrl, {oemaxlevel: inLevel});
+	// jQuery("#em_fmdialog").load(inUrl, {oemaxlevel: inLevel});
+	jQuery("#em_fmdialog").load(inUrl, 0);
 	jQuery("#em_fmdialog").show();
 }
 
