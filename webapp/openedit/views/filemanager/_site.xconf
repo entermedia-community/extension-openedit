@@ -25,9 +25,6 @@
 		<value locale="es">Administrador de Archivos</value>
 	</property>
 
-	<permission name="view">
-		<permission name="oe.filemanager"/>
-  	</permission>
   	<permission name="editallfiles">
 		<permission name="oe.filemanager.editall"/>
   	</permission>
