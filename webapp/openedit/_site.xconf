@@ -13,6 +13,9 @@
 			<not />
 	</permission>
 
+  <property name="allowspecifiedpath">true</property>
+
+
   <property name="fallbackdirectory">/WEB-INF/base/emfrontend</property>
   <property name="title">OpenEdit</property>
   <property name="applicationid">openedit</property>
