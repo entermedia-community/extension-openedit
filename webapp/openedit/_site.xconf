@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <page>
+
+	<permission name="view">
+		<or>
+			<group id="administrators"/>
+		</or>
+	</permission>
+
+
 	<permission name="edit"> 
 			<not />
 	</permission>
+
+  <property name="allowspecifiedpath">true</property>
+
 
   <property name="fallbackdirectory">/WEB-INF/base/emfrontend</property>
   <property name="title">OpenEdit</property>
