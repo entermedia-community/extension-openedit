@@ -16,7 +16,7 @@
   <property name="allowspecifiedpath">true</property>
 
 
-  <property name="fallbackdirectory">/WEB-INF/base/emfrontend</property>
+  <property name="fallbackdirectory">/WEB-INF/base/modulefrontend</property>
   <property name="title">OpenEdit</property>
   <property name="applicationid">openedit</property>
   <property name="catalogid">media/catalogs/public</property>
