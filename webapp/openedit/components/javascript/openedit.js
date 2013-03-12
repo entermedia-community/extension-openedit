@@ -24,7 +24,7 @@ jQuery(document).ready(function()
 	);
 	
 	
-	jQuery("a.openeditdialog").click(
+	jQuery("a.openeditdialog").each(
 		function() 
 		{
 			var height  = jQuery(window).height();
@@ -39,7 +39,7 @@ jQuery(document).ready(function()
 			{ 
 				'zoomSpeedIn': 300, 'zoomSpeedOut': 300, 'overlayShow': true,
 				enableEscapeButton: true, type: 'iframe', 
-				frameHeight: height, frameWidth: width
+				height: height, width: width
 			});
 		}
 	); 
