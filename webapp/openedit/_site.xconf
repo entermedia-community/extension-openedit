@@ -69,5 +69,7 @@
 	 <property name="themeprefix">/openedit/theme</property>
   	<inner-layout>${themeprefix}/layouts/layout.html</inner-layout>	
 
+	<path-action name="Admin.loadPermissions"/>
+	<path-action name="Admin.allowViewing" />
 
 </page>
