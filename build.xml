@@ -9,7 +9,6 @@
     <property name="src" location="${basedir}/src"/>
 	<property name="testsrc" location="${basedir}/test"/>
     <property name="lib" location="${basedir}/lib"/>
-	 <property name="base" location="${basedir}/base"/>
     <property name="etc" location="${basedir}/etc"/>
     <property name="build" location="${basedir}/build"/>
 	<property name="compiled" location="${basedir}/build/compiled"/>
@@ -104,7 +103,6 @@
 			<zipfileset dir="${lib}" prefix="lib" excludes="compile/**"/>
 			
 			<zipfileset dir="${deployDir}/builds/" includes="${appname}-${version}.jar" prefix="lib"/>
-			<zipfileset dir="${base}" prefix="base" />
 			<zipfileset dir="${webapp}/openedit" prefix="base/openedit" />
 
 		</zip>

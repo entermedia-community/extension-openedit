@@ -21,7 +21,8 @@ $context.putPageValue("editPath","$editPath" )
 ##<input type="hidden" name="oemaxlevel" value="1" />
 <input type="hidden" name="textheight" value="$height"/>
 
-<div class="imagebutton" id="savebutton"><a href="javascript:save();"><img border="0" class="image" src="$home$themeprefix/images/toolbar/saveas.gif" title="[[Save]]" ></a> $!message</div>
+<div class="imagebutton" id="savebutton"><a href="javascript:save();"><img border="0" class="image" src="$home$themeprefix/images/toolbar/saveas.gif" title="[[Save]]" ></a> $!message  $!context.getRequestParameter("path")
+</div>
 
 <textarea id="texteditcontent" name="content" wrap="off" onkeydown="return catchTab(this,event)" 
 	style="width: 100%; height: $height;" #if( $browser.isMSIE() ) rows="40" #end ></textarea>
