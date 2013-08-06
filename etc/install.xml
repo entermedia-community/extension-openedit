@@ -57,9 +57,6 @@
     <delete failonerror="false">
       <fileset dir="../WEB-INF/base/system/components/openedit/"/>
     </delete>
-    <copy todir="../WEB-INF/base/system/components/openedit" preservelastmodified="true">
-      <fileset dir="${build}/unpacked/base/system/components/openedit"/>
-    </copy>
 
     <delete failonerror="false">
        <fileset dir="../WEB-INF/base/openedit/"/>
