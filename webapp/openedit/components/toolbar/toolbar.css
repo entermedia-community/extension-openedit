@@ -5,7 +5,7 @@
 	height: 20px;
 
 	position:absolute; 
-	z-index:200;
+	z-index:2001;
     top: 0px;
     right: 0px;
 	border: 1px solid white;
@@ -17,7 +17,7 @@
 #oeadmintoolbarlocation
 {
 	position:absolute; 
-	z-index:200;
+	z-index:2001;
 	width: 160px;
     height:0px;
     top: 0px;
@@ -27,7 +27,7 @@
 .oeminimaladmintoolbar
 {
 	position:absolute;
-	z-index:200;
+	z-index:2001;
     height:0px;
     top: 0px;
     right: 17px;
