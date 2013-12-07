@@ -1,28 +1,24 @@
+
 jQuery(document).ready(function() 
 { 
-	jQuery("#oeselector").mouseenter(
-			function()
-			{
-				if( jQuery("#oeadmintoolbarlocation").is(":visible"))
+	//ccheck for a permission on the body tag?
+	var canedit = jQuery(document.body).attr("showadmintoolbar");
+	if( canedit && canedit == "true" )
+	{
+		/*
+				//insert a chunk of html
+				jQuery.get("/openedit/components/toolbar/admintoolbarselector.html", {}, function(data) 
 				{
-					return;
+					var body = jQuery("body");
+					
+					body.prepend(data);
+					
+					loadToolbar();
 				}
-				var me =jQuery(this); 
-				showing = true;
-				jQuery.get(me.attr("href"), {}, function(data) 
-						{
-							me.html(data);
-							jQuery("#oeadmintoolbarlocation").mouseleave(
-									function() 
-									{
-										jQuery(this).hide();
-									}
-							);
-						}
-					);
-			}
-	);
-	
+		*/		
+
+	}
+	loadToolbar();
 	
 	jQuery("a.openeditdialog").each(
 		function() 
@@ -43,83 +39,91 @@ jQuery(document).ready(function()
 			});
 		}
 	); 
-
-
-
-jQuery(".oethumbholder").click(
-		function()
-		{
-			jQuery(this).mouseleave(
-				function(){
-					var el = document.getElementById("oehover");
-					if( el )
-					{
-						jQuery(el).attr("status","hide"); //Beware this gets called when popup is shown
-					}
-				});
-		
-			jQuery(this).mouseenter(
-			function()
-			{
-				var dohover = jQuery(this).parent().parent().parent().attr("hover"); //TODO: use parents("div)
-				dohover = "true";
-				if(dohover == "true")
-				{
-					var el = document.getElementById("oehover");
-					if(!el)
-					{
-						el = document.createElement("div");
-						document.body.appendChild(el);
-						el=jQuery(el);
-						el.attr("id","oehover");
-						el.attr("status","hide");
-						el.bind("mouseleave",function(){
-							jQuery(this).attr("status","hide");
-							jQuery(this).hide();
-						});
-					}
-					el=jQuery(el);
-					
-					var img = jQuery(this).find("img.emthumbnail");
-					var width = img.width();
-					if(width < 100)
-					{
-						width=100;
-					}
-					var height = img.height();
-					var offset = img.offset();
-					height = offset.top -( height/2); //center it
-					el.css("top", height + "px");
-					width = offset.left - (width / 2);
-					el.css("left", width + "px"); 
-
-					var sourcepath = img.attr("sourcepath");
-					var assetid = img.attr("assetid");
-					var catalogid = img.attr("catalogid");
-					var title = img.attr("title");
-					var link = jQuery(this).parent().attr("href");
-					
-					var imgloc = "$home/"+catalogid+"/downloads/preview/medium/" + sourcepath + "/medium.jpg";
-					new Image().src = escape(imgloc);
-				
-					jQuery(el).load('$home/${openeditid}/html/browse/hover.html', {
-						assetid: assetid,
-						sourcepath: sourcepath,
-						catalogid: catalogid,
-						title: title,
-						href: link
-					});
-					
-					el.attr("status","show"); //Show it is ok. If someone leaves the show is turned off
-					el.attr("assetid",assetid); //Show it is ok. If someone leaves the show is turned off
-					
-					setTimeout('showHover(\"' + assetid +'\")',500)
-				}
-			});
+	jQuery("a.oeinlineedit").live('click',
+			function(e) 
+			{	
 			
-		}
-	);
+			var container = $(this).parent().parent().parent();
+			container = $(container);
+			var editpath = container.data("editpath");
+			var home = $("#openedit").data("home");
+			if(!home)
+			{
+				home = "";
+			}
+			var savepath = home + "/openedit/components/html/save.html";
+			
+		 	CKEDITOR.config.saveSubmitURL = savepath + "?editPath=" + editpath;	 //TODO: Save this URL specific to this editor
+			
+				e.preventDefault();
+				var content = container.find(".openediteditcontent" ).get(0);
+				//var content = jQuery(".openediteditcontent" ).get(0);
+				content.setAttribute('contenteditable', 'true');
+				var editor = CKEDITOR.inline( content,
+					 {
+					 extraConfig : { 'oldcontent' : 'null'},
+        			 startupFocus : true ,        			 
+        			 on: 
+        			   {
+        			   	dataReady: function( event ) {
+        			   		
+        			   		 event.editor.config.extraConfig.oldcontent = event.editor.getData();
+        			   	},        			   
+		                 blur: function( event ) {
+		                
+	                        content.setAttribute('contenteditable', 'false');
+	               
+		                    var data = event.editor.getData();
+							
+							if( data != editor.config.extraConfig.oldcontent )
+							{
+								var answer = confirm("Do you want to save changes?"); //TODO: Make sure they changed something
+								if (answer)
+								{
+									event.editor.execCommand( 'savebtn' );			                   
+				                 } 
+				                 else
+				                 {
+				                 	location.reload();
+				                 }							
+							}
+							event.editor.destroy();
+		                 } ,
+		                 savecontentdone: function( event )    {
+		                 	
+		                 }  
+		              }      
+                } );
+                
+               
+                	
+				/*
+				if( typeof content.ckeditorGet == "undefined")
+				{
+					CKEDITOR.inline( content,
+					 {
+        				startupFocus : true
+        			 }
+        			);	
+				}
+				*/
+//				content.focus();
 
+/*
+  				jQuery(content).blur( function() {
+	                content.setAttribute('contenteditable', 'false');
+	               
+					for(name in CKEDITOR.instances)
+					{
+					    CKEDITOR.instances[name].destroy()
+					}
+
+	             } ); 
+*/
+
+				return false;
+			}
+	);		
 
 jQuery("form.oeajaxform").bind('submit',	
 		function() 
@@ -142,8 +146,34 @@ jQuery("form.oeajaxform").bind('submit',
 		}
 	);
 
-
-
+	
+});
+	
+	loadToolbar = function()
+	{
+		jQuery("#oeselector").mouseenter(
+			function()
+			{
+				if( jQuery("#oeadmintoolbarlocation").is(":visible"))
+				{
+					return;
+				}
+				var me = jQuery(this); 
+				jQuery.get(me.attr("href"), {}, function(data) 
+						{
+							me.html(data);
+							jQuery("#oeadmintoolbarlocation").mouseleave(
+									function() 
+									{
+										jQuery(this).hide();
+									}
+							);
+						}
+					);
+			}
+	);
+	}
+	
 
 showHover = function(inAssetId)
 {
@@ -158,4 +188,6 @@ showHover = function(inAssetId)
 	}
 }
 
-});
+
+
+

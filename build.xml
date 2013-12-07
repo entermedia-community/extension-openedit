@@ -84,7 +84,7 @@
 	-->	  
 	<target name="jar" depends="compile">
 		<mkdir dir="${deployDir}/builds/"/>
-		<jar jarfile="${deployDir}/builds/${appname}-${version}.jar" basedir="${compiled}" >
+		<jar jarfile="${deployDir}/builds/${branch}${appname}-${version}.jar" basedir="${compiled}" >
 			<exclude name="**/*Test*"/>
 			<manifest>
 		    	<attribute name="Built-By" value="${user.name}"/>
@@ -102,7 +102,7 @@
 		<zip destfile="${deployDir}/builds/${appname}.zip" >			
 			<zipfileset dir="${lib}" prefix="lib" excludes="compile/**"/>
 			
-			<zipfileset dir="${deployDir}/builds/" includes="${appname}-${version}.jar" prefix="lib"/>
+			<zipfileset dir="${deployDir}/builds/" includes="${branch}${appname}-${version}.jar" prefix="lib"/>
 			<zipfileset dir="${webapp}/openedit" prefix="base/openedit" />
 
 		</zip>

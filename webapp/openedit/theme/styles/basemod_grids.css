@@ -45,8 +45,8 @@
 
   /* (en) Layout: width, background, borders */
   /* (de) Layout: Breite, Hintergrund, Rahmen */
-  .page_margins { max-width: 90%; }
-  .page { margin: 0 20px; }
+  .page_margins { max-width: 95%; }
+  .page { margin: 0 10px; }
   #topnav, #header, #nav, #main, #extended, #footer { overflow:hidden; min-width: 720px; }
 
   /* (en) Designing main layout elements */
@@ -55,9 +55,10 @@
   #topnav .page { text-align:left; padding: 5px 0; }
   #topnav span.navlinks { float:right; }
 
-  #header {
-    
-    background: #fff url("../images/oe-logo.jpg") no-repeat top left;
+  .logoheader {
+    height: 34px;
+    background:  url("../images/oe-logo.png") no-repeat top left;
+    padding-left: 100px;
   }
 
   #header .page {
@@ -90,7 +91,7 @@
   #extended .subcl { padding: 0 10px 0 0; }
   #extended .subcr { padding: 0 0 0 10px; }
 
-  #main, #extended { padding-top: 20px; padding-bottom: 20px; }
+  #main, #extended { padding-top: 10px; padding-bottom: 10px; }
 
   #footer { border-top: 2px #666 solid; }
   #footer .page { padding: 10px 0px; }

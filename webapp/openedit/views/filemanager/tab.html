@@ -11,7 +11,9 @@
 	#set( $path = $path.substring(0, $end) )
 #end
 
+
 #set( $editPage = $pageManager.getPage($path))
+
 $context.putPageValue("editPage", $editPage)
 $context.putPageValue("editPath", $editPage.path)
 <div id="em_fmcontent">

@@ -80,7 +80,7 @@ text-decoration: none;
 border-top: 1px solid white;
 text-align:left;
 }
-
+style="position:relative;  height:-2px; top: 0px;"><div style="position:absolute;top:-20px;"
 
 * html .oeglossymenu li a{ /*IE only. Actual menu width minus left padding of A element (10px) */
 width: 160px;
@@ -91,4 +91,37 @@ width: 160px;
 
 .oeglossymenu li a:hover{
 background-color: #DDDDDD;
+}
+
+.openedittoolbar 
+{
+	position:relative;  height:-2px; top: 0px;	
+}
+
+.openedittoolbarcontent 
+{
+	position:absolute;
+	top:-20px;
+}
+div.openeditinline
+{
+	border:1px dashed #aaa;
+	padding: 0px 1px 1px 1px;
+	margin: 18px;
+}
+
+.openediteditcontent
+{
+	min-height: 20px;
+}
+div.openeditdebug
+{
+	border:1px dashed #aaa;
+	padding: 0px 1px 1px 1px;
+	margin: 18px;
+}
+.oeglossymenu li a.oeglossyselected
+{
+	font-weight: bold;
+	background-color: #aaa;
 }

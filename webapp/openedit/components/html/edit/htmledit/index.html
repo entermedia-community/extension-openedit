@@ -11,7 +11,7 @@ $context.putPageValue("parentName",$parentName )
 
 <a href="$home$oehome/html/browse/index.html?editorid=content" class="emdialog" id="oebrowsedialog" ></a>
 
-<form id="contentForm" name="contentForm" onSubmit="return saving()" target="_top" method="post" action="$home/openedit/components/html/edit/htmledit/save.html" style="margin-bottom:0;">
+<form id="contentForm" name="contentForm" target="_top" method="post" action="$home/openedit/components/html/edit/htmledit/save.html" style="margin-bottom:0;">
 
 $context.putPageValue("height","100%" )
 	<input type="hidden" name="editPath" value="$editPath" />
@@ -29,11 +29,6 @@ $context.putPageValue("height","100%" )
 </form>
 <script type="text/javascript">   
         
-			jQuery(document).ready(function() 
-			{
-				window.setTimeout("loadedOk()",2000); 
-			});
-
 		    var savingnow = false;
 			var origSource;
 
@@ -47,57 +42,6 @@ $context.putPageValue("height","100%" )
 				return true;			
 			}
 
-			function loadedOk()
-			{
-				var oEditor = CKEDITOR.instances.content;
-				origSource = oEditor.getData();
-			
-				parent.jQuery.fn.fancybox.allowclose = allowclose;
-				
-				parent.window.onbeforeunload = function (e) 
-				{
-				  	var e = e || window.event;
-
-					if( !savingnow && isModified() )
-					{
-						savingnow = true; //so it does not ask twice
-						var text = 	'[[HTML edits will be lost]]';						
-						// For IE and Firefox
-						if (e) 
-						{
-							e.returnValue = text;
-						}
-						// For Safari
-						return text	;
-					}	  
-				};
-				
-				jQuery(".catalogs_menu_item a").click(	function() 
-				{
-					var ok = allowclose();
-					return ok;
-				});
-			}
-
-			function isModified()
-			{
-				//Do not do this while they are in source view mode. Causes reloading of page
-				var oEditor = CKEDITOR.instances.content;
-				if(  oEditor.mode  != 1 )
-				{
-					var newSource = oEditor.getData();
-					if ( origSource != newSource )
-					{
-					    return true;
-					}
-				}
-				return false;
-			}
-		    
-			function saving()
-			{
-				savingnow = true;
-			}
 			#foreach( $path in $editPage.getStylePaths() )
 				#if( $css )
 					#set( $css = "$css,'$path'" )
@@ -112,8 +56,6 @@ $context.putPageValue("height","100%" )
 		
 			curheight = curheight * 0.65;
 			
-			
-
 			
 		CKEDITOR.replace( 'content', {
 #if( $editorSession.isFullPage() )
