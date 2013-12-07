@@ -10,6 +10,8 @@
 	#set ($curPage = 1)
 #end
 
+
+
 $children.setHitsPerPage(1000)
 $children.setPage($curPage)
 
@@ -38,6 +40,8 @@ $children.setPage($curPage)
 #else 
 #set( $even = true)
 	<tr> #end
+	
+	
 	#if($node.isLeaf() )				
 		
 		<td class='actionlink$open'><a class="emdialog" href="$home$page.filerootpath/showfile.html?path=$node.getURL()&textheight=600px&width=1000&height=680"><img src="$home$themeprefix/images/tree/${type}page.gif" />$node.getName()</a>

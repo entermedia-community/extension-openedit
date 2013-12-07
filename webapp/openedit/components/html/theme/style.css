@@ -19,7 +19,7 @@ padding:0 10px;
 text-align:center;
 }
 #openedit .catalogs_menu_item {
-width:150px;
+width:120px;
 }
 #openedit .catalogs_menu_item a {
 color:#555252;
@@ -38,7 +38,7 @@ vertical-align:middle;
 background:green;
 margin:50px 0 0 80px;
 text-decoration:none;
-width:150px;
+width:120px;
 }
 
 #openedit #catalogSettingsPanel {
@@ -91,7 +91,7 @@ border-right:1px solid #EAFFEA;
 #openedit .spiffyfg {
 background:none repeat scroll 0 0 #E4FFE3;
 height:500px;
-width:150px;
+width:120px;
 }
 #openedit .spiffyoe {
 display:block;

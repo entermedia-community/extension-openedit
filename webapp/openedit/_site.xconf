@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <page>
+  <property name="fallbackdirectory">/WEB-INF/base/emfrontend</property>
+
+	<property name="filerootpath">/${applicationid}/views/filemanager</property>
+
+  <property name="applicationid">/${module}</property>
+  <property name="themeprefix">/${applicationid}/theme</property>
+
+  <path-action name="MediaArchiveModule.loadApplicationId" />
+  <path-action name="ProfileModule.loadUserProfile" />
+  <path-action alltypes="true" name="MediaArchiveModule.getMediaArchive"/>
+
+	<path-action name="Admin.loadPermissions"/>
+	<path-action name="Admin.allowViewing" />
+
+	<path-action bean="searcherManager" name="PageValue.loadPageVariable" allowduplicates="true" />
+	<path-action bean="userManager" name="PageValue.loadPageVariable" allowduplicates="true" />
+
+	<path-action name="TranslationModule.loadBrowserLanguage" />
 
 	<permission name="view">
 		<or>
@@ -8,15 +26,12 @@
 		</or>
 	</permission>
 
-
 	<permission name="edit"> 
 			<not />
 	</permission>
 
   <property name="allowspecifiedpath">true</property>
 
-
-  <property name="fallbackdirectory">/WEB-INF/base/modulefrontend</property>
   <property name="title">OpenEdit</property>
   <property name="applicationid">openedit</property>
   <property name="catalogid">media/catalogs/public</property>
@@ -30,9 +45,7 @@
   <generator mimetypes="text/html" name="velocityGenerator"/>
 	
   <property name="section" >activity</property>
-  <!-- 
-  <property name="contentsiteroot">http://s3.amazonaws.com/emtube</property 
-  -->
+  
 	<path-action name="MediaSearchModule.searchCategories" cancel="true"/>
 
 	
@@ -45,7 +58,7 @@
 	<path-action bean="pageManager" name="PageValue.loadPageVariable" allowduplicates="true" />
 
 	
-	<script id="jquery" src="/${applicationid}/theme/jqueryUI/${jquery-theme}/js/jquery-1.5.1.min.js"/>
+	<script id="jquery" src="/${applicationid}/components/javascript/jquery-1.7.1.min.js"/>
 	<script id="jquery-ui" src="/${applicationid}/theme/jqueryUI/${jquery-theme}/js/jquery-ui-1.8.13.custom.min.js" />
 	<style  id="jquery-ui-css" href="/${applicationid}/theme/jqueryUI/${jquery-theme}/css/${jquery-theme}/jquery-ui-1.8.13.custom.css"/>
 	
@@ -63,9 +76,8 @@
 	<script id="entermedia" src="/${applicationid}/components/javascript/tabs.js">     </script>
 
 	 <property name="themeprefix">/openedit/theme</property>
-  	<inner-layout>${themeprefix}/layouts/layout.html</inner-layout>	
+  	<inner-layout>${themeprefix}/layouts/application.html</inner-layout>	
 
-	<path-action name="Admin.loadPermissions"/>
-	<path-action name="Admin.allowViewing" />
+
 
 </page>

@@ -17,7 +17,6 @@
 	<property name="root">/</property>
 	<property name="excludes">.bash*, *CVS*</property>
 	<property name="tablistname">tablist</property>
-	<property name="filerootpath">/${applicationid}/views/filemanager</property>
 	<property name="tab">filemanager</property>
 
 	<property name="sectiontitle">

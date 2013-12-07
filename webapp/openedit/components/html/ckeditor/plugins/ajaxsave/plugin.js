@@ -15,7 +15,16 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 			{
 			    exec : function( editor )
 			    {
-			    	jQuery("#contentForm").submit();
+			    	var savepath = CKEDITOR.config.saveSubmitURL;
+		    	  	var data = event.editor.getData();
+                    var request = jQuery.ajax({
+                        url: savepath,
+                        type: "POST",
+                        data: {
+                            content : data
+                        },
+                        dataType: "html"
+                    });
 			    },
 			    async : true   
 			});
