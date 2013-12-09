@@ -39,7 +39,7 @@ jQuery(document).ready(function()
 			});
 		}
 	); 
-	jQuery("a.oeinlineedit").live('click',
+	jQuery("a.oeinlineedit").on('click',
 			function(e) 
 			{	
 			
