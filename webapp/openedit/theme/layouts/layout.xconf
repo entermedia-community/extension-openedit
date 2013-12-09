@@ -1,5 +1,3 @@
 <page>
-
-<generator name="admintoolbarGenerator"/>
-
+	<generator name="admintoolbarGenerator" />
 </page>

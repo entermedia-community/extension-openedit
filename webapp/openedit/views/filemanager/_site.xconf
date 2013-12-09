@@ -176,7 +176,7 @@
    	</property>
     
      <property name="iconhome">/${applicationid}/theme/images/tree/</property>
-     
+     <!--
     	<generator name="velocityGenerator" mimetypes="text/html"/>
-    
+    -->
 </page>
