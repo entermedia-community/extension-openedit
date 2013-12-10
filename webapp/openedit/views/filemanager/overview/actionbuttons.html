@@ -11,15 +11,15 @@
 
 #set ($origURL = "${page.filerootpath}/showfile.html")
 
-	<a href="#" onclick="openDialog('$home${page.filerootpath}/copypage-leaf/copypage.html?path=$!{editPath}');">
+	<a href="$home${page.filerootpath}/copypage-leaf/copypage.html?path=$!{editPath}&oemaxlevel=1" >
 	$context.getText("Copy $type")</a>
 
 #if( $pages.canEdit($editPath) || $caneditallfiles)
 	
-	| <a  href="#" onclick="openDialog('$home${page.filerootpath}/movepage-leaf/movepage.html?path=$!{editPath}');">
+	| <a  href="$home${page.filerootpath}/movepage-leaf/movepage.html?path=$!{editPath}&oemaxlevel=1" class="ajaxDialog" >
 	$context.getText("Move and rename $type")</a>		
 	
-	| <a  href="#" onclick="openDialog('$home${page.filerootpath}/deletepage-leaf/deletepage.html?delete=$!{editPath}');">
+	| <a  href="$home${page.filerootpath}/deletepage-leaf/deletepage.html?delete=$!{editPath}&oemaxlevel=1" >
 	$context.getText("Delete $type")
 	</a>
 	
@@ -36,7 +36,9 @@
 #end
 
 	| <a href="$home${page.filerootpath}/download${editPath}">[[Download File]]</a>	
-	| <a href="$home${page.filerootpath}/preview/index.html?editPath=${editPath}">[[Preview]]</a>	
+	<!-- really not useful 
+	| <a href="$home${page.filerootpath}/preview/index.html?editPath=${editPath}">[[Preview]]</a>
+	 -->	
   #if( $pages.canEdit($editPath) )
 	| <a href="#" onclick="openDialog('$home${page.filerootpath}/settings/index.html?editPath=$editPath');"> 
 	#if( $type == "file") [[Page Properties]] #elseif ($type == "folder") [[Folder Properties]] #elseif ($type == "image") [[Image Properties]] #end
