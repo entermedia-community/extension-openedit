@@ -1,6 +1,30 @@
 
 jQuery(document).ready(function() 
 { 
+	
+	
+	$(document).on("click",  ".ajaxDialog" ,function(){
+		var target = $(this).data('target');
+		if(target == null){
+			target = $(this).attr('href');
+		}
+		var title= $(this).data('title');
+		if(title != null){-t
+			$('#modal-title').text(title);
+		}
+		$('#edit-modal-body').load(target,function(result){
+			var textareas = jQuery(".htmleditor");
+			if(textareas.size() > 0){
+			
+				loadEditors();
+			}
+			$('#editmodal').modal({show:true});
+		
+		});
+	  return false;
+		
+	});		
+	
 	//ccheck for a permission on the body tag?
 	var canedit = jQuery(document.body).attr("showadmintoolbar");
 	if( canedit && canedit == "true" )

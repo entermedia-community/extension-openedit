@@ -1,7 +1,4 @@
-
 <h2>[[Upload New Media]]</h2>
-
-		
 #set( $path = $context.getRequestParameter('path') )
 #set( $target = $pageManager.getPage($path))
 #if( !$target.isFolder() )	
@@ -10,7 +7,9 @@
 
 
 <div id="alluploadfiles">
+<!-- 
 <p align="center">Try <a href="#" onclick="usedragdrop(); return false;" >drag and drop</a> ([[requires Java]])</p>
+ -->
 $pages.include("$page.filerootpath/upload/uploadfield.html?path=$path")
 </div>
 

@@ -11,7 +11,10 @@ $context.putPageValue("parentName",$parentName )
 
 <a href="$home$oehome/html/browse/index.html?editorid=content" class="emdialog" id="oebrowsedialog" ></a>
 
-<form id="contentForm" name="contentForm" target="_top" method="post" action="$home/openedit/components/html/edit/htmledit/save.html" style="margin-bottom:0;">
+<form id="" name="contentForm" method="post" action="$home/openedit/components/html/edit/htmledit/save.html" style="margin-bottom:0;">
+
+
+
 
 $context.putPageValue("height","100%" )
 	<input type="hidden" name="editPath" value="$editPath" />
@@ -23,10 +26,17 @@ $context.putPageValue("height","100%" )
 	#end
 	<input type="hidden" name="parentName" value="$parentName" />
 
-
 	<textarea class="oeeditor" cols="80"  id="content" name="content" rows="10">$editorSession.getEscapedSource()</textarea>
+<div class="clear-both"/>
+#if(!$editPage.isHtml())
+
+<input type="submit" value="Save changes" class="btn btn-default"/>
+#end
 
 </form>
+
+#if($editPage.isHtml())
+
 <script type="text/javascript">   
         
 		    var savingnow = false;
@@ -63,8 +73,10 @@ $context.putPageValue("height","100%" )
 #end
 
 			height : curheight,
+			#if($css)
 			contentsCss: [$css] ,
 			contentsCss: [$css] ,
+			#end
 			entities : false,
 			basicEntities : false,
 			
@@ -78,3 +90,5 @@ $context.putPageValue("height","100%" )
 			});
 		});
 		</script>
+		
+		#end

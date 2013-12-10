@@ -44,7 +44,7 @@ $children.setPage($curPage)
 	
 	#if($node.isLeaf() )				
 		
-		<td class='actionlink$open'><a  href="$home$page.filerootpath/showfile.html?path=$node.getURL()&textheight=600px&width=1000&height=680"><img src="$home$themeprefix/images/tree/${type}page.gif" />$node.getName()</a>
+		<td class='actionlink$open'><a  href="$home$apphome/components/html/edit/htmledit/index.html?editPath=$node.getURL()&origURL=$node.getURL()&path=$node.getURL()"><img src="$home$themeprefix/images/tree/${type}page.gif" />$node.getName()</a>
 		</td>
 		<td class='actionlink$open'>&nbsp;$node.contentItem.length</td>
 		<td class='actionlink$open'>$node.contentItem.lastModified().toString()</td>

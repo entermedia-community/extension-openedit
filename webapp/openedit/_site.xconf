@@ -67,10 +67,11 @@
  <style id="bootstrap-theme" href='/${applicationid}/bootstrap/css/bootstrap-theme.css' />
  <style id="bootstrap-select" href='/${applicationid}/bootstrap/select/bootstrap-select.min.css' />
  <style id="bootstrap-validate" href='/${applicationid}/bootstrap/validate/jquery.validate.css' />
+	 <style id="ortree" href='/${applicationid}/bootstrap/validate/jquery.validate.css' />
 	
 	  	<inner-layout>${themeprefix}/layouts/application.html</inner-layout>	
 
-<script id="openedit" src="/${applicationid}/components/javascript/openedit.js">     </script>	
+<style id="openedit-tree" href="/${applicationid}/theme/styles/dtree.css"/>
 	<script id="entermedia" src="/${applicationid}/components/javascript/tabs.js">     </script>
 
 
