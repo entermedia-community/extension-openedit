@@ -2,7 +2,9 @@
 
 <div class="oelist-box">
 <h2>[[Revision History]] - $revisions.getEditPage().getName()</h2>
+#if($revisions.revisions.size() >0)
 #set($current = $revisions.revisions.get(0).getVersion())
+#end
 #set ( $editPath = $editorSession.getEditPath() )
 #set ( $origURL = $context.getRequestParameter("origURL") )
 

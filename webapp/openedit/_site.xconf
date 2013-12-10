@@ -49,7 +49,6 @@
 	<path-action name="MediaSearchModule.searchCategories" cancel="true"/>
 
 	
-	<style 	id="grids" href="${themeprefix}/styles/layout_grids.css" />
 	
 	<!-- style id="openedit" href="/openedit/components/html/theme/style.css" / -->
 	<style id="tools" href="${themeprefix}/styles/filemanager/tools.css" />

@@ -1,32 +1,32 @@
-#emcontainer .emtreehover
+#application .emtreehover
 {
 	background-color: #E0E0E0;
 }
-#emcontainer .treerow a
+#application .treerow a
 {
 	min-width: 50px;
 }
 
-#emcontainer .treerowtext
+#application .treerowtext
 {
 	padding-bottom: 4px;
 }
 
-#emcontainer .dtree {
+#application .dtree {
 	white-space: nowrap;
 }
-#emcontainer .dtree img {
+#application .dtree img {
 	border: 0px;
 	vertical-align: top;
 }
-#emcontainer .dtree a 
+#application .dtree a 
 {
 	color: #444444;
 	font-size: 12px;
 	margin-bottom: 5px;
 	text-decoration: none;
 }
-#emcontainer .dTreeNodeSel
+#application .dTreeNodeSel
 {
 	background-color: #C0D2EC;
 	
