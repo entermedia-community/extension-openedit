@@ -64,6 +64,11 @@ $context.putPageValue("height","100%" )
 
 			height : curheight,
 			contentsCss: [$css] ,
+			contentsCss: [$css] ,
+			entities : false,
+			basicEntities : false,
+			
+			saveSubmitURL:'$home/openedit/components/html/edit/htmledit/save.html?editPath=$editPath',
 			filebrowserBrowseUrl : '$home/openedit/components/html/browse/index.html?editPath=$editPath',
 		    filebrowserUploadUrl : '$home/openedit/components/html/browse/imageupload-finish.html',
 		    filebrowserImageBrowseUrl : '$home/openedit/components/html/browse/index.html?editPath=$editPath',

@@ -25,11 +25,14 @@ CKEDITOR.plugins.add( 'savebtn', {
                 //Now we are ready to post to the server...
                 $.ajax({
                     url: editor.config.saveSubmitURL,//the url to post at... configured in config.js
+                   
                     type: 'POST', 
                     data: {content: data, id: editor.name, page: page},//editor.name contains the id of the current editable html tag
                 })
                 .done(function(response) {
-                    console.log("success");
+                	
+                    var url=  editor.config.saveSubmitURL;//the url to post at... configured in config.js
+
                     if( editor.config.extraConfig )
                     {
 	                    editor.config.extraConfig.oldcontent = data;

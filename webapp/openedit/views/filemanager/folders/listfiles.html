@@ -49,8 +49,8 @@ $children.setPage($curPage)
 		<td class='actionlink$open'>&nbsp;$node.contentItem.length</td>
 		<td class='actionlink$open'>$node.contentItem.lastModified().toString()</td>
 	#else
-		##<td class='actionlink$open' width="1%"><a class="ajax" targetdiv="allsections" href="$home$page.filerootpath/tab.html?path=$node.URL&oemaxlevel=1"><img src="$home$themeprefix/images/tree/${type}folder${open}.gif" />$node.getName()</a></td>
-		<td class='actionlink$open' width="1%"><a class="ajax" targetdiv="allsections" href="$home$page.filerootpath/tab.html?path=$node.URL&oemaxlevel=1"><img src="$home$themeprefix/images/tree/${type}folder${open}.gif" />$node.getName()</a></td>
+		##<td class='actionlink$open' width="1%"><a class="ajax" targetdiv="allsections" href="$home$page.filerootpath/tab.html?path=$node.URL"><img src="$home$themeprefix/images/tree/${type}folder${open}.gif" />$node.getName()</a></td>
+		<td class='actionlink$open' width="1%"><a class="ajax" targetdiv="allsections" href="$home$page.filerootpath/tab.html?path=$node.URL"><img src="$home$themeprefix/images/tree/${type}folder${open}.gif" />$node.getName()</a></td>
 		<td class='actionlink$open' align="left" colspan=3 ><img src="$home$themeprefix/images/tree/right.gif" /></td>
 	#end
 	</tr>
