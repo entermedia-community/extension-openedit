@@ -1,10 +1,6 @@
 <div id="application"  data-home="$home" data-apphome="$apphome" data-themeprefix="${themeprefix}" data-browserlanguage="$!{browserlanguage}">   
    
-   #if($content.isPropertyTrue("showbanner"))
-    <div>
-    <img class="img img-responsive" src="$apphome/theme/images/banner.png" style="width: 100%;"/>
-    </div>
-#end
+   
  $pages.include("$apphome/theme/layouts/nav.html")
    
 
