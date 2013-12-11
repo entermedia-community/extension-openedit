@@ -2,7 +2,7 @@
 
 
 <li>
-	<a class="ajaxDialog" title="Copy Page" href="$home${page.filerootpath}/copypage/copypage.html?path=$!{editPage.path}&oemaxlevel=1" >
+	<a class="ajaxDialog" data-title="Copy Page" href="$home${page.filerootpath}/copypage/copypage.html?path=$!{editPage.path}&oemaxlevel=1" >
 	<img src="$home$themeprefix/images/toolbar/copy.gif" border="0"/>
 	$context.getText("Copy $type")</a>
 </li>
@@ -10,12 +10,12 @@
 #if( $pages.canEdit($editPath) || $caneditallfiles)
 	#if (!$rootsection)
 		<li>
-	      <a class="ajaxDialog" href="$home${page.filerootpath}/movepage/movepage.html?path=$!{editPage.path}&oemaxlevel=1" >
+	      <a data-title="[[Move or Rename File]]" class="ajaxDialog" href="$home${page.filerootpath}/movepage/movepage.html?path=$!{editPage.path}&oemaxlevel=1" >
 		<img src="$home$themeprefix/images/toolbar/modeeditor.png" border="0"/>
 		$context.getText("Move and rename $type")</a>		
 		</li>
 		<li>
-		  <a class="ajaxDialog" href="$home${page.filerootpath}/deletepage/deletepage.html?delete=$!{editPage.path}&oemaxlevel=1"><img src="$home$themeprefix/images/toolbar/deletefile.gif" border="0"/>
+		  <a data-title="Delete $editPage.name" class="ajaxDialog" href="$home${page.filerootpath}/deletepage/deletepage.html?delete=$!{editPage.path}&oemaxlevel=1"><img src="$home$themeprefix/images/toolbar/deletefile.gif" border="0"/>
 		  $context.getText("Delete $type")
 		  </a>
 		</li>

@@ -2,7 +2,7 @@
 #set ( $origURL = $context.getRequestParameter("origURL") )
 
 <div id="openedit" style="height: 100%;"> 
-
+$pages.include("$apphome/views/filemanager/layout/crumbs.html", $context)
   
   $pages.include("/openedit/components/html/edit/menu.html")
 			<div class="oeeditorarea">

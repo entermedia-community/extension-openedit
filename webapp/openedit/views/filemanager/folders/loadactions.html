@@ -1,7 +1,7 @@
 #if($type == "folder" )
 	#if( $pages.canEdit($editPath) || $caneditallfiles)
 		<li>
-			<a class="ajaxDialog" href="$home${page.filerootpath}/upload/index.html?path=$editPath&oemaxlevel=1" ><span><img src="$home$themeprefix/images/toolbar/uploadfile.gif" border="0" title="$context.getPageProperty('text.pushdirectory')" /> [[Upload File]]</span></a>
+			<a data-title="[[Upload Files]]" class="ajaxDialog" href="$home${page.filerootpath}/upload/index.html?path=$editPath&oemaxlevel=1" ><span><img src="$home$themeprefix/images/toolbar/uploadfile.gif" border="0" title="$context.getPageProperty('text.pushdirectory')" /> [[Upload File]]</span></a>
 		</li>
 	#end
 	<li>

@@ -9,7 +9,8 @@ jQuery(document).ready(function()
 			target = $(this).attr('href');
 		}
 		var title= $(this).data('title');
-		if(title != null){-t
+		if(title != null){
+			alert("setting title to: " + title);
 			$('#modal-title').text(title);
 		}
 		$('#edit-modal-body').load(target,function(result){
