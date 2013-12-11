@@ -25,7 +25,9 @@
     	</property>
 
 	<path-action name="Page.movePage" />
+	<!--
 	<path-action name="Page.constructParameter" />
 	<path-action name="Admin.redirectToOriginal" />
+	-->
 
 </page>

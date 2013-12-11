@@ -1,8 +1,8 @@
 <page>
 
 <inner-layout>/openedit/components/html/edit/layout.html</inner-layout>
-	<path-action name="EditModule.claimEditLock" />
-	<path-action name="HtmlEditor.loadView" />
+	<page-action name="EditModule.claimEditLock" />
+	<page-action name="HtmlEditor.loadView" />
 
 <property name="htmledit">Editor</property>
 <property name="text">Raw</property>

@@ -2,7 +2,7 @@
 
 <page>
 	<path-action name="Page.copyPage" />
-	<!-- path-action name="Page.constructParameter" /-->
+	<path-action name="Page.constructParameter" />
 	<!-- path-action name="Admin.redirectToOriginal" /-->
 	<property name="virtual">true</property>
 	
