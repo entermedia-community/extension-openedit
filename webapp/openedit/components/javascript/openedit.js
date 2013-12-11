@@ -10,7 +10,7 @@ jQuery(document).ready(function()
 		}
 		var title= $(this).data('title');
 		if(title != null){
-			alert("setting title to: " + title);
+			
 			$('#modal-title').text(title);
 		}
 		$('#edit-modal-body').load(target,function(result){

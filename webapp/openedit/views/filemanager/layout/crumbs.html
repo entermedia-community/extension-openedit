@@ -21,7 +21,7 @@
 	<td><a class="ajax" style="padding: 0 20px 3px 0;display:block;" targetdiv="allsections" href="#"><img style="vertical-align:bottom;" src="$home$themeprefix/images/tree/page.gif" border=0  />$editPage.getName() 	</a></td>
 	#if( $editPage.isDraft() )
 	<td>
-		$pages.include("/openedit/components/html/workflow/approvetoolbar.html", $context) 
+		##$pages.include("/openedit/components/html/workflow/approvetoolbar.html", $context) 
 	</td>
 				
 			#end
