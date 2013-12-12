@@ -1,0 +1,8 @@
+<page>
+
+	<path-action name="DataEditModule.search">
+		<property name="searchtype">asset</property>
+	</path-action>
+	<inner-layout>/${openeditid}/html/browse/browselayout.html</inner-layout>
+	
+</page>

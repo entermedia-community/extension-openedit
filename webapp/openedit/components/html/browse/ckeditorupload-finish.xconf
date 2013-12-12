@@ -1,8 +1,9 @@
 <page>
 	
 	
-	<path-action name="MediaArchiveModule.uploadAsset"/>
-	<path-action name="AssetEditModule.createAssetFromUploads"/>
-	<property name="hitsname">hits</property>
+	<path-action name="Script.run">
+		<script>/${applicationid}/components/html/edit/actions/handleupload.groovy</script>    
+	
+	</path-action>
 	<inner-layout>/${openeditid}/html/browse/browselayout.html</inner-layout>
 </page>

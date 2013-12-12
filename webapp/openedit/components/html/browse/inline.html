@@ -1,7 +1,7 @@
 <h2>Browse Categories</h2>
 <div id="oetree">
 
-#set( $rootpath = "$home$oehome/html/browse/")
+#set( $rootpath = "$home$apphome/components/html/browse/")
 
 <script type="text/javascript">
 //<![CDATA[
@@ -17,7 +17,7 @@ categoryPickerTree.jumpToNode = function(inUrl, inNodeId)
 			
 	
 		
-		jQuery("#resultsarea").load('$home$oehome/html/browse/searchresults.html', {nodeID: inNodeId,categoryid: '$categoryid', searchtype : 'asset', field: 'category' ,'category.value' :  inNodeId , operation: 'exact' });
+		jQuery("#resultsarea").load('$home$apphome/components/html/browse/searchresults.html', {nodeID: inNodeId,categoryid: '$categoryid', searchtype : 'asset', field: 'category' ,'category.value' :  inNodeId , operation: 'exact' });
 		
 		
 		

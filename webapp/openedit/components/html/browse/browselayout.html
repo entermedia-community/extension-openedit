@@ -2,70 +2,85 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 #foreach( $script in $content.getScriptPaths() )
-	<script type="text/javascript" src="$home$script">  </script>
-#end
-#foreach( $style in $content.getStylePaths() )
-	<link rel="stylesheet" type="text/css" href="$home$style" />
+<script type="text/javascript" src="$home$script">
+	
+</script>
+#end #foreach( $style in $content.getStylePaths() )
+<link rel="stylesheet" type="text/css" href="$home$style" />
 #end
 </head>
 
 <body class="embody">
-<div id="openedit">
-<table>
-	<tbody>
-	<tr>
-	<td colspan="2" style="width:150px;" width="150">$pages.include("./upload.html")</td>
-	</tr>
-	
-	<tr>
-	<td style="vertical-align: top;">
-		<b class="spiffy">
-  <b class="spiffy1"><b></b></b>
-  <b class="spiffy2"><b></b></b>
 
-  <b class="spiffy3"></b>
-  <b class="spiffy4"></b>
-  <b class="spiffy5"></b></b>
-		<div class="spiffyfg">
-		
-		<div id="oesidebar">
-	$pages.include("./search.html")
-	
-	$pages.include("./inline.html")
-		</div>
-		</div>
-	</td>
-	<td>
-	
-	<b class="spiffytwo">
-	  <b class="spiffytwo1"><b></b></b>
-	  <b class="spiffytwo2"><b></b></b>
+<nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">Asset/File Browser</a>
+  </div>
 
-	  <b class="spiffytwo3"></b>
-	  <b class="spiffytwo4"></b>
-	  <b class="spiffytwo5"></b></b>
-	  <div class="spiffyfgtwo">
-	
-	
-	
-	<div id="oeresults_$catalogid" style="background-color: white; padding-left: 10px; padding-right: 10px; padding-top: 2px;min-height:550px;">
-	
-	<h1 style="padding-top: 5px;">Media Organizer</h1>
-		<div id="resultsarea">
-			$pages.includeContent()
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Link</a></li>
+      <li><a href="#">Link</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+          <li class="divider"></li>
+          <li><a href="#">One more separated link</a></li>
+        </ul>
+      </li>
+    </ul>
+    <form class="navbar-form navbar-left" role="search" action="$home$apphome/components/html/browse/quicksearch.html">
+      <div class="form-group">
+        <input type="hidden" name="field" value="description" />
+		<input type="hidden" name="operation" value="contains" />
+        <input type="text" class="form-control" placeholder="Search" name="description.value">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#">Link</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+	<div id="openedit">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2">
+					<div class="well">$pages.include("./upload.html")
+						$pages.include("./search.html") $pages.include("./inline.html")</div>
+				</div>
+				<div class="col-md-10">
+
+					<div id="oeresults_$catalogid"
+						style="background-color: white; padding-left: 10px; padding-right: 10px; padding-top: 2px; min-height: 550px;">
+						<div id="resultsarea">$pages.includeContent()</div>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
-	</div>
-	<b class="spiffytwo">
-	  <b class="spiffytwo5"></b>
-	  <b class="spiffytwo4"></b>
-	  <b class="spiffytwo3"></b>
-	  <b class="spiffytwo2"><b></b></b>
-	  <b class="spiffytwo1"><b></b></b></b>
-	</td>
-	</tr>
-	</tbody>
-	</table>
 	</div>
 </body>
 </html>
