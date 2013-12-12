@@ -79,14 +79,22 @@ jQuery(document).ready(function()
 			var savepath = home + "/openedit/components/html/save.html";
 			
 		 	CKEDITOR.config.saveSubmitURL = savepath + "?editPath=" + editpath;	 //TODO: Save this URL specific to this editor
-			
+		 	CKEDITOR.config.filebrowserBrowseUrl =  home+ '/openedit/components/html/browse/index.html?editPath=$editPath';
+		    CKEDITOR.config.filebrowserUploadUrl = home+ '/openedit/components/html/edit/actions/imageupload-finish.html';
+		    CKEDITOR.config.filebrowserImageBrowseUrl = home+'/openedit/components/html/browse/index.html?editPath=$editPath';
+			CKEDITOR.config.filebrowserImageUploadUrl = home+ '/openedit/components/html/edit/actions/imageupload-finish.html';
+			CKEDITOR.config.entities =false;
+			CKEDITOR.config.basicEntities= false;
 				e.preventDefault();
 				var content = container.find(".openediteditcontent" ).get(0);
 				//var content = jQuery(".openediteditcontent" ).get(0);
 				content.setAttribute('contenteditable', 'true');
 				var editor = CKEDITOR.inline( content,
 					 {
-					 extraConfig : { 'oldcontent' : 'null'},
+					 extraConfig : { 'oldcontent' : 'null'
+						 
+					 
+					 },
         			 startupFocus : true ,        			 
         			 on: 
         			   {
