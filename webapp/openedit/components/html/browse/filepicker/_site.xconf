@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<page>
+	<property name="title">Open Edit File Picker</property>
+	<property name="editable">false</property>
+	<inner-layout>/openedit/components/html/browse/filepicker/template.html</inner-layout>
+		
+	<path-action name="WebTree.getTree" >
+		<tree-name>imagePicker</tree-name>
+		<root>/</root>
+		<url-prefix>/openedit/editors/filepicker/index.html?path=</url-prefix>
+		<!-- ignoreFilesTypes>xconf,html,xml,js,css,openedit,stats,WEB-INF</ignoreFilesTypes -->
+		<!-- ignoreFilesTypes>openedit,stats,WEB-INF</ignoreFilesTypes -->
+		<excludes>.bash*</excludes>
+	</path-action>
+</page>

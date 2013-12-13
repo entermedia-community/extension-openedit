@@ -24,7 +24,23 @@ jQuery(document).ready(function()
 		});
 	  return false;
 		
-	});		
+	});	
+	
+	
+	$(document).on("click",  ".oemodechange" ,function(e){
+		
+		var target = $(this).attr('href');
+		jQuery.get(target, function(){
+			
+			location.reload();
+			
+		});
+	     e.preventDefault();
+		}
+	);
+		
+	
+	
 	
 	//ccheck for a permission on the body tag?
 	var canedit = jQuery(document.body).attr("showadmintoolbar");
@@ -123,7 +139,8 @@ jQuery(document).ready(function()
 							event.editor.destroy();
 		                 } ,
 		                 savecontentdone: function( event )    {
-		                 	
+			                 	location.reload();
+
 		                 }  
 		              }      
                 } );
