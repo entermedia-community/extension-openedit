@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project basedir="." default="default" name="openedit">
+<project basedir="." default="default" name="extension-openedit">
 
   <target name="default" depends="clean, source, update-dependencies, compile, junit, jar, javadoc, zip, publish"/>
   <target name="dependency" depends="default"/>

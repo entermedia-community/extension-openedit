@@ -11,7 +11,7 @@ var tmp = web + "/tmp";
 
 log.add("1. GET THE LATEST WAR FILE");
 var downloader = new Downloader();
-downloader.download( war, tmp + "/openedit.zip");
+downloader.download( war, tmp + "/extension-openedit.zip");
 
 log.add("2. UNZIP WAR FILE");
 var unziper = new ZipUtil();
@@ -19,18 +19,18 @@ unziper.unzip(  tmp + "/openedit.zip",  tmp );
 
 log.add("3. REPLACE LIBS");
 var files = new FileUtils();
-files.deleteMatch( web + "/lib/openedit*.jar");
+files.deleteMatch( web + "/lib/dev_extension_openedit*.jar");
+files.deleteMatch( web + "/lib/extension_openedit*.jar");
+files.deleteMatch( web + "/lib/openedit-8*.jar");
 
-files.copyFileByMatch( tmp + "/lib/openedit*.jar", web + "/lib/");
+
+files.copyFileByMatch( tmp + "/lib/@BRANCH@extension_openedit*.jar", web + "/lib/");
 
 files.deleteMatch( web + "/system/components/openedit/")
 
 
-
 files.deleteMatch( web + "/WEB-INF/base/openedit/")
 files.copyFileByMatch( tmp + "/base/openedit/", root + "/WEB-INF/base/openedit/");
-
-
 
 
 log.add("5. CLEAN UP");
