@@ -5,5 +5,5 @@
 		<script>/${applicationid}/components/html/edit/actions/handleupload.groovy</script>    
 	
 	</path-action>
-	<inner-layout>/${openeditid}/html/browse/browselayout.html</inner-layout>
+<inner-layout>/${openeditid}/html/browse/assetlayout.html</inner-layout>
 </page>
