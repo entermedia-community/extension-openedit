@@ -142,7 +142,6 @@ jQuery(document).ready(function()
 							event.editor.destroy();
 		                 } ,
 		                 savecontentdone: function( event )    {
-			                 alert("all done");
 		                	 location.reload();
 
 		                 }  

@@ -52,7 +52,9 @@ Choose Format:
 			if(size != "original"){
 			window.opener.CKEDITOR.tools.callFunction( 1, "$home$apphome/views/modules/asset/downloads/preview/" + size + "/${asset.sourcepath}/thumb.jpg" );
 			} else{
-				window.opener.CKEDITOR.tools.callFunction( 1, "$home$apphome/views/modules/asset/downloads/preview/" + size + "/${asset.sourcepath}/thumb.jpg" );
+				#set($url = $mediaarchive.asLinkToOriginal($asset))
+				
+				window.opener.CKEDITOR.tools.callFunction( 1, "$url" );
 			}
 			//jQuery("a.openeditdialog").fancybox.close();
 			//	jQuery(this).first().fancybox.close();
