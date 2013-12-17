@@ -7,10 +7,12 @@
 		
 	<path-action name="WebTree.getTree" >
 		<tree-name>imagePicker</tree-name>
+		<iconhome>/${applicationid}/theme/images/tree/</iconhome>
+		
 		<root>/</root>
 		<url-prefix>/openedit/editors/filepicker/index.html?path=</url-prefix>
 		<!-- ignoreFilesTypes>xconf,html,xml,js,css,openedit,stats,WEB-INF</ignoreFilesTypes -->
 		<!-- ignoreFilesTypes>openedit,stats,WEB-INF</ignoreFilesTypes -->
-		<excludes>.bash*</excludes>
+		<excludes>.bash*,.versions</excludes>
 	</path-action>
 </page>
