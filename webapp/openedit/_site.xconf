@@ -53,6 +53,7 @@
 	<!-- style id="openedit" href="/openedit/components/html/theme/style.css" / -->
 	<style id="tools" href="${themeprefix}/styles/filemanager/tools.css" />
 
+	<property name="login-path">/${applicationid}/authentication/login.html</property>
 
 	<path-action bean="pageManager" name="PageValue.loadPageVariable" allowduplicates="true" />
 
