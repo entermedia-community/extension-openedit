@@ -15,7 +15,7 @@ downloader.download( war, tmp + "/extension-openedit.zip");
 
 log.add("2. UNZIP WAR FILE");
 var unziper = new ZipUtil();
-unziper.unzip(  tmp + "/openedit.zip",  tmp );
+unziper.unzip(  tmp + "/extension-openedit.zip",  tmp );
 
 log.add("3. REPLACE LIBS");
 var files = new FileUtils();
