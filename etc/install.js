@@ -19,12 +19,12 @@ unziper.unzip(  tmp + "/extension-openedit.zip",  tmp );
 
 log.add("3. REPLACE LIBS");
 var files = new FileUtils();
-files.deleteMatch( web + "/lib/dev_extension_openedit*.jar");
-files.deleteMatch( web + "/lib/extension_openedit*.jar");
+files.deleteMatch( web + "/lib/dev_extension-openedit*.jar");
+files.deleteMatch( web + "/lib/extension-openedit*.jar");
 files.deleteMatch( web + "/lib/openedit-8*.jar");
 
 
-files.copyFileByMatch( tmp + "/lib/@BRANCH@extension_openedit*.jar", web + "/lib/");
+files.copyFileByMatch( tmp + "/lib/@BRANCH@extension-openedit*.jar", web + "/lib/");
 
 files.deleteMatch( web + "/system/components/openedit/")
 
