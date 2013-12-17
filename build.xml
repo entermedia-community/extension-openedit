@@ -171,7 +171,7 @@
 	<target name="publish" depends="javadoc, zip">
 		  
 			<!-- publish results to anthill -->
-		 	<copy file="${deployDir}/builds/openedit.zip" overwrite="true"
+		 	<copy file="${deployDir}/builds/extensions-openedit.zip" overwrite="true"
 		        tofile="${deployDir}/extension-openedit.zip"/>
 			<copy overwrite="true"  file="${etc}/install.js" 
 				    tofile="${deployDir}/install.js">
