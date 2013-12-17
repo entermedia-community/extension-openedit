@@ -6,7 +6,7 @@ CKEDITOR.plugins.add( 'savebtn', {
         editor.addCommand( 'savecontent', {
 
         	exec : function(editor){
-
+        		//alert("not even here");
                 //get the text from ckeditor you want to save
         		var data = editor.getData();
                 

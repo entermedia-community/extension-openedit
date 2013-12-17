@@ -129,7 +129,10 @@ jQuery(document).ready(function()
 								var answer = confirm("Do you want to save changes?"); //TODO: Make sure they changed something
 								if (answer)
 								{
-									event.editor.execCommand( 'savebtn' );			                   
+									
+									event.editor.execCommand( 'savecontent' );
+				                 	location.reload();
+
 				                 } 
 				                 else
 				                 {
@@ -139,7 +142,8 @@ jQuery(document).ready(function()
 							event.editor.destroy();
 		                 } ,
 		                 savecontentdone: function( event )    {
-			                 	location.reload();
+			                 alert("all done");
+		                	 location.reload();
 
 		                 }  
 		              }      

@@ -1,3 +1,22 @@
+#if($editPage.isBinary())
+<div class="oeheader">Content: $editPath $editPage.getMimeType()</div>
+	#if($editPage.isImage())
+		<img class="img img-responsive" src="$editPath">
+		<!-- TODO: Add cropping tool. -->
+	#end
+	#if($editPage.isVideo())
+		
+		<video width="50%"  controls>
+		  	<source src="$editPath" >
+		</video>
+		
+
+		<!-- TODO: Add cropping tool. -->
+	#end
+
+
+#else
+
 #set ( $editPath = $editorSession.getEditPath() )
 #set ( $origURL = $context.getRequestParameter("origURL") )
 #set ( $parentName = $editorSession.getParentName() )
@@ -5,7 +24,11 @@
 $context.putPageValue("origURL",$origURL)
 $context.putPageValue("editPath",$editPath)
 $context.putPageValue("parentName",$parentName )
-	<script type="text/javascript" src="../../ckeditor/ckeditor.js"></script>
+
+
+
+
+<script type="text/javascript" src="../../ckeditor/ckeditor.js"></script>
 
 #set( $catalogid = $editPage.get('uploadcatalog') )
 
@@ -90,5 +113,9 @@ $context.putPageValue("height","100%" )
 			});
 		});
 		</script>
+		
+		#end
+		
+		
 		
 		#end
