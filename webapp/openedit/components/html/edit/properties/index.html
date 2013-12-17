@@ -17,15 +17,20 @@
 		#end	
 		$editPage.getLastModified("MM/dd/yy h:mm a") <br>	[[File Size]]: $filesize.inEnglish( $editPage.path )
 
-<h2>Fall Backs</h2>
 
-<table>
+<ul class="list-group">
+<a href="#" class="list-group-item active">
+   Fallbacks
+  </a>
 #foreach( $fallback in $editPage.getPageSettings().getFallBacks() )
-	<tr>
-	<td>	$fallback.getParentFolder()/$editPage.getName()</td>
-	</tr>
+  #set($targeturl = "$fallback.getParentPath()/$editPage.getName()" )
+  #set($real = $pages.doesExist($targeturl))
+  
+  <li class="list-group-item"><a href="$apphome/components/html/edit/htmledit/index.html?editPath=$targeturl&path=$targeturl">$targeturl #if(!$real) <span class="badge"> virtual</span> #end</a> </li>
 #end
-</table>
+ 
+</ul>
+
 
 <br>
 

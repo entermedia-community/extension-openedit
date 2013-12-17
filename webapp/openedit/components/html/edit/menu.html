@@ -42,8 +42,7 @@
 			#end
 			<li><a href="$home${page.filerootpath}/download${editPath}">[[Download File]] </a></li>	
 			#if( $editorSession.getEditPage().isDraft() )
-				##$pages.include("/openedit/components/html/workflow/approvetoolbar.html", $context)
-				
+			<li><a href="$home/openedit/components/html/workflow/approve-finished.html?editPath=$editPath">Approve Draft</a></li>
 			#end
         
         
