@@ -181,94 +181,102 @@ jQuery(document).ready(function()
 	
 	
 	
-//	jQuery(".oe-dataedit").on('click',
-//			function(e) 
-//			{	
-//			
-//			var container = $(this).data("container");
-//			container = $(container);
-//			var searchtype = container.data("searchtype");
-//			var id = container.data("dataid");
-//			var field = container.data("field");
-//			
-//			var home = $("#openedit").data("home");
-//			if(!home)
-//			{
-//				home = "";
-//			}
-//			var savepath = home + "/openedit/components/data/save.html";
-//			
-//		 	CKEDITOR.config.saveSubmitURL = savepath + "?editPath=" + editpath;	 //TODO: Save this URL specific to this editor
-//			
-//				e.preventDefault();
-//				var content = container.find(".openediteditcontent" ).get(0);
-//				//var content = jQuery(".openediteditcontent" ).get(0);
-//				content.setAttribute('contenteditable', 'true');
-//				var editor = CKEDITOR.inline( content,
-//					 {
-//					 extraConfig : { 'oldcontent' : 'null'},
-//        			 startupFocus : true ,        			 
-//        			 on: 
-//        			   {
-//        			   	dataReady: function( event ) {
-//        			   		
-//        			   		 event.editor.config.extraConfig.oldcontent = event.editor.getData();
-//        			   	},        			   
-//		                 blur: function( event ) {
-//		                
-//	                        content.setAttribute('contenteditable', 'false');
-//	               
-//		                    var data = event.editor.getData();
-//							
-//							if( data != editor.config.extraConfig.oldcontent )
-//							{
+	jQuery(document).on('click',".oe-dataedit",
+			function(e) 
+			{	
+			
+			var container = $(this).data("target");
+			container = $(container);
+			var searchtype = container.data("searchtype");
+			var id = container.data("dataid");
+			var field = container.data("field");
+			
+			var home = $("#openedit").data("home");
+			if(!home)
+			{
+				home = "";
+			}
+			var catalogid = jQuery("#application").data("catalogid");
+			var savepath = home + "/openedit/components/data/save.html";
+			
+		 	CKEDITOR.config.saveSubmitURL = savepath + "?searchtype=" + searchtype + "&field=" + field + "&id=" +id + "&catalogid=" + catalogid;	 //TODO: Save this URL specific to this editor
+			CKEDITOR.config.filebrowserBrowseUrl =  home+ '/openedit/components/html/browse/index.html?editPath=$editPath';
+		    CKEDITOR.config.filebrowserUploadUrl = home+ '/openedit/components/html/edit/actions/imageupload-finish.html';
+		    CKEDITOR.config.filebrowserImageBrowseUrl = home+'/openedit/components/html/browse/index.html?editPath=$editPath';
+			CKEDITOR.config.filebrowserImageUploadUrl = home+ '/openedit/components/html/edit/actions/imageupload-finish.html';
+			CKEDITOR.config.entities =false;
+			CKEDITOR.config.basicEntities= false;
+			
+				e.preventDefault();
+				var content = container.get(0);
+				//var content = jQuery(".openediteditcontent" ).get(0);
+				content.setAttribute('contenteditable', 'true');
+				var editor = CKEDITOR.inline( content,
+					 {
+					 extraConfig : { 'oldcontent' : 'null'},
+        			 startupFocus : true ,        			 
+        			 on: 
+        			   {
+        			   	dataReady: function( event ) {
+        			   		
+        			   		 event.editor.config.extraConfig.oldcontent = event.editor.getData();
+        			   	},        			   
+		                 blur: function( event ) {
+		                
+	                        content.setAttribute('contenteditable', 'false');
+	               
+		                    var data = event.editor.getData();
+							
+							if( data != editor.config.extraConfig.oldcontent )
+							{
 //								var answer = confirm("Do you want to save changes?"); //TODO: Make sure they changed something
 //								if (answer)
 //								{
+//									
 //									event.editor.execCommand( 'savebtn' );			                   
 //				                 } 
 //				                 else
 //				                 {
 //				                 	location.reload();
 //				                 }							
-//							}
-//							event.editor.destroy();
-//		                 } ,
-//		                 savecontentdone: function( event )    {
-//		                 	
-//		                 }  
-//		              }      
-//                } );
-//                
-//               
-//                	
-//				/*
-//				if( typeof content.ckeditorGet == "undefined")
-//				{
-//					CKEDITOR.inline( content,
-//					 {
-//        				startupFocus : true
-//        			 }
-//        			);	
-//				}
-//				*/
-////				content.focus();
-//
-///*
-//  				jQuery(content).blur( function() {
-//	                content.setAttribute('contenteditable', 'false');
-//	               
-//					for(name in CKEDITOR.instances)
-//					{
-//					    CKEDITOR.instances[name].destroy()
-//					}
-//
-//	             } ); 
-//*/
-//
-//				return false;
-//			}
-//	);		
+							}
+							event.editor.destroy();
+		                 } ,
+		                 savecontentdone: function( event )    {
+		                		event.editor.destroy();
+		                 }  
+		              }      
+                } );
+                
+               
+                	
+				/*
+				if( typeof content.ckeditorGet == "undefined")
+				{
+					CKEDITOR.inline( content,
+					 {
+        				startupFocus : true
+        			 }
+        			);	
+				}
+				*/
+//				content.focus();
+
+/*
+  				jQuery(content).blur( function() {
+	                content.setAttribute('contenteditable', 'false');
+	               
+					for(name in CKEDITOR.instances)
+					{
+					    CKEDITOR.instances[name].destroy()
+					}
+
+	             } ); 
+*/
+
+				return false;
+			}
+	);		
 
 	
 	
