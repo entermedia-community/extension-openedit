@@ -119,27 +119,20 @@ jQuery(document).ready(function()
         			   		 event.editor.config.extraConfig.oldcontent = event.editor.getData();
         			   	},        			   
 		                 blur: function( event ) {
-		                
-	                        content.setAttribute('contenteditable', 'false');
-	               
+          	
 		                    var data = event.editor.getData();
 							
 							if( data != editor.config.extraConfig.oldcontent )
 							{
-								var answer = confirm("Do you want to save changes?"); //TODO: Make sure they changed something
-								if (answer)
-								{
-									
-									event.editor.execCommand( 'savecontent' );
-				                 	location.reload();
-
-				                 } 
-				                 else
-				                 {
-				                 	location.reload();
-				                 }							
+									$(window).on("beforeunload", function() {
+										return "You have unsaved changes.  Reloading will loose these changes.";
+										
+										
+									});
+								
 							}
-							event.editor.destroy();
+							return false;
+							//event.editor.destroy();
 		                 } ,
 		                 savecontentdone: function( event )    {
 		                	 location.reload();
