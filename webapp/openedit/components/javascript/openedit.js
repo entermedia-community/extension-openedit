@@ -346,5 +346,15 @@ showHover = function(inAssetId)
 }
 
 
-
+refreshFileMenu = function(){
+	var editpath = $("#fileoptionsmenu").data("editpath");
+	
+	var home = $("#openedit").data("home");
+	if(!home)
+	{
+		home = "";
+	}
+	$("#fileoptionsmenu").load(home + "/openedit/components/html/edit/menu.html?oemaxlevel=1&editPath=" + editpath);
+	
+}
 

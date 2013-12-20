@@ -11,12 +11,16 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-        <li ><a href="$home$apphome/views/filemanager/index.html"><span>File Manager</span></a></li>
-<li ><a href="$home$apphome/views/links/index.html"><span>Links and Menus</span></a></li>
-<li ><a href="$home$apphome/views/workflow/index.html"><span>Pending Approval</span></a></li>
+        	<li><a href="$home$apphome/views/filemanager/index.html"><span>File Manager</span></a></li>
+			<li><a href="$home$apphome/views/links/index.html"><span>Links and Menus</span></a></li>
+			<li><a href="$home$apphome/views/workflow/index.html"><span>Pending Approval</span></a></li>
         </ul>        
         <ul class="nav navbar-nav navbar-right">
+        <li><a href="$home/index.html"> <span class="glyphicon glyphicon-circle-arrow-left"></span> Return to site </a></li>
+        #if($user)
+        
       <li><a href="$home$apphome/authentication/logout.html">Logout</a></li>
+      #end
       </ul>
         </div><!--/.navbar-collapse -->
       </div>

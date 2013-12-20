@@ -28,7 +28,7 @@ CKEDITOR.editorConfig = function( config )
 		['TextColor','BGColor'],
 		['Maximize', 'ShowBlocks','-','About']
 	];
-	config.extraPlugins='ajaxsave,entermedia';
+	config.extraPlugins='ajaxsave';
 	//config.protectedSource.push(/<%[\s\S]*?%>/g);
 	//config.protectedSource.push(#*?/g);
 };

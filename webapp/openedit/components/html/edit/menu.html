@@ -42,7 +42,10 @@
 			#end
 			<li><a href="$home${page.filerootpath}/download${editPath}">[[Download File]] </a></li>	
 			#if( $editorSession.getEditPage().isDraft() )
-			<li><a href="$home/openedit/components/html/workflow/approve-finished.html?editPath=$editPath">Approve Draft</a></li>
+			
+				<li><a href="$home/openedit/components/html/edit/htmledit/approve-finished.html?editPath=$editorSession.getEditPath()">Approve Draft</a></li>
+				<li><a href="$home/openedit/components/html/edit/htmledit/delete.html?editPath=$editorSession.getEditPath()">Delete Draft</a></li>
+			
 			#end
         
         

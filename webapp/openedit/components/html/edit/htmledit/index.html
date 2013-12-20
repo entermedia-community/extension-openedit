@@ -108,7 +108,12 @@ $context.putPageValue("height","100%" )
 		    filebrowserImageBrowseUrl : '$home/openedit/components/html/browse/index.html?editPath=$editPath',
 			filebrowserImageUploadUrl : '$home/openedit/components/html/edit/actions/imageupload-finish.html',
 		    filebrowserWindowWidth  : 1000,
-		    filebrowserWindowHeight : 800
+		    filebrowserWindowHeight : 800,
+		    on: {
+		       savecontentdone: function( event )    {
+             refreshFileMenu();
+              }  
+           	 }      
 			});
 		});
 		</script>
