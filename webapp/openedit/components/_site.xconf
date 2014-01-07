@@ -7,6 +7,7 @@
 	<inner-layout>/${themeprefix}/layouts/innerlayout.html</inner-layout>
 	
 	<generator mimetypes="text/html" name="velocityGenerator"/>
+		<path-action bean="pageManager" name="PageValue.loadPageVariable"/>
 	
 
 </page>

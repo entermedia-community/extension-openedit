@@ -1,43 +1,30 @@
+<div id="application"  data-home="$home" data-apphome="$apphome" data-themeprefix="${themeprefix}" data-browserlanguage="$!{browserlanguage}">   
+   
+   
+ $pages.include("$apphome/theme/layouts/nav.html")
+   
 
+ $pages.includeContent()
+
+   
   
- <div id="nav" role="navigation">
-    	<div class="logoheader">
-    <div class="page_margins">
-      <div class="page">
-        <div class="hlist">
-          <!-- main navigation: #nav_main -->
-         $pages.include("$apphome/theme/layouts/nav.html")
+  
+  <!-- Modal -->
+  <div class="modal" id="editmodal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="modal-title">Modal title</h4>
         </div>
-      </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div id="main">
-    <div class="page_margins">
-      <div class="page">
-       $pages.includeContent()
-      </div>
-    </div>
-  </div>
-
-  <div id="extended">
-    <div class="page_margins">
-      <div class="page">
-      	OpenEdit Content Management System
-      </div>
-    </div>
-  </div>
-  <!-- begin: #footer -->
-  <div id="footer" role="contentinfo">
-    <div class="page_margins">
-      <div class="page">
-     <p></p>
-      </div>
-    </div>
-  </div>
-<!-- full skiplink functionality in webkit browsers -->
-
-
-
+        <div class="modal-body" id="edit-modal-body">
+          ...
+        </div>
+      
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  
+  
+ 
+</div>

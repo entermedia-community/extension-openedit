@@ -41,43 +41,39 @@
   	<property name="showaddselections">true</property>
 	<property name="showremoveselections">false</property>
 	<property name="editable">false</property>
-	
+	<!--
   <generator mimetypes="text/html" name="velocityGenerator"/>
-	
+	-->
   <property name="section" >activity</property>
   
 	<path-action name="MediaSearchModule.searchCategories" cancel="true"/>
 
 	
-	<style 	id="grids" href="${themeprefix}/styles/layout_grids.css" />
 	
 	<!-- style id="openedit" href="/openedit/components/html/theme/style.css" / -->
 	<style id="tools" href="${themeprefix}/styles/filemanager/tools.css" />
 
+	<property name="login-path">/${applicationid}/authentication/login.html</property>
 
 	<path-action bean="pageManager" name="PageValue.loadPageVariable" allowduplicates="true" />
 
 	
-	<script id="jquery" src="/${applicationid}/components/javascript/jquery-1.7.1.min.js"/>
-	<script id="jquery-ui" src="/${applicationid}/theme/jqueryUI/${jquery-theme}/js/jquery-ui-1.8.13.custom.min.js" />
-	<style  id="jquery-ui-css" href="/${applicationid}/theme/jqueryUI/${jquery-theme}/css/${jquery-theme}/jquery-ui-1.8.13.custom.css"/>
 	
+	 <script id="jquery" src="/${applicationid}/bootstrap/js/jquery.js" />
+ <script id="bootstrap" src="/${applicationid}/bootstrap/js/bootstrap.js" />
+ <script id="bootstrap-select" src="/${applicationid}/bootstrap/select/bootstrap-select.min.js" />
+ <script id="bootstrap-validate" src="/${applicationid}/bootstrap/validate/jquery.validate.min.js" />
+ <script id="bootstrap-validation" src="/${applicationid}/bootstrap/validation/jqBootstrapValidation.js" />
+ <style id="bootstrap" href='/${applicationid}/bootstrap/css/bootstrap.min.css' />
+ <style id="bootstrap-theme" href='/${applicationid}/bootstrap/css/bootstrap-theme.css' />
+ <style id="bootstrap-select" href='/${applicationid}/bootstrap/select/bootstrap-select.min.css' />
+ <style id="bootstrap-validate" href='/${applicationid}/bootstrap/validate/jquery.validate.css' />
+	 <style id="ortree" href='/${applicationid}/bootstrap/validate/jquery.validate.css' />
+	
+	  	<inner-layout>${themeprefix}/layouts/application.html</inner-layout>	
 
-	<script id="jquery-fancybox" src="/${applicationid}/components/javascript/jquery.fancybox/jquery.fancybox.js" />
-	<style 	id="jquery-fancybox-css" href="/${applicationid}/components/javascript/jquery.fancybox/jquery.fancybox.css" />
-	<script id="jquery-prettycomments" src="/${applicationid}/components/javascript/prettycomments.js"/>
-	<script id="jquery-form" src="/${applicationid}/components/javascript/jquery.form.js" />
-	
-	<script id="jquery-livequery" src="/${applicationid}/components/javascript/jquery.livequery.js" />
-	
-	<script id="jquery-autocomplete" src="/${applicationid}/components/javascript/jquery.autocomplete.js"/>
-	<script id="jquery-validate"  src="/${applicationid}/components/javascript/validateandedit.js"/>
-	<script id="openedit" src="/${applicationid}/components/javascript/openedit.js">     </script>	
+<style id="openedit-tree" href="/${applicationid}/theme/styles/dtree.css"/>
 	<script id="entermedia" src="/${applicationid}/components/javascript/tabs.js">     </script>
-
-	 <property name="themeprefix">/openedit/theme</property>
-  	<inner-layout>${themeprefix}/layouts/application.html</inner-layout>	
-
 
 
 </page>

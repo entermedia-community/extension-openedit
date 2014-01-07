@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project basedir="." default="default" name="openedit">
+<project basedir="." default="default" name="extension-openedit">
 
   <target name="default" depends="clean, source, update-dependencies, compile, junit, jar, javadoc, zip, publish"/>
   <target name="dependency" depends="default"/>
@@ -171,7 +171,7 @@
 	<target name="publish" depends="javadoc, zip">
 		  
 			<!-- publish results to anthill -->
-		 	<copy file="${deployDir}/builds/openedit.zip" overwrite="true"
+		 	<copy file="${deployDir}/builds/extension-openedit.zip" overwrite="true"
 		        tofile="${deployDir}/extension-openedit.zip"/>
 			<copy overwrite="true"  file="${etc}/install.js" 
 				    tofile="${deployDir}/install.js">

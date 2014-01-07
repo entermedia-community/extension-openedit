@@ -1,10 +1,8 @@
 <h2>[[Media Uploaded]]</h2>
-#set($uploadtype = $context.getRequestParameter("uploadtype"))
-#set($catalogid = $context.getRequestParameter("catalogid"))
-#if( $hits && $hits.size() == 1 )
+#if( $newasset )
 [[Your asset has been uploaded]]
 #set( $hit = $hits.get(0) )
-$pages.include("./details.html?sourcepath=$hit.sourcepath")
+$pages.include("./details.html?sourcepath=$newasset.sourcepath")
 
 #else
 File not uploaded - please try again.

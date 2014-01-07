@@ -5,4 +5,5 @@
 		<property name="catalogid">${linkedcatalog}</property>
 	</path-action>
 	<inner-layout/>
+	
 </page>

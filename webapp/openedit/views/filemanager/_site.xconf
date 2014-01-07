@@ -3,6 +3,7 @@
 <page>
 	<inner-layout>${filerootpath}/treelayout.html</inner-layout>
 	<path-action bean="pageManager" name="PageValue.loadPageVariable"/>
+	
 	<path-action name="LinkTree.loadSizer"/>
 	<path-action name="WebTree.getTree" allowduplicates="true" >
 		<property name="tree-name">pageTree</property>
@@ -176,7 +177,7 @@
    	</property>
     
      <property name="iconhome">/${applicationid}/theme/images/tree/</property>
-     
+     <!--
     	<generator name="velocityGenerator" mimetypes="text/html"/>
-    
+    -->
 </page>
