@@ -2,6 +2,9 @@
 <page>
 	<property name="editable">false</property>
 	<property name="showToolbar">false</property>
-	<view-requirements />
+	<permission name="view">
+		<user />
+	</permission>	
+	
 	
 </page>

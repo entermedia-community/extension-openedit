@@ -6,7 +6,7 @@
 #end
 
 #if( $editPage.isDraft() )
-#if( $canapprove )	
+#if( $canapprove )	##see WorkFlow.canApprove
 
 <a href="$home/openedit/components/html/workflow/approve-finished.html?editPath=$editPath&origURL=$origURL"><img src="$home/openedit/components/html/theme/images/check.png" border="0" title="$context.getPageProperty("text.approve")" /></a>
 

@@ -3,7 +3,7 @@ $adminLinkTree.getTreeRenderer().setSelectedNodeById($editlinks.getSelectedLink(
 <div class="oedivided-box-blue">
 	<a class="btn btn-default" href="javascript:gotoEditAction('addnew.html');">[[Add New Child]]</a>
 	<!--  Not Needed a class="oelink-button" href="javascript:selectLink();">[[Refresh]]</a-->
-	#if( $editlinks.isDraft() && $user.hasPermission("oe.edit.approves") ) ##TODO: Use Workflow object
+	#if( $editlinks.isDraft() && $canapprove ) ##TODO: Use Workflow object
 		<a class="btn btn-default" href="javascript:gotoEditAction('approve.html');">[[Approve]]</a>
 	#end		
 </div>
