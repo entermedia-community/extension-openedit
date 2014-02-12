@@ -13,7 +13,7 @@ CKEDITOR.editorConfig = function( config ) {
 	config.toolbar =
 	[
 	 	{ name: 'save', items : [ 'savebtn']},
-		{ name: 'document', items : [ 'Source','-','Save','NewPage','DocProps','Preview','Print','-','Templates' ] },
+		{ name: 'document', items : [ 'Sourcedialog','-','Save','NewPage','DocProps','Preview','Print','-','Templates' ] },
 		{ name: 'clipboard', items : [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ] },
 		{ name: 'editing', items : [ 'Find','Replace','-','SelectAll','-','SpellChecker', 'Scayt' ] },
 		{ name: 'forms', items : [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 
