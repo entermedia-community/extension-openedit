@@ -3,7 +3,7 @@ jQuery(document).ready(function()
 { 
 	
 	
-	$(document).on("click",  ".ajaxDialog" ,function(){
+	$(document).on("click",  ".oeDialog" ,function(){
 		var target = $(this).data('target');
 		if(target == null){
 			target = $(this).attr('href');
