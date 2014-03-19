@@ -14,6 +14,8 @@ CKEDITOR.editorConfig = function( config ) {
 	[
 	 	{ name: 'save', items : [ 'savebtn']},
 		{ name: 'document', items : [ 'Sourcedialog','-','Save','NewPage','DocProps','Preview','Print','-','Templates' ] },
+		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
+
 		{ name: 'clipboard', items : [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ] },
 		{ name: 'editing', items : [ 'Find','Replace','-','SelectAll','-','SpellChecker', 'Scayt' ] },
 		{ name: 'forms', items : [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 
