@@ -1,6 +1,9 @@
 <page>
 	<page-action name="WorkFlow.deleteDraft" />
 	
-	<view-requirements />
+	<permission name="view">
+		<user />
+	</permission>	
+	
 	
 </page>

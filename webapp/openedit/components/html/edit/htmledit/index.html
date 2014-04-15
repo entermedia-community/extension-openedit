@@ -20,22 +20,17 @@
 #set ( $editPath = $editorSession.getEditPath() )
 #set ( $origURL = $context.getRequestParameter("origURL") )
 #set ( $parentName = $editorSession.getParentName() )
-<div class="oeheader">Currently editing: $editPath</div>
+<div class="oeheader">Currently editing: <a href="$home$editPath">$editPath</a></div>
 $context.putPageValue("origURL",$origURL)
 $context.putPageValue("editPath",$editPath)
 $context.putPageValue("parentName",$parentName )
 
-
-
-<script type="text/javascript" src="../../ckeditor/ckeditor.js"></script>
 
 #set( $catalogid = $editPage.get('uploadcatalog') )
 
 <a href="$home$oehome/html/browse/index.html?editorid=content" class="emdialog" id="oebrowsedialog" ></a>
 
 <form id="" name="contentForm" method="post" action="$home/openedit/components/html/edit/htmledit/save.html" style="margin-bottom:0;">
-
-
 
 
 $context.putPageValue("height","100%" )
@@ -97,10 +92,9 @@ $context.putPageValue("height","100%" )
 			height : curheight,
 			#if($css)
 			contentsCss: [$css] ,
-			contentsCss: [$css] ,
 			#end
 			entities : false,
-			basicEntities : false,
+			basicEntities : true,
 			
 			saveSubmitURL:'$home/openedit/components/html/edit/htmledit/save.html?editPath=$editPath',
 			filebrowserBrowseUrl : '$home/openedit/components/html/browse/index.html?editPath=$editPath',

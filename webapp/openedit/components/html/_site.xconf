@@ -1,7 +1,8 @@
 <page>
-	<view-requirements>
-		<blank />
-	</view-requirements>
+	<permission name="view">
+		<user />
+	</permission>	
+	
 
 	<property name="editable">false</property>
 	<layout/>

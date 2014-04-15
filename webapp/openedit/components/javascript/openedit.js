@@ -3,7 +3,7 @@ jQuery(document).ready(function()
 { 
 	
 	
-	$(document).on("click",  ".ajaxDialog" ,function(){
+	$(document).on("click",  ".oeDialog" ,function(){
 		var target = $(this).data('target');
 		if(target == null){
 			target = $(this).attr('href');
@@ -100,7 +100,7 @@ jQuery(document).ready(function()
 		    CKEDITOR.config.filebrowserImageBrowseUrl = home+'/openedit/components/html/browse/index.html?editPath=$editPath';
 			CKEDITOR.config.filebrowserImageUploadUrl = home+ '/openedit/components/html/edit/actions/imageupload-finish.html';
 			CKEDITOR.config.entities =false;
-			CKEDITOR.config.basicEntities= false;
+			CKEDITOR.config.basicEntities= true;
 				e.preventDefault();
 				var content = container.find(".openediteditcontent" ).get(0);
 				//var content = jQuery(".openediteditcontent" ).get(0);
@@ -198,7 +198,7 @@ jQuery(document).ready(function()
 		    CKEDITOR.config.filebrowserImageBrowseUrl = home+'/openedit/components/html/browse/index.html?editPath=$editPath';
 			CKEDITOR.config.filebrowserImageUploadUrl = home+ '/openedit/components/html/edit/actions/imageupload-finish.html';
 			CKEDITOR.config.entities =false;
-			CKEDITOR.config.basicEntities= false;
+			CKEDITOR.config.basicEntities= true;
 			
 				e.preventDefault();
 				var content = container.get(0);

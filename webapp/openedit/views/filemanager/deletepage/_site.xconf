@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <page>
-	<view-requirements>
-    	<permission name="oe.edit"/>
-	</view-requirements>
+	<permission name="view">
+		<permission name="oe.edit"/>
+	</permission>	
 </page>

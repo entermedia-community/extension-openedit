@@ -1,7 +1,8 @@
 <page>
 	<property name="virtual">true</property>
 	<page-action name="WorkFlow.deleteDraft" />
-	
-	<view-requirements />
+	<permission name="view">
+		<user />
+	</permission>	
 	
 </page>

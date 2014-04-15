@@ -1,6 +1,8 @@
 <page>
 	<property name="virtual">true</property>
-	<view-requirements />
+	<permission name="view">
+		<permission name="oe.edit"/>
+	</permission>	
 	<path-action name="TabModule.selectTab">
 		<tablistname>oeadminmode</tablistname>
 	</path-action>

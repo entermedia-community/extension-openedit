@@ -59,16 +59,16 @@
 
 	
 	
-	 <script id="jquery" src="/${applicationid}/bootstrap/js/jquery.js" />
- <script id="bootstrap" src="/${applicationid}/bootstrap/js/bootstrap.js" />
- <script id="bootstrap-select" src="/${applicationid}/bootstrap/select/bootstrap-select.min.js" />
- <script id="bootstrap-validate" src="/${applicationid}/bootstrap/validate/jquery.validate.min.js" />
- <script id="bootstrap-validation" src="/${applicationid}/bootstrap/validation/jqBootstrapValidation.js" />
- <style id="bootstrap" href='/${applicationid}/bootstrap/css/bootstrap.min.css' />
- <style id="bootstrap-theme" href='/${applicationid}/bootstrap/css/bootstrap-theme.css' />
- <style id="bootstrap-select" href='/${applicationid}/bootstrap/select/bootstrap-select.min.css' />
- <style id="bootstrap-validate" href='/${applicationid}/bootstrap/validate/jquery.validate.css' />
-	 <style id="ortree" href='/${applicationid}/bootstrap/validate/jquery.validate.css' />
+	 <script id="jquery" src="/${applicationid}/components/bootstrap/js/jquery.js" />
+ <script id="bootstrap" src="/${applicationid}/components/bootstrap/js/bootstrap.js" />
+ <script id="bootstrap-select" src="/${applicationid}/components/bootstrap/select/bootstrap-select.min.js" />
+ <script id="bootstrap-validate" src="/${applicationid}/components/bootstrap/validate/jquery.validate.min.js" />
+ <script id="bootstrap-validation" src="/${applicationid}/components/bootstrap/validation/jqBootstrapValidation.js" />
+ <style id="bootstrap" href='/${applicationid}/components/bootstrap/css/bootstrap.min.css' />
+ <style id="bootstrap-theme" href='/${applicationid}/components/bootstrap/css/bootstrap-theme.css' />
+ <style id="bootstrap-select" href='/${applicationid}/components/bootstrap/select/bootstrap-select.min.css' />
+ <style id="bootstrap-validate" href='/${applicationid}/components/bootstrap/validate/jquery.validate.css' />
+	 <style id="ortree" href='/${applicationid}/components/bootstrap/validate/jquery.validate.css' />
 	
 	  	<inner-layout>${themeprefix}/layouts/application.html</inner-layout>	
 
