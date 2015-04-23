@@ -19,7 +19,7 @@ $context.putPageValue("showcaption", "true")
 
 #if( $asset.getKeywords().size() > 0 || $asset.getCategories().size() > 0 )
 
-	<h6 class="vlist">Related Tags</h6>
+	<h6 class="vlist">[[Related Tags]]</h6>
 		#foreach ($tag in $asset.keywords)
 			<a href="$home$apphome/views/search/search.html?searchtype=asset&field=$catalogid:asset/details:description&operation=matches&description.value=$tag">$tag</a>
 		#end
