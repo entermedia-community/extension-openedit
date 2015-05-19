@@ -48,11 +48,11 @@
   <target name="upgrade">
   	<echo>Delete old open edit libs</echo>
     <delete>
-      <fileset dir="./lib" includes="openedit**.jar"/>
+      <fileset dir="./lib" includes="@BRANCH@extension-openedit**.jar"/>
     </delete>
   	
     <copy todir="./lib" overwrite="false" preservelastmodified="true">
-      <fileset file="${build}/unpacked/lib/extension-openedit*.jar"/>
+      <fileset file="${build}/unpacked/lib/@BRANCH@extension-openedit*.jar"/>
     </copy>
 
     <delete failonerror="false">
