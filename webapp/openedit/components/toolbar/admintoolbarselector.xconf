@@ -4,5 +4,5 @@
 	<property name="showToolbar">false</property>
 	<layout />
 	<inner-layout />
-	
+	<permission name="view"><boolean value="true"/></permission>
 </page>

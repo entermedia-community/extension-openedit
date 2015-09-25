@@ -1,3 +1,4 @@
+#if( $pages.canView("/openedit") )
 <script type="text/javascript" src="$home/openedit/components/html/ckeditor/ckeditor.js">  </script>
 <link rel="stylesheet" type="text/css" href="$home/openedit/components/toolbar/toolbar.css"/>
 <div id="openedit" data-home="$home">
@@ -5,3 +6,4 @@
 #set ( $origURL=$url_util.getOriginalUrl() )
 <a id="oeselector" href="$home/openedit/components/toolbar/plugintoolbar.html?origURL=$origURL&path=$!path"></a>
 </div>
+#end
