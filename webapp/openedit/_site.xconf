@@ -30,6 +30,14 @@
 			<not />
 	</permission>
 
+	<permission name="openeditdebug">
+		 <group id="administrators"/>
+	</permission>
+  
+	<permission name="approve">
+		 <group id="administrators"/>
+	</permission>
+
   <property name="allowspecifiedpath">true</property>
 
   <property name="title">OpenEdit</property>
@@ -41,6 +49,8 @@
   	<property name="showaddselections">true</property>
 	<property name="showremoveselections">false</property>
 	<property name="editable">false</property>
+	<property name="showdebug">false</property>
+	
 	<!--
   <generator mimetypes="text/html" name="velocityGenerator"/>
 	-->

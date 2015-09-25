@@ -2,6 +2,15 @@
 jQuery(document).ready(function() 
 { 
 	
+		//insert a chunk of html
+	jQuery.get("/openedit/components/toolbar/admintoolbarselector.html", {}, function(data) 
+	{
+		var body = jQuery("body");
+		
+		body.prepend(data);
+		
+		loadToolbar();
+	});
 	
 	$(document).on("click",  ".oeDialog" ,function(){
 		var target = $(this).data('target');
@@ -39,28 +48,6 @@ jQuery(document).ready(function()
 		}
 	);
 		
-	
-	
-	
-	//ccheck for a permission on the body tag?
-	var canedit = jQuery(document.body).attr("showadmintoolbar");
-	if( canedit && canedit == "true" )
-	{
-		/*
-				//insert a chunk of html
-				jQuery.get("/openedit/components/toolbar/admintoolbarselector.html", {}, function(data) 
-				{
-					var body = jQuery("body");
-					
-					body.prepend(data);
-					
-					loadToolbar();
-				}
-		*/		
-
-	}
-	loadToolbar();
-	
 	jQuery("a.openeditdialog").each(
 		function() 
 		{

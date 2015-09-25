@@ -1,3 +1,5 @@
+#if( $canshowadmintoolbar )
+
 #set ( $origURL=$context.getRequestParameter( "origURL" ) )
 #set ( $path = $context.getRequestParameter( "path" ) )
 #if ( !$path )
@@ -29,3 +31,4 @@
 </ul>
 </div>
 
+#end

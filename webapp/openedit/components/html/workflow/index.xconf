@@ -52,4 +52,11 @@
 <property name='text.listapprovalfiles'>
         <value>The following files have recently been changed and are awaiting approval.</value>
     </property>
+    
+    	<permission name="view">
+		<or>
+		<pagevalue name="canapprove" equals="true"/>
+		<permission name="oe.edit.approves" />
+		</or>
+	</permission>
 </page>
