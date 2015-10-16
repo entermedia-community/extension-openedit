@@ -1,4 +1,6 @@
 #if( $pages.canView("/openedit") )
+#set( $mode = $user.get("oe_edit_mode") )
+#if( $mode != "preview" )
 <script type="text/javascript" src="$home/openedit/components/html/ckeditor/ckeditor.js">  </script>
 <link rel="stylesheet" type="text/css" href="$home/openedit/components/toolbar/toolbar.css"/>
 <div id="openedit" data-home="$home">

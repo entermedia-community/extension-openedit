@@ -56,7 +56,7 @@
     	<permission name="view">
 		<or>
 		<pagevalue name="canapprove" equals="true"/>
-		<permission name="oe.edit.approves" />
+		<permission name="oe_edit_approves" />
 		</or>
 	</permission>
 </page>

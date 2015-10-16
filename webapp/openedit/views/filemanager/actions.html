@@ -29,7 +29,7 @@
 		<li>
 				<a href="#" onclick="showpath('oework', '$home${page.filerootpath}/mount/edit.html?path=$!{editPath}&nodeID=$nodeID',1);"><span><img src="$home$themeprefix/images/toolbar/mount.gif" border="0" title="[[Mount External Folders]]" /> [[Mount]] </span></a>		
 		</li>		
-		#if( $user.hasPermission("oe.edit.update") )
+		#if( $user.hasPermission("oe_edit_update") )
 		
 		<li>
 				<a href="$home/${applicationid}/views/filemanager/update/pushdirectory.html?path=$editPath"><span><img src="$home$themeprefix/images/toolbar/add.gif" border="0" title="$context.getPageProperty('text.pushdirectory')" /> $context.getPageProperty('text.pushdirectory')</span></a>

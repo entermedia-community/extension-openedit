@@ -3,7 +3,7 @@
 	<path-action name="EditModule.releaseEditLock" />
 	<path-action name="HtmlEditor.save" />	
 	<path-action name="EditModule.redirectToOriginal" />
-	<property name="oe.edit.draftedits">false</property>
+	<property name="oe_edit_draftedits">false</property>
 	<inner-layout>${applicationid}/theme/layouts/dialoglayout.html</inner-layout>
 	
 </page>

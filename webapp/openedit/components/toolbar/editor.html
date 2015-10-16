@@ -17,9 +17,9 @@
 $!oeadminmode.addNewTab("editing","[[Editing Mode]]","/openedit/components/workflow/mode/viewediting.html")
 $!oeadminmode.addNewTab("preview","[[Preview Mode]]","/openedit/components/workflow/mode/viewpreview.html")
 $!oeadminmode.addNewTab("debug","[[Debug Mode]]","/openedit/components/workflow/mode/viewdebug.html")
-$!oeadminmode.setLastSelectedById($user.get("oe.edit.mode"))
+$!oeadminmode.setLastSelectedById($user.get("oe_edit_mode"))
 #end
-#set( $mode = $oeadminmode.getTabById($user.get("oe.edit.mode") ) )
+#set( $mode = $oeadminmode.getTabById($user.get("oe_edit_mode") ) )
 #if( !$mode) 
 #set( $mode = $oeadminmode.getTabById("editing"))	
 #end

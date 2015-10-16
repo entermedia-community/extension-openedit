@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <page>
-	<property name="oe.edit.draftedits">false</property>
+	<property name="oe_edit_draftedits">false</property>
 	<page-action name="HtmlEditor.loadView" />
 	<property name='text.Save'>
         	<value>Save</value>

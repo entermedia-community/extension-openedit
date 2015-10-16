@@ -6,7 +6,7 @@
 	#set( $path = $content.path )
 #end
 #set( $path = $url_util.encode($path) )
-
+<link rel="stylesheet" type="text/css" href="$home/openedit/components/toolbar/toolbar.css"/>
 <div id="oeadmintoolbarlocation" class="oeadmintoolbarlocation" style="position:absolute">
 			
 	#set( $id = $plugin.id )
@@ -20,9 +20,9 @@
 	<li><a href="$home/openedit/views/filemanager/index.html" target="_parent"><img border="0" src="$home/openedit/theme/images/toolbar/filemanager.gif" title="[[filemanager]]"/> [[File Manager]]</a></li>
 	#end
 	
-	#set( $mode = $user.get("oe.edit.mode") )
-	<li><a class="oemodechange" href="$home/openedit/views/workflow/mode/viewpreview.html?origURL=$origURL"  #if( $mode == "preview")class="oeglossyselected" #end ><img src="$home/openedit/theme/images/toolbar/modepreview.gif" border="0" title="Live Mode" /> [[Live Mode]]</a></li>
-	<li><a class="oemodechange" href="$home/openedit/views/workflow/mode/viewediting.html?origURL=$origURL"  #if( $mode == "editing")class="oeglossyselected" #end><img src="$home/openedit/theme/images/toolbar/modeeditor.png" border="0" title="Edit Mode" /> [[Edit Mode]]</a></li>
+	#set( $mode = $user.get("oe_edit_mode") )
+	<li><a class="oemodechange #if( $mode == "preview")oeglossyselected #end" href="$home/openedit/views/workflow/mode/viewpreview.html?origURL=$origURL" ><img src="$home/openedit/theme/images/toolbar/modepreview.gif" border="0" title="Live Mode" /> [[Live Mode]]</a></li>
+	<li><a class="oemodechange #if( $mode == "editing")oeglossyselected #end" href="$home/openedit/views/workflow/mode/viewediting.html?origURL=$origURL" ><img src="$home/openedit/theme/images/toolbar/modeeditor.png" border="0" title="Edit Mode" /> [[Edit Mode]]</a></li>
 	#if($canopeneditdebug  || $user.hasPermission("oe.administration"))
 	<li><a class="oemodechange" href="$home/openedit/views/workflow/mode/viewdebug.html?origURL=$origURL"  #if( $mode == "debug")class="oeglossyselected" #end ><img src="$home/openedit/theme/images/toolbar/modedebug.gif" border="0" title="Debug Mode" /> [[Debug Mode]]</a></li>
 	#end

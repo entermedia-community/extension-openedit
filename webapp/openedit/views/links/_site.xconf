@@ -5,7 +5,7 @@
 		<!--root>topmenu</root -->
 	</page-action>
 	<permission name="view">
-		<permission name="oe.edit.links" />
+		<permission name="oe_edit_links" />
 	</permission>
 	<property name="linktreename">editlinks</property>
 	<property name="linkloader">xmlLinkLoader</property>		
