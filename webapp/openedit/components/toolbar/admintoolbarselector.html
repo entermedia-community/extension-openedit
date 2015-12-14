@@ -1,9 +1,13 @@
 #if( $pages.canView("/openedit") )
+#set( $mode = $user.get("oe.edit.mode") )
+#if( $mode != "preview" )
 <script type="text/javascript" src="$home/openedit/components/html/ckeditor/ckeditor.js">  </script>
 <link rel="stylesheet" type="text/css" href="$home/openedit/components/toolbar/toolbar.css"/>
+#end
 <div id="openedit" data-home="$home">
 #set ( $path = $context.getRequestParameter( "path" ) )
 #set ( $origURL=$url_util.getOriginalUrl() )
-<a id="oeselector" href="$home/openedit/components/toolbar/plugintoolbar.html?origURL=$origURL&path=$!path"></a>
+<a id="oeselector" style="width: 20px;height: 20px;position:absolute; z-index:2001;top: 0px;right: 0px;border: 1px solid white;	display: block;	background-color: rgba(6,6,6,.2);" 
+	href="$home/openedit/components/toolbar/plugintoolbar.html?origURL=$origURL&path=$!path"></a>
 </div>
 #end

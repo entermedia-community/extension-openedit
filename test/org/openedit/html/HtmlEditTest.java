@@ -1,6 +1,6 @@
 package org.openedit.html;
 
-import com.openedit.BaseTestCase;
+import org.openedit.BaseTestCase;
 
 public class HtmlEditTest extends BaseTestCase{
 
