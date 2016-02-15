@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<beans  default-lazy-init="true">
+<beans projectname="openedit" depends="entermedia">
 
 	<bean id="velocity" class="org.entermediadb.asset.generators.ToolbarGenerator" >
-		<property name="headerPath"><value>/openedit/components/html/toolbar.html</value></property>
+T		<property name="headerPath"><value>/openedit/components/html/toolbar.html</value></property>
 		<property name="footerPath"><value>/openedit/components/html/footer.html</value></property>
 		<property name="pageManager"><ref bean="pageManager"/></property>
 		<property name="wraps"><ref bean="velocityGenerator"/></property>
