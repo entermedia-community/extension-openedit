@@ -1,5 +1,5 @@
 <page>
-	<path-action name="PageValue.loadPageVariable"  bean="pathutil" class="com.openedit.util.PathUtilities"/>
+	<path-action name="PageValue.loadPageVariable"  bean="pathutil" class="org.openedit.util.PathUtilities"/>
 
     	<property name='text.finish'>
         	<value>FINISH</value>

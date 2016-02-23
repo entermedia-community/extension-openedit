@@ -6,7 +6,7 @@
         <value>Message</value>
     </property>
 
-	<page-action name="PageValue.loadPageVariable" class="com.openedit.util.PathUtilities" bean="pathUtils" />
+	<page-action name="PageValue.loadPageVariable" class="org.openedit.util.PathUtilities" bean="pathUtils" />
 
 
 <property name='text.deletedraft'>
