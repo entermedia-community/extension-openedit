@@ -2,16 +2,18 @@
 jQuery(document).ready(function() 
 { 
 	
-		//insert a chunk of html
-	jQuery.get("/openedit/components/toolbar/admintoolbarselector.html", {}, function(data) 
+	var body = jQuery("body");
+	if( body.data("hidetoolbar") != "true")
 	{
-		var body = jQuery("body");
+		//insert a chunk of html
+		jQuery.get("/openedit/components/toolbar/admintoolbarselector.html", {}, function(data) 
+		{
+			body.prepend(data);
 		
-		body.prepend(data);
-		
-		loadToolbar();
-	});
+			loadToolbar();
+		});
 	
+	}
 	$(document).on("click",  ".oeDialog" ,function(){
 		var target = $(this).data('target');
 		if(target == null){
