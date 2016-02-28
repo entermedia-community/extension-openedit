@@ -176,8 +176,12 @@ jQuery(document).ready(function()
 			{
 				home = "";
 			}
+			
+			
 			var catalogid = jQuery("#application").data("catalogid");
-			var savepath = home + "/openedit/components/data/save.html";
+			var apphome = jQuery("#application").data("apphome");
+
+			var savepath = home  + apphome + "/components/data/save.html";
 			
 		 	CKEDITOR.config.saveSubmitURL = savepath + "?searchtype=" + searchtype + "&field=" + field + "&id=" +id + "&catalogid=" + catalogid;	 //TODO: Save this URL specific to this editor
 			CKEDITOR.config.filebrowserBrowseUrl =  home+ '/openedit/components/html/browse/index.html?editPath=$editPath';
