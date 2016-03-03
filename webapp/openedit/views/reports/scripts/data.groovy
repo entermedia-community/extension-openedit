@@ -5,7 +5,7 @@ import org.openedit.data.PropertyDetail
 import org.openedit.data.PropertyDetails
 import org.openedit.entermedia.Asset
 
-import com.openedit.hittracker.HitTracker
+import org.openedit.hittracker.HitTracker
 
 import groovy.xml.MarkupBuilder
 
@@ -13,7 +13,7 @@ import org.openedit.Data
 import org.openedit.data.PropertyDetails
 import org.openedit.entermedia.Asset
 
-import com.openedit.hittracker.HitTracker
+import org.openedit.hittracker.HitTracker
 
 import groovy.xml.MarkupBuilder
 
@@ -21,7 +21,7 @@ import org.openedit.Data
 import org.openedit.data.PropertyDetails
 import org.openedit.entermedia.Asset
 
-import com.openedit.hittracker.HitTracker
+import org.openedit.hittracker.HitTracker
 
 
 

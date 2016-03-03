@@ -2,7 +2,7 @@ import org.openedit.Data;
 import org.openedit.data.PropertyDetail;
 import org.openedit.data.Searcher;
 
-import com.openedit.util.URLUtilities;
+import org.openedit.util.URLUtilities;
 
 public void importData(WebPageRequest inReq) throws Exception {
 	Searcher searcher = loadSearcher(inReq);
