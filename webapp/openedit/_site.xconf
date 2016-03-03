@@ -50,6 +50,8 @@
 	<property name="showremoveselections">false</property>
 	<property name="editable">false</property>
 	<property name="showdebug">false</property>
+		<property name="skipvirtualhost">true</property>
+	
 	
 	<!--
   <generator mimetypes="text/html" name="velocityGenerator"/>
