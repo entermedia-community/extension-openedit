@@ -3,4 +3,4 @@
 #set($newpath = $context.getRequestParameter("destinationPath"))
 #end
 $newpath
-$pages.include("$apphome/components/html/edit/htmledit/index.html?editPath=$newpath&path=$newpath", $context)
+$pages.include("$apphome/components/html/edit/preview/index.html?editPath=$newpath&path=$newpath", $context)
