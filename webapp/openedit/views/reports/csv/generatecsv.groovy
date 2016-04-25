@@ -13,6 +13,7 @@ if(hits == null){
 	String sessionid = context.getRequestParameter("hitssessionid");
 	hits = context.getSessionValue(sessionid);
 }
+hits.enableBulkOperations();
 log.info("hits: " +hits);
 searcherManager = context.getPageValue("searcherManager");
 searchtype = context.findValue("searchtype");
