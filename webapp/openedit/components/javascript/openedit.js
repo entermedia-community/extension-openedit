@@ -281,13 +281,22 @@ jQuery("form.oeajaxform").bind('submit',
 			if(targetdiv.indexOf("parent.") == 0)
 			{
 				targetdiv = targetdiv.substr(7);
-				parent.jQuery(this).ajaxSubmit({target: "#" + targetdiv});
+				parent.jQuery(this).ajaxSubmit({
+					target:"#" + targetdiv, 
+					success: function() { $(document).trigger( "domchanged", "#" + targetdiv ); }
+				 });
+	
+				
 				//closes the fancybox after submitting
 				parent.jQuery.fn.fancybox.close();
 			}
 			else
 			{
-				jQuery(this).ajaxSubmit( {target:"#" + targetdiv} );
+				jQuery(this).ajaxSubmit({
+					target:"#" + targetdiv, 
+					success: function() { $(document).trigger( "domchanged", "#" + targetdiv ); }
+				 });
+	
 			}
 			return false;
 		}
