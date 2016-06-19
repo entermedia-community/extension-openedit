@@ -9,7 +9,7 @@ jQuery(document).ready(function()
 	
 	if( hide != true )
 	{	
-		jQuery.get("/openedit/components/toolbar/admintoolbarselector.html", {}, function(data) 
+		jQuery.get("/openedit/components/toolbar/admintoolbarselector.html", {path:	document.location.href }, function(data) 
 		{
 			
 			body.prepend(data);
