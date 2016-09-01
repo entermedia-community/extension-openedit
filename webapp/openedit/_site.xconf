@@ -76,21 +76,12 @@
   <script id="jquery-ui-i18n" src="/${applicationid}/components/javascript/ui/i18n/jquery-ui-i18n.js"/>
   
  <script id="bootstrap" src="/${applicationid}/components/bootstrap/js/bootstrap.js" />
- <script id="bootstrap-select" src="/${applicationid}/components/bootstrap/select/bootstrap-select.min.js" />
  
- <!--
- <script id="bootstrap-validate" src="/${applicationid}/components/bootstrap/validate/jquery.validate.min.js" />
- <script id="bootstrap-validation" src="/${applicationid}/components/bootstrap/validation/jqBootstrapValidation.js" />
- 	 	 <script id="ckeditor" src="/${applicationid}/components/html/ckeditor/ckeditor.js" />
- -->	
  	 <script id="openedit" src="/${applicationid}/components/javascript/openedit.js" />
  
  
  <style id="bootstrap" href='/${applicationid}/components/bootstrap/css/bootstrap.min.css' />
  <style id="bootstrap-theme" href='/${applicationid}/components/bootstrap/css/bootstrap-theme.css' />
- <style id="bootstrap-select" href='/${applicationid}/components/bootstrap/select/bootstrap-select.min.css' />
- <style id="bootstrap-validate" href='/${applicationid}/components/bootstrap/validate/jquery.validate.css' />
-	 <style id="ortree" href='/${applicationid}/components/bootstrap/validate/jquery.validate.css' />
 	
 	  	<inner-layout>${themeprefix}/layouts/application.html</inner-layout>	
 
