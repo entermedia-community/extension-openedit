@@ -75,13 +75,13 @@
   <script id="jquery-ui" src="/${applicationid}/components/javascript/jquery-ui-1.11.4.min.js"/>
   <script id="jquery-ui-i18n" src="/${applicationid}/components/javascript/ui/i18n/jquery-ui-i18n.js"/>
   
- <script id="bootstrap" src="/${applicationid}/components/bootstrap/js/bootstrap.js" />
+ <script id="bootstrap" src="/${applicationid}/components/javascript/bootstrap/js/bootstrap.js" />
  
  	 <script id="openedit" src="/${applicationid}/components/javascript/openedit.js" />
  
  
- <style id="bootstrap" href='/${applicationid}/components/bootstrap/css/bootstrap.min.css' />
- <style id="bootstrap-theme" href='/${applicationid}/components/bootstrap/css/bootstrap-theme.css' />
+ <style id="bootstrap" href='/${applicationid}/components/javascript/bootstrap/css/bootstrap.min.css' />
+ <style id="bootstrap-theme" href='/${applicationid}/components/javascript/bootstrap/css/bootstrap-theme.css' />
 	
 	  	<inner-layout>${themeprefix}/layouts/application.html</inner-layout>	
 
