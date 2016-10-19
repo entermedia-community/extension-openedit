@@ -12,15 +12,15 @@ var root = moduleManager.getBean("root").getAbsolutePath();
 var web = root + "/WEB-INF";
 var tmp = web + "/tmp";
 
-log.add("1. GET THE LATEST WAR FILE");
+log.info("1. GET THE LATEST WAR FILE");
 var downloader = new Downloader();
 downloader.download( war, tmp + "/extension-openedit.zip");
 
-log.add("2. UNZIP WAR FILE");
+log.info("2. UNZIP WAR FILE");
 var unziper = new ZipUtil();
 unziper.unzip(  tmp + "/extension-openedit.zip",  tmp );
 
-log.add("3. REPLACE LIBS");
+log.info("3. REPLACE LIBS");
 var files = new FileUtils();
 files.deleteMatch( web + "/lib/dev_extension-openedit*.jar");
 files.deleteMatch( web + "/lib/extension-openedit*.jar");
@@ -36,7 +36,7 @@ files.deleteMatch( web + "/WEB-INF/base/openedit/")
 files.copyFileByMatch( tmp + "/base/openedit/", root + "/WEB-INF/base/openedit/");
 
 
-log.add("5. CLEAN UP");
+log.info("5. CLEAN UP");
 files.deleteAll(tmp);
 
 log.add("6. UPGRADE COMPLETED");
