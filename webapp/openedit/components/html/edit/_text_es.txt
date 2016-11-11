@@ -1,5 +1,4 @@
-#
-#Mon Oct 10 12:27:06 EDT 2016
+#Thu Nov 10 09:51:28 EST 2016
 Scripts=Guiones
 Delete\ File=Borrar archivo
 Move\ or\ Rename\ File=Mover o cambiar el nombre de archivo
@@ -10,8 +9,9 @@ Copy\ file=Copiar archivo
 Properties=propiedades
 Editor=Editor
 SEO=SEO
-Delete\ file=Borrar archivo
-Copy\ File=Copiar archivo
 Move\ and\ rename\ file=Mover y cambiar el nombre de archivo
-Raw=Crudo
+Copy\ File=Copiar archivo
+Delete\ file=Borrar archivo
 Versions=versiones
+Raw=Crudo
+
