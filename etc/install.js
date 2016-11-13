@@ -25,6 +25,10 @@ var files = new FileUtils();
 files.deleteMatch( web + "/lib/dev_extension-openedit*.jar");
 files.deleteMatch( web + "/lib/extension-openedit*.jar");
 files.deleteMatch( web + "/lib/openedit-8*.jar");
+files.deleteMatch( web + "/lib/em9_extension-openedit*.jar");
+files.deleteMatch( web + "/lib/em9dev_extension-openedit*.jar");
+
+
 
 
 files.copyFileByMatch( tmp + "/lib/@BRANCH@extension-openedit*.jar", web + "/lib/");
