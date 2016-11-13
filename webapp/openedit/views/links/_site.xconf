@@ -5,8 +5,10 @@
 		<!--root>topmenu</root -->
 	</page-action>
 	<permission name="view">
+		<or>
 		<permission name="oe.edit.links" />
 				<group id="administrators"/>
+				</or>
 		
 	</permission>
 	<property name="linktreename">editlinks</property>

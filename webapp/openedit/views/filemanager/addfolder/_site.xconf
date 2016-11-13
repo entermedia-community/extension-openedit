@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
 
 <page>
-	<permission name="view">
+		<permission name="view">
+		<or>
 		<permission name="oe.edit"/>
 				<group id="administrators"/>
-		
+		</or>
 	</permission>	
 	
 	<!--
