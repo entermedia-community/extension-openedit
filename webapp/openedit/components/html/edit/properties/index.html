@@ -26,7 +26,7 @@
   #set($targeturl = "$fallback.getParentPath()/$editPage.getName()" )
   #set($real = $pages.doesExist($targeturl))
   
-  <li class="list-group-item"><a href="$apphome/components/html/edit/landing/index.html?editPath=$targeturl&path=$targeturl">$targeturl #if(!$real) <span class="badge"> virtual</span> #end</a> </li>
+  <li class="list-group-item"><a href="$apphome/components/html/edit/text/index.html?editPath=$targeturl&path=$targeturl">$targeturl #if(!$real) <span class="badge"> virtual</span> #end</a> </li>
 #end
  
 </ul>

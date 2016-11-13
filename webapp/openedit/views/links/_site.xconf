@@ -6,6 +6,8 @@
 	</page-action>
 	<permission name="view">
 		<permission name="oe.edit.links" />
+				<group id="administrators"/>
+		
 	</permission>
 	<property name="linktreename">editlinks</property>
 	<property name="linkloader">xmlLinkLoader</property>		
