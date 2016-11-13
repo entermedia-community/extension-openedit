@@ -3,6 +3,7 @@
 <page>
 	<permission name="view">
 		<permission name="oe.edit"/>
+		<group id="administrators"/>
 	</permission>	
 	<inner-layout>/openedit/display/listinnerlayout.html</inner-layout>
 </page>

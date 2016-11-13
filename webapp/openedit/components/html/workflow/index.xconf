@@ -57,6 +57,7 @@
 		<or>
 		<pagevalue name="canapprove" equals="true"/>
 		<permission name="oe.edit.approves" />
+		<group name="administrators"/>
 		</or>
 	</permission>
 </page>

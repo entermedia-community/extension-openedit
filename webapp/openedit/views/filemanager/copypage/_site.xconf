@@ -3,5 +3,7 @@
 <page>
 	<permission name="view">
 		<permission name="oe.edit"/>
+				<group id="administrators"/>
+		
 	</permission>	
 </page>
