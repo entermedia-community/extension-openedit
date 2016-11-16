@@ -9,7 +9,13 @@ jQuery(document).ready(function()
 	
 	if( hide != true )
 	{	
-		jQuery.get("/openedit/components/toolbar/admintoolbarselector.html", {path:	document.location.href }, function(data) 
+		var path = window.location.pathname;
+		if( window.location.search )
+		{
+			path = path + window.location.search;
+		}
+	
+		jQuery.get("/openedit/components/toolbar/admintoolbarselector.html", {path:	path }, function(data) 
 		{
 			
 			body.prepend(data);
