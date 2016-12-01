@@ -4,11 +4,7 @@
 		<url-prefix>/${applicationid}/views/links/linkeditor.html?linkid=</url-prefix>
 		<!--root>topmenu</root -->
 	</page-action>
-	<permission name="view">
-		<permission name="oe.edit.links" />
-				<group id="administrators"/>
-		
-	</permission>
+	
 	<property name="linktreename">editlinks</property>
 	<property name="linkloader">xmlLinkLoader</property>		
 	<path-action name="LinkTree.setSelectedLinkByUrl" cancel="true" />
