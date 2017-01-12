@@ -19,10 +19,10 @@
 
 	#if( $editPage.isDraft() ) $pages.include("/openedit/components/html/workflow/approvetoolbar.html", $context) #end
 		
-##	#if($debugmode && $debugmode == "true")
-##		<a class="openeditdialog"  href="$home/openedit/views/filemanager/showfile.html?path=$editPage.getContentItem().getActualPath()&textheight=600px&width=1000&height=680">
-##		<img border="0" title="[[Base]] $editPath" src="$home/openedit/components/html/theme/images/seo.png"/></a>
-##	#end
+#if($mode && $mode == "debug")
+		<a  target="_blank" href="$home/openedit/components/html/edit/text/index.html?path=$editPage.getContentItem().getActualPath()&textheight=600px&width=1000&height=680">
+		<img border="0" title="[[Base]] $editPath" src="$home/openedit/components/html/theme/images/seo.png"/></a>
+	#end
 </div></div>
 <div class="openediteditcontent">
 
