@@ -39,4 +39,4 @@ files.copyFileByMatch( tmp + "/base/openedit/", root + "/WEB-INF/base/openedit/"
 log.info("5. CLEAN UP");
 files.deleteAll(tmp);
 
-log.add("6. UPGRADE COMPLETED");
+log.info("6. UPGRADE COMPLETED");
