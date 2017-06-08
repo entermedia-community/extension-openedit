@@ -44,11 +44,11 @@ $context.putPageValue("editPage", $editPage)
 	#end
 
 	#if (!($canusenewmenu == false))
-		#if( $pages.canEdit($editPath) || $caneditallfiles)
+		##if( $pages.canEdit($editPath) || $caneditallfiles)
 			
 				$pages.include("${page.filerootpath}/layout/menuitem.html?id=1st&icon=$home$themeprefix/images/toolbar/new.gif&label=[[New]]&input=${page.filerootpath}/folders/newactions.html", $context)
 			
-		#end
+		##end
 	#end
 	
 	#if (!($canuseeditmenu == false))
