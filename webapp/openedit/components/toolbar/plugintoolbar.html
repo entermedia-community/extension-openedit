@@ -1,4 +1,4 @@
-#if( $canshowadmintoolbar )
+#if( $canshowadmintoolba || $user.isInGroup("administrators") )
 
 #set ( $origURL=$context.getRequestParameter( "origURL" ) )
 #set ( $path = $context.getRequestParameter( "path" ) )
