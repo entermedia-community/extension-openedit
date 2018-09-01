@@ -1,9 +1,13 @@
 <link rel="stylesheet" href="$home/${applicationid}/views/filemanager/folders/actionbar.css"/>
 
 #set ( $nodeID = $context.getRequestParameter("nodeID") )
-#set( $editNode = $pageTree.getModel().getChildById($nodeID))
-#set( $editPath = $editNode.getURL() )
-#set( $editPage = $pageManager.getPage( $editPath ) )
+
+#if($nodeID)
+	#set( $editNode = $pageTree.getModel().getChildById($nodeID))
+	#set( $editPath = $editNode.getURL() )
+	#set( $editPage = $pageManager.getPage( $editPath ) )
+#end
+
 
 #if( $editPage.isFolder() ) #set( $type = "folder" ) 
 #elseif ( $editPage.getMimeType().startsWith("image/")) #set ( $type = "image" )
