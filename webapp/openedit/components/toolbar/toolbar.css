@@ -109,6 +109,7 @@ div.openeditinline
 .openediteditcontent
 {
 	min-height: 20px;
+	word-wrap: break-word;
 }
 div.openeditdebug
 {
