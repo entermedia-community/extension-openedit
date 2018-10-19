@@ -99,7 +99,7 @@ jQuery(document).ready(function()
 			
 		 	CKEDITOR.config.saveSubmitURL = savepath + "?editPath=" + editpath;	 //TODO: Save this URL specific to this editor
 		 	CKEDITOR.config.filebrowserBrowseUrl =  home+ '/openedit/components/html/browse/index.html?editPath=$editPath';
-		    CKEDITOR.config.filebrowserUploadUrl = home+ '/openedit/components/html/edit/actions/imageupload-finish.html?catalogid=' + catalogid;
+		    CKEDITOR.config.filebrowserUploadUrl = home+ '/openedit/components/html/edit/actions/imageupload-finish.html';
 		    CKEDITOR.config.filebrowserImageBrowseUrl = home+'/openedit/components/html/browse/index.html?editPath=$editPath';
 			CKEDITOR.config.filebrowserImageUploadUrl = home+ '/openedit/components/html/edit/actions/imageupload-finish.html';
 			CKEDITOR.config.entities =false;
@@ -178,108 +178,99 @@ jQuery(document).ready(function()
 	
 	
 	jQuery(document).on('click',".oe-dataedit",
-			function(e) 
-			{	
+		function(e) 
+		{	
 			
 			var container = $(this).data("target");
 			container = $(container);
 			var searchtype = container.data("searchtype");
 			var id = container.data("dataid");
 			var field = container.data("field");
-			
+			var viewtype = container.data("viewtype");
+			if( !viewtype )
+			{
+				viewtype = "html";
+			}
 			var home = $("#openedit").data("home");
 			if(!home)
 			{
 				home = "";
 			}
-			
+			e.preventDefault();
 			
 			var catalogid = jQuery("#application").data("catalogid");
 			var apphome = jQuery("#application").data("apphome");
-
 			var savepath = home  + apphome + "/components/data/save.html";
 			
-		 	CKEDITOR.config.saveSubmitURL = savepath + "?searchtype=" + searchtype + "&field=" + field + "&id=" +id + "&catalogid=" + catalogid;	 //TODO: Save this URL specific to this editor
-			CKEDITOR.config.filebrowserBrowseUrl =  home+ '/openedit/components/html/browse/index.html?editPath=$editPath';
-		    CKEDITOR.config.filebrowserUploadUrl = home+ '/openedit/components/html/edit/actions/imageupload-finish.html?catalogid=' + catalogid;
-		    CKEDITOR.config.filebrowserImageBrowseUrl = home+'/openedit/components/html/browse/index.html?editPath=$editPath';
-			CKEDITOR.config.filebrowserImageUploadUrl = home+ '/openedit/components/html/edit/actions/imageupload-finish.html';
-			CKEDITOR.config.entities =false;
-			CKEDITOR.config.basicEntities= true;
-			
-				e.preventDefault();
+			if( viewtype == "html")
+			{
+			 	CKEDITOR.config.saveSubmitURL = savepath + "?searchtype=" + searchtype + "&field=" + field + "&id=" +id + "&catalogid=" + catalogid;	 //TODO: Save this URL specific to this editor
+				CKEDITOR.config.filebrowserBrowseUrl =  home+ '/openedit/components/html/browse/index.html?editPath=$editPath';
+			    CKEDITOR.config.filebrowserUploadUrl = home+ '/openedit/components/html/edit/actions/imageupload-finish.html';
+			    CKEDITOR.config.filebrowserImageBrowseUrl = home+'/openedit/components/html/browse/index.html?editPath=$editPath';
+				CKEDITOR.config.filebrowserImageUploadUrl = home+ '/openedit/components/html/edit/actions/imageupload-finish.html';
+				CKEDITOR.config.entities =false;
+				CKEDITOR.config.basicEntities= true;
+				
 				var content = container.get(0);
 				//var content = jQuery(".openediteditcontent" ).get(0);
 				content.setAttribute('contenteditable', 'true');
 				var editor = CKEDITOR.inline( content,
-					 {
+				{
 					 extraConfig : { 'oldcontent' : 'null'},
         			 startupFocus : true ,        			 
         			 on: 
-        			   {
-        			   	dataReady: function( event ) {
+        			 {
+        			   	dataReady: function( event ) 
+        			   	{
         			   		
         			   		 event.editor.config.extraConfig.oldcontent = event.editor.getData();
         			   	},        			   
-		                 blur: function( event ) {
-		                
+		                blur: function( event ) 
+		                {
 	                        content.setAttribute('contenteditable', 'false');
-	               
 		                    var data = event.editor.getData();
-							
-							if( data != editor.config.extraConfig.oldcontent )
-							{
-//								var answer = confirm("Do you want to save changes?"); //TODO: Make sure they changed something
-//								if (answer)
-//								{
-//									
-//									event.editor.execCommand( 'savebtn' );			                   
-//				                 } 
-//				                 else
-//				                 {
-//				                 	location.reload();
-//				                 }							
-							}
 							event.editor.destroy();
-		                 } ,
-		                 savecontentdone: function( event )    {
+		                } ,
+		                savecontentdone: function( event )    
+		                {
 		                		event.editor.destroy();
-		                 }  
-		              }      
-                } );
-                
-               
-                	
-				/*
-				if( typeof content.ckeditorGet == "undefined")
+		                }  
+		             }      
+                });
+	                
+		}
+		else if( viewtype == "input")
+		{
+			var oldborder = container.css("border"); 
+			container.css("border","1px dashed black");
+			var content = container.get(0);
+			content.setAttribute('contenteditable', 'true');
+			container.focus();
+			var options = container.data();
+			options.save = true;
+			options.oemaxlevel = 1;
+			options.id = options.dataid;
+			var field = options.field;
+			container.keyup(function(evt)
+			{
+				//save as we go?
+				// enter pressed
+				var contents = content.innerHTML;
+				options[field + ".value"] = contents;
+
+				$.get(savepath,options,function()
 				{
-					CKEDITOR.inline( content,
-					 {
-        				startupFocus : true
-        			 }
-        			);	
-				}
-				*/
-//				content.focus();
-
-/*
-  				jQuery(content).blur( function() {
-	                content.setAttribute('contenteditable', 'false');
-	               
-					for(name in CKEDITOR.instances)
-					{
-					    CKEDITOR.instances[name].destroy()
-					}
-
-	             } ); 
-*/
-
-				return false;
-			}
-	);		
-
-	
-	
+					//reset border  
+					//content.setAttribute('contenteditable', 'false'); 
+					container.css("border",oldborder); 				
+				});
+			});
+			//Capture the enter key
+			
+		}
+		return false;
+	});		
 	
 	
 jQuery("form.oeajaxform").bind('submit',	
