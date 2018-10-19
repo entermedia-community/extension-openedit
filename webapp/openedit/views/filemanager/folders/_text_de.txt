@@ -1,5 +1,4 @@
-#
-#Wed Oct 20 15:33:56 EDT 2010
+#Fri Sep 21 13:32:18 EDT 2018
 Create\ Folder=Ordner erstellen
 Open\ Preview\ Tab=Vorschau in neuem Tab öffnen
 Set\ Permissions=Berechtigungen definieren
@@ -8,26 +7,26 @@ Tools=Werkzeuge
 Prev\ Page=vorherige Seite
 Next\ Page=nächste Seite
 Name=Name
-Edit\ XConf=xconf bearbeiten
+Edit\ XConf=XConf bearbeiten
 Folder\ Properties=Ordner-Eigenschaften
 Last\ Modified=Letzte Änderung
-Visual\ Editor=visueller Editor
+Visual\ Editor=Visueller Editor
 Versions=Versionen
 Text\ Editor=Text-Editor
 Delete\ folder=Ordner löschen
-Edit\ Site\ XConf=xconf der Seite bearbeiten
+Edit\ Site\ XConf=XConf der Seite bearbeiten
 Upload\ File=Datei hochladen
-Page\ Properties=Eigenschaften der Seite
-Translate=übersetzen
+Page\ Properties=Seiten-Eigenschaften
+Translate=Übersetzen
 Create\ File=Datei erstellen
 Empty\ Folder=Ordner leeren
 Copy\ folder=Ordner kopieren
 Move\ and\ rename\ folder=Ordner verschieben und umbenennen
-Refresh=aktualisieren
+Refresh=Aktualisieren
 Upload/Download=Upload / Download
 Size=Größe
-Edit=bearbeiten
-Download\ In\ Zip=in einer Zip herunterladen
+Edit=Bearbeiten
+Download\ In\ Zip=In einer Zip herunterladen
 Image\ Properties=Bildeigenschaften
-New=neue
+New=Neu
 

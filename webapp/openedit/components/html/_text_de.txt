@@ -1,5 +1,5 @@
-#
-#Thu Feb 12 12:30:46 EST 2015
+#Fri Sep 21 13:32:18 EDT 2018
 Base=Basis
 View=Ansicht
-Inline\ Edit=Inline Edit
+Inline\ Edit=Bearbeitung in der Reihe
+
