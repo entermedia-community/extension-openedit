@@ -1,7 +1,7 @@
 <page>
 	
 	<path-action name="Script.run">
-		<script>./handleupload.groovy</script>    
+		<script>/openedit/src/scripts/oeupload.groovy</script>    
 	
 	</path-action>
 	<property name="hitsname">hits</property>
