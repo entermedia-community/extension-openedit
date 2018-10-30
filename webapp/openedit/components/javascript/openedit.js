@@ -24,6 +24,20 @@ jQuery(document).ready(function()
 		});
 	}	
 	
+	$(document).on("click",  ".oe-enableedit" ,function()
+	{
+		var apphome = jQuery("#application").data("apphome");
+		//<li><a href="$home/openedit/views/workflow/mode/viewdebug.html?origURL=$origURL" ><img src="$home/openedit/theme/images/toolbar/modepreview.gif" border="0" title="Debug Mode" />Debug Mode</a></li>
+		
+		var args = $(this).data();
+		//Enable dashes on 
+		$.get(href, args, function(data) 
+		{
+			//reload page
+			
+		});
+	});
+	
 	$(document).on("click",  ".oeDialog" ,function(){
 		var target = $(this).data('target');
 		if(target == null){
@@ -174,37 +188,17 @@ jQuery(document).ready(function()
 			}
 	);		
 
-	
-	
-	
-	jQuery(document).on('click',".oe-dataedit",
-		function(e) 
-		{	
-			
-			var container = $(this).data("target");
-			container = $(container);
-			var searchtype = container.data("searchtype");
-			var id = container.data("dataid");
-			var field = container.data("field");
-			var viewtype = container.data("viewtype");
-			if( !viewtype )
-			{
-				viewtype = "html";
-			}
-			var home = $("#openedit").data("home");
-			if(!home)
-			{
-				home = "";
-			}
-			e.preventDefault();
-			
+
+	loadHtmlEditor = function(searchtype,id,field,viewtype,content) 
+	{
 			var catalogid = jQuery("#application").data("catalogid");
 			var apphome = jQuery("#application").data("apphome");
 			var savepath = home  + apphome + "/components/data/save.html";
 			
 			if( viewtype == "html")
 			{
-			 	CKEDITOR.config.saveSubmitURL = savepath + "?searchtype=" + searchtype + "&field=" + field + "&id=" +id + "&catalogid=" + catalogid;	 //TODO: Save this URL specific to this editor
+			 	CKEDITOR.config.saveSubmitURL = savepath + "?searchtype=" + searchtype + "&field=" + field + "&id=" +id + "&catalogid=" + catalogid;
+			 	 //TODO: Save this URL specific to this editor
 				CKEDITOR.config.filebrowserBrowseUrl =  home+ '/openedit/components/html/browse/index.html?editPath=$editPath';
 			    CKEDITOR.config.filebrowserUploadUrl = home+ '/openedit/components/html/edit/actions/imageupload-finish.html';
 			    CKEDITOR.config.filebrowserImageBrowseUrl = home+'/openedit/components/html/browse/index.html?editPath=$editPath';
@@ -212,7 +206,6 @@ jQuery(document).ready(function()
 				CKEDITOR.config.entities =false;
 				CKEDITOR.config.basicEntities= true;
 				
-				var content = container.get(0);
 				//var content = jQuery(".openediteditcontent" ).get(0);
 				content.setAttribute('contenteditable', 'true');
 				var editor = CKEDITOR.inline( content,
@@ -244,7 +237,6 @@ jQuery(document).ready(function()
 		{
 			var oldborder = container.css("border"); 
 			container.css("border","1px dashed black");
-			var content = container.get(0);
 			content.setAttribute('contenteditable', 'true');
 			container.focus();
 			var options = container.data();
@@ -269,6 +261,48 @@ jQuery(document).ready(function()
 			//Capture the enter key
 			
 		}
+	
+	} 
+
+	
+	jQuery(document).on('click',".oe-editable",
+		function(e) 
+		{	
+			var container = $(this);
+			var searchtype = container.data("searchtype");
+			var id = container.data("dataid");
+			var field = container.data("field");
+			var viewtype = container.data("viewtype");
+			var content = container.get(0);
+			loadHtmlEditor(searchtype,id,field,viewtype,content);
+		}
+	);
+	
+	
+	
+	jQuery(document).on('click',".oe-dataedit",
+		function(e) 
+		{	
+			
+			var container = $(this).data("target");
+			container = $(container);
+			var content = container.get(0);
+			var searchtype = container.data("searchtype");
+			var id = container.data("dataid");
+			var field = container.data("field");
+			var viewtype = container.data("viewtype");
+			if( !viewtype )
+			{
+				viewtype = "html";
+			}
+			var home = $("#openedit").data("home");
+			if(!home)
+			{
+				home = "";
+			}
+			e.preventDefault();
+			
+
 		return false;
 	});		
 	

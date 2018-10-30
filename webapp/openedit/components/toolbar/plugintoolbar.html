@@ -27,6 +27,7 @@
 	<li><a class="oemodechange #if( $mode == "editing")oeglossyselected #end" href="$home/openedit/views/workflow/mode/viewediting.html?origURL=$origURL" ><img src="$home/openedit/theme/images/toolbar/modeeditor.png" border="0" title="Edit Mode" /> [[Edit Mode]]</a></li>
 	#if($canopeneditdebug  || $user.hasPermission("oe.administration"))
 	<li><a class="oemodechange #if( $mode == "debug")oeglossyselected #end" href="$home/openedit/views/workflow/mode/viewdebug.html?origURL=$origURL" ><img src="$home/openedit/theme/images/toolbar/modedebug.gif" border="0" title="Debug Mode" /> [[Debug Mode]]</a></li>
+	<li><a class="oemodechange #if( $mode == "postedit")oeglossyselected #end" href="$home/openedit/views/workflow/mode/postedit.html?origURL=$origURL" ><img src="$home/openedit/theme/images/toolbar/modedebug.gif" border="0" title="Debug Mode" /> [[Post Edit Mode]]</a></li>
 	#end
 	<li><a class="oemodechange" href="$home/openedit/authentication/logout.html"><img src="$home/openedit/theme/images/toolbar/logout.gif" border="0" title="Logout" /> [[Logout]]</a></li>
 		
