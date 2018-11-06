@@ -193,11 +193,19 @@ jQuery(document).ready(function()
 	{
 			var catalogid = jQuery("#application").data("catalogid");
 			var apphome = jQuery("#application").data("apphome");
+			
+			
+			var home = $("#openedit").data("home");
+			if(!home)
+			{
+				home = "";
+			}
+			
 			var savepath = home  + apphome + "/components/data/save.html";
 			
 			if( viewtype == "html")
 			{
-			 	CKEDITOR.config.saveSubmitURL = savepath + "?searchtype=" + searchtype + "&field=" + field + "&id=" +id + "&catalogid=" + catalogid;
+			 	CKEDITOR.config.saveSubmitURL = savepath + "?save=true&searchtype=" + searchtype + "&field=" + field + "&id=" +id + "&catalogid=" + catalogid;
 			 	 //TODO: Save this URL specific to this editor
 				CKEDITOR.config.filebrowserBrowseUrl =  home+ '/openedit/components/html/browse/index.html?editPath=$editPath';
 			    CKEDITOR.config.filebrowserUploadUrl = home+ '/openedit/components/html/edit/actions/imageupload-finish.html';
