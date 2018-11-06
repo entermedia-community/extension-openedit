@@ -272,19 +272,23 @@ jQuery(document).ready(function()
 	
 	} 
 
-	
-	jQuery(document).on('click',".oe-editable",
-		function(e) 
-		{	
-			var container = $(this);
-			var searchtype = container.data("searchtype");
-			var id = container.data("dataid");
-			var field = container.data("field");
-			var viewtype = container.data("viewtype");
-			var content = container.get(0);
-			loadHtmlEditor(searchtype,id,field,viewtype,content);
-		}
-	);
+	var editmode = jQuery("#application").data("editmode");
+	if( editmode == "postedit" )
+	{
+		jQuery(".oe-editable").css("border","1px dashed black");
+		jQuery(document).on('click',".oe-editable",
+			function(e) 
+			{	
+				var container = $(this);
+				var searchtype = container.data("searchtype");
+				var id = container.data("dataid");
+				var field = container.data("field");
+				var viewtype = container.data("viewtype");
+				var content = container.get(0);
+				loadHtmlEditor(searchtype,id,field,viewtype,content);
+			}
+		);
+	}
 	
 	
 	
