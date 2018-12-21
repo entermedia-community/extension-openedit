@@ -297,7 +297,6 @@ jQuery(document).ready(function()
 	jQuery(document).on('click',".oe-dataedit",
 		function(e) 
 		{	
-			
 			var container = $(this).data("target");
 			container = $(container);
 			var content = container.get(0);
@@ -315,7 +314,8 @@ jQuery(document).ready(function()
 				home = "";
 			}
 			e.preventDefault();
-			
+			loadHtmlEditor(searchtype,id,field,viewtype,content);
+
 
 		return false;
 	});		
