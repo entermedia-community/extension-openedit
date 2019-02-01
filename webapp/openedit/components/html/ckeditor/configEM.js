@@ -29,6 +29,7 @@ CKEDITOR.editorConfig = function( config )
 		['Maximize', 'ShowBlocks','-','About']
 	];
 	config.extraPlugins='ajaxsave';
+	config.extraPlugins = 'codemirror';
 	//config.protectedSource.push(/<%[\s\S]*?%>/g);
 	//config.protectedSource.push(#*?/g);
 };
