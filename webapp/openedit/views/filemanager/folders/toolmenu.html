@@ -19,11 +19,11 @@
 	</li>
 	
 	#if ($type == "file")
-  	<li><a target="_blank" href="$home/system/tools/html/edit.html?editPath=$editPath"><img src="$home$themeprefix/images/toolbar/edit.gif" border="0" title="$context.getPageProperty("text.section")" /> [[Visual Editor]]</a></li>
-	<li><a target="_blank" href="$home/system/tools/text/edit.html?editPath=$editPath" ><img src="$home$themeprefix/images/toolbar/text.gif" border="0" title="$context.getPageProperty("text.edittext")" />	[[Text Editor]]</a></li>
+  	<li><a target="_blank" href="#urlencode("$home/system/tools/html/edit.html?editPath=$editPath")"><img src="$home$themeprefix/images/toolbar/edit.gif" border="0" title="$context.getPageProperty("text.section")" /> [[Visual Editor]]</a></li>
+	<li><a target="_blank" href="#urlencode("$home/system/tools/text/edit.html?editPath=$editPath")" ><img src="$home$themeprefix/images/toolbar/text.gif" border="0" title="$context.getPageProperty("text.edittext")" />	[[Text Editor]]</a></li>
 	#end
 	<li>
-		<a class="emdialog" href="$home/system/tools/text/edit.html?editPath=$editPage.pageSettings.path&type=text"><img src="$home$themeprefix/images/toolbar/text.gif" border="0" title="[[Edit XConf]]" />
+		<a class="emdialog" href="#urlencode("$home/system/tools/text/edit.html?editPath=$editPage.pageSettings.path&type=text")"><img src="$home$themeprefix/images/toolbar/text.gif" border="0" title="[[Edit XConf]]" />
 			[[Edit XConf]]
 		</a>
 	</li>
@@ -46,7 +46,7 @@
 	</li>
 	#if($context.getPageProperty("usemultiplelanguages") && "true" == $context.getPageProperty("usemultiplelanguages") && $user.hasPermission("translations") )	
 	<li>
-	 <a  href="$home/${applicationid}/views/filemanager/translations/translate.html?path=$!{editPath}"><span>[[Translate]] $type</span></a>		
+	 <a  href="#urlencode("$home/${applicationid}/views/filemanager/translations/translate.html?path=$!{editPath}")"><span>[[Translate]] $type</span></a>		
 	</li>
 	#end
 #end

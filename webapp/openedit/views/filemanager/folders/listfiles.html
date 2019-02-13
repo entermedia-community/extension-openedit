@@ -46,17 +46,17 @@ $children.setPage($curPage)
 		
 		<td class='actionlink$open'>
 #if( $node.getFileFormat() == "html" )
-			<a  href="$home$apphome/components/html/edit/text/index.html?width=1000editPath=$node.getURL()&origURL=$node.getURL()&path=$node.getURL()"><img src="$home$themeprefix/images/tree/${type}page.gif" />$node.getName()</a>
+			<a  href="#urlencode("$home$apphome/components/html/edit/text/index.html?width=1000editPath=$node.getURL()&origURL=$node.getURL()&path=$node.getURL()")"><img src="$home$themeprefix/images/tree/${type}page.gif" />$node.getName()</a>
 #else
-			<a  href="$home$apphome/components/html/edit/preview/index.html?editPath=$node.getURL()&origURL=$node.getURL()&path=$node.getURL()"><img src="$home$themeprefix/images/tree/${type}page.gif" />$node.getName()</a>
+			<a  href="#urlencode("$home$apphome/components/html/edit/preview/index.html?editPath=$node.getURL()&origURL=$node.getURL()&path=$node.getURL()")"><img src="$home$themeprefix/images/tree/${type}page.gif" />$node.getName()</a>
 
 #end			
 		</td>
 		<td class='actionlink$open'>&nbsp;$node.contentItem.length</td>
 		<td class='actionlink$open'>$node.contentItem.lastModified().toString()</td>
 	#else
-		##<td class='actionlink$open' width="1%"><a class="ajax" targetdiv="allsections" href="$home$page.filerootpath/tab.html?path=$node.URL"><img src="$home$themeprefix/images/tree/${type}folder${open}.gif" />$node.getName()</a></td>
-		<td class='actionlink$open' width="1%"><a class="ajax" targetdiv="allsections" href="$home$page.filerootpath/tab.html?path=$node.URL"><img src="$home$themeprefix/images/tree/${type}folder${open}.gif" />$node.getName()</a></td>
+		##<td class='actionlink$open' width="1%"><a class="ajax" targetdiv="allsections" href="#urlencode("$home$page.filerootpath/tab.html?path=$node.URL")"><img src="$home$themeprefix/images/tree/${type}folder${open}.gif" />$node.getName()</a></td>
+		<td class='actionlink$open' width="1%"><a class="ajax" targetdiv="allsections" href="#urlencode("$home$page.filerootpath/tab.html?path=$node.URL")"><img src="$home$themeprefix/images/tree/${type}folder${open}.gif" />$node.getName()</a></td>
 		<td class='actionlink$open' align="left" colspan=3 ><img src="$home$themeprefix/images/tree/right.gif" /></td>
 	#end
 	</tr>
