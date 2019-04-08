@@ -258,7 +258,8 @@ jQuery(document).ready(function()
 				// enter pressed
 				var contents = content.innerHTML;
 				options[field + ".value"] = contents;
-
+				
+				//TODO: use "post" method for larger inputs not "get"
 				$.get(savepath,options,function()
 				{
 					//reset border  
