@@ -103,7 +103,7 @@ jQuery(document).ready(function()
 			var app = jQuery("#application");
 
 			var catalogid = app.data("catalogid");
-			alert("using " + catalogid);
+			//alert("using " + catalogid);
 			var home = $("#openedit").data("home");
 			if(!home)
 			{
