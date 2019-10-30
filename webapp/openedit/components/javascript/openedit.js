@@ -7,22 +7,23 @@ jQuery(document).ready(function()
 	var hide = body.data("hidetoolbar");
 	//console.log(hide);
 	
-	if( hide != "true" )
+	if( hide == true )
 	{	
-		var path = window.location.pathname;
-		if( window.location.search )
-		{
-			path = path + window.location.search;
-		}
-	
-		jQuery.get("/openedit/components/toolbar/admintoolbarselector.html", {path:	path }, function(data) 
-		{
-			
-			body.prepend(data);
-			
-			loadToolbar();
-		});
-	}	
+		return;
+	}
+	var path = window.location.pathname;
+	if( window.location.search )
+	{
+		path = path + window.location.search;
+	}
+
+	jQuery.get("/openedit/components/toolbar/admintoolbarselector.html", {path:	path }, function(data) 
+	{
+		
+		body.prepend(data);
+		
+		loadToolbar();
+	});
 	
 	$(document).on("click",  ".oe-enableedit" ,function()
 	{
