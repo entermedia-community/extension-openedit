@@ -7,7 +7,7 @@ jQuery(document).ready(function()
 	var hide = body.data("hidetoolbar");
 	//console.log(hide);
 	
-	if( hide != true )
+	if( hide != "true" )
 	{	
 		var path = window.location.pathname;
 		if( window.location.search )
