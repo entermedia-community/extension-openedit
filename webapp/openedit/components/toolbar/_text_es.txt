@@ -1,10 +1,11 @@
 #
-#Mon Oct 10 12:26:51 EDT 2016
-Logout=Cerrar sesi\u00F3n
+#Tue Apr 07 17:55:15 CST 2020
+Post\ Edit\ Mode=Modo de edici\u00F3n posterior
 Edit\ Mode=Modo de edici\u00F3n
-Live\ Mode=Modo directo
-Clear\ Page\ Cache=Borrar cach\u00E9 de p\u00E1gina
+Logout=Cerrar sesi\u00F3n
 Debug\ Mode=Modo de depuraci\u00F3n
-Home=Home
+Clear\ Page\ Cache=Borrar cach\u00E9 de p\u00E1gina
 File\ Manager=File Manager
+Live\ Mode=Modo directo
 filemanager=filemanager
+Home=Home
