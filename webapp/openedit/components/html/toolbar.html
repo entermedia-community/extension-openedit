@@ -22,8 +22,12 @@
 #if($mode && $mode == "debug")
 		<a  target="_blank" href="$home/openedit/components/html/edit/text/index.html?path=$editPage.getContentItem().getActualPath()&editPath=$editPage.getContentItem().getActualPath()&textheight=600px&width=1000&height=680">
 		<img border="0" title="[[Base]] $editPath" src="$home/openedit/components/html/theme/images/seo.png"/></a>
+		#if($content.findValue("eclipsepath"))
+		<a   onclick="jQuery.get('$home/openedit/components/html/eclipse.html?path=$editPage.getContentItem()'); return false;" id="eclipselaunch" href="#">
+		<img border="0" title="Open in Eclipse" src="$home/openedit/components/html/theme/images/properties.png"/></a>
+		#end
+		
 	#end
 </div></div>
 <div class="openediteditcontent">
-
 
