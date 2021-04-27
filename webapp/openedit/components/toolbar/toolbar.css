@@ -72,6 +72,7 @@
 
 .oeglossymenu li a{
 background-color: #f7f7f7;
+color:#333;
 font: 12px "Lucida Grande", "Trebuchet MS", Verdana, Helvetica, sans-serif;
 display: block;
 width: auto;
