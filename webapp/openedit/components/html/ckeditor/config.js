@@ -13,24 +13,14 @@ CKEDITOR.editorConfig = function( config ) {
 	config.toolbar =
 	[
 	 	{ name: 'save', items : [ 'savebtn']},
-		{ name: 'document', items : [ 'Sourcedialog','-','Save','NewPage','DocProps','Preview','Print','-','Templates' ] },
-		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
-
-		{ name: 'clipboard', items : [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ] },
-		{ name: 'editing', items : [ 'Find','Replace','-','SelectAll','-','SpellChecker', 'Scayt' ] },
-		{ name: 'forms', items : [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 
-	        'HiddenField' ] },
-		{ name: 'links', items : [ 'Link','Unlink','Anchor' ] },
-		{ name: 'insert', items : [ 'Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak','Iframe' ] },
-	 	{ name: 'cancel', items : [ 'closebtn' ]},
-		'/',
+		{ name: 'document', items : [ 'Sourcedialog','-','Save','NewPage','DocProps','Preview','Print','Templates' ] },
+		
 		{ name: 'styles', items : [ 'Styles','Format','Font','FontSize' ] },
-
-		{ name: 'basicstyles', items : [ 'Bold','Italic','Underline','Strike','Subscript','Superscript','-','RemoveFormat' ] },
-		{ name: 'paragraph', items : [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv',
-		'-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl' ] },
-		{ name: 'colors', items : [ 'TextColor','BGColor' ] },
-		{ name: 'tools', items : [ 'Maximize', 'ShowBlocks','-','About' ] }
+		{ name: 'basicstyles', items : [ 'Bold','Italic','Underline' ] },
+		{ name: 'links', items : [ 'Link','Unlink' ] },
+		{ name: 'paragraph', items : [ 'NumberedList','BulletedList','Outdent','Indent',
+			'JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock' ] },
+		{ name: 'colors', items : [ 'TextColor','BGColor','RemoveFormat' ] }
 	];
 	 
 	
@@ -68,7 +58,7 @@ CKEDITOR.editorConfig = function( config ) {
 	config.allowedContent = true; 
 	
 	//config.extraPlugins = 'ajaxsave';//savebtn is the plugin's name
-	config.extraPlugins='savebtn,closebtn,colorbutton,panelbutton';		 	
+	config.extraPlugins='savebtn,closebtn,colorbutton,panelbutton,justify';		 	
 	
 	
 };
