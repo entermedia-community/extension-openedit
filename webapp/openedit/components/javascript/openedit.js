@@ -280,7 +280,7 @@ jQuery(document).ready(function()
 		jQuery(".oe-editable").css("border","1px dashed black");
 		jQuery(".oe-editable").css("min-width","50px");
 		jQuery(".oe-editable").css("min-height","50px");
-		jQuery(document).on('click',".oe-editable",
+		jQuery(document).on('dblclick',".oe-editable",
 			function(e) 
 			{	
 				var container = $(this);
@@ -322,6 +322,7 @@ jQuery(document).ready(function()
 		return false;
 	});		
 	
+
 	
 jQuery("form.oeajaxform").bind('submit',	
 		function() 
