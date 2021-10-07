@@ -94,6 +94,8 @@ jQuery(document).ready(function()
 			});
 		}
 	); 
+	
+	//OLD Approach
 	jQuery("a.oeinlineedit").on('click',
 			function(e) 
 			{	
@@ -190,7 +192,7 @@ jQuery(document).ready(function()
 	);		
 
 
-	loadHtmlEditor = function(searchtype,id,field,viewtype,content) 
+	loadHtmlEditor = function(searchtype,id,field,viewtype,container) 
 	{
 			var catalogid = jQuery("#application").data("catalogid");
 			var apphome = jQuery("#application").data("apphome");
@@ -204,10 +206,39 @@ jQuery(document).ready(function()
 			
 			var savepath = home  + apphome + "/components/data/save.html";
 			
+			var component = container.get(0);
+			
 			if( viewtype == "html")
 			{
-			 	CKEDITOR.config.saveSubmitURL = savepath + "?save=true&searchtype=" + searchtype + "&field=" + field + "&id=" +id + "&catalogid=" + catalogid;
-			 	 //TODO: Save this URL specific to this editor
+				if( searchtype != null)
+				{
+					CKEDITOR.config.saveSubmitURL = savepath + "?save=true&searchtype=" + searchtype + "&field=" + field + "&id=" +id + "&catalogid=" + catalogid;
+					CKEDITOR.config.customtoolbar =
+						[
+						 	{ name: 'save', items : [ 'savebtn']},
+							{ name: 'basicstyles', items : [ 'Bold','Italic','Underline' ] },
+							{ name: 'links', items : [ 'Link','Unlink' ] },
+							{ name: 'paragraph', items : [ 'NumberedList','BulletedList','Outdent','Indent',
+								'JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock' ] },
+							{ name: 'colors', items : [ 'TextColor','BGColor','RemoveFormat' ] },
+								{ name: 'document', items : [ 'Sourcedialog'] }
+						];
+				}
+				else
+				{
+					CKEDITOR.config.customtoolbar =
+						[
+						 	//{ name: 'save', items : [ 'savebtn']},
+							{ name: 'basicstyles', items : [ 'Bold','Italic','Underline' ] },
+							{ name: 'links', items : [ 'Link','Unlink' ] },
+							{ name: 'paragraph', items : [ 'NumberedList','BulletedList','Outdent','Indent',
+								'JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock' ] },
+							{ name: 'colors', items : [ 'TextColor','BGColor','RemoveFormat' ] },
+								{ name: 'document', items : [ 'Sourcedialog'] }
+						];
+				}
+				
+			 	//TODO: Save this URL specific to this editor
 				CKEDITOR.config.filebrowserBrowseUrl =  home+ '/openedit/components/html/browse/index.html?editPath=$editPath';
 			    CKEDITOR.config.filebrowserUploadUrl = home+ '/openedit/components/html/edit/actions/imageupload-finish.html';
 			    CKEDITOR.config.filebrowserImageBrowseUrl = home+'/openedit/components/html/browse/index.html?editPath=$editPath';
@@ -215,71 +246,99 @@ jQuery(document).ready(function()
 				CKEDITOR.config.entities =false;
 				CKEDITOR.config.basicEntities= true;
 				
-				//var content = jQuery(".openediteditcontent" ).get(0);
-				content.setAttribute('contenteditable', 'true');
-				var editor = CKEDITOR.inline( content,
+				container.attr('contenteditable', 'true');
+				var config = 
 				{
 					 extraConfig : { 'oldcontent' : 'null'},
-        			 startupFocus : true ,        			 
         			 on: 
         			 {
         			   	dataReady: function( event ) 
         			   	{
-        			   		
         			   		 event.editor.config.extraConfig.oldcontent = event.editor.getData();
-        			   	},        			   
+        			   	},
+        			    focus: function( event ) 
+        			    {
+	            				var placeholder = container.data("placeholder");
+	            				var data = container.html();
+	            				//var data = event.editor.getData();
+	            				if( data  == placeholder)
+	            				{
+	            					event.editor.setData("");
+	            				}
+        			    },
 		                blur: function( event ) 
 		                {
-	                        content.setAttribute('contenteditable', 'false');
-		                    var data = event.editor.getData();
-							event.editor.destroy();
+		    				if( searchtype != null)
+		    				{
+		    					container.attr('contenteditable', 'false');
+			                    event.editor.destroy();
+		                	}
+		    				else
+		    				{
+		    					var saveto = container.data("saveto");
+		    					var data = event.editor.getData();
+								$("#" + saveto).val(data);
+		    				}
 		                } ,
 		                savecontentdone: function( event )    
 		                {
-		                		event.editor.destroy();
+		    				if( searchtype != null)
+		    				{
+			                	container.attr('contenteditable', 'false');
+			               		event.editor.destroy();
+		    				}
 		                }  
 		             }      
-                });
-	                
-		}
-		else if( viewtype == "input")
-		{
-			var oldborder = container.css("border"); 
-			container.css("border","1px dashed black");
-			content.setAttribute('contenteditable', 'true');
-			container.focus();
-			var options = container.data();
-			options.save = true;
-			options.oemaxlevel = 1;
-			options.id = options.dataid;
-			var field = options.field;
-			container.keyup(function(evt)
-			{
-				//save as we go?
-				// enter pressed
-				var contents = content.innerHTML;
-				options[field + ".value"] = contents;
-				
-				//TODO: use "post" method for larger inputs not "get"
-				$.get(savepath,options,function()
+                };
+				if( searchtype == null)
 				{
-					//reset border  
-					//content.setAttribute('contenteditable', 'false'); 
-					container.css("border",oldborder); 				
+					config.startupFocus = false;   
+				}
+				else
+				{
+					config.startupFocus = true;   
+				}
+
+				var editor = CKEDITOR.inline( component, config );
+			}
+			else if( viewtype == "input")
+			{
+				var oldborder = container.css("border"); 
+				container.css("border","1px dashed black");
+				content.setAttribute('contenteditable', 'true');
+				container.focus();
+				var options = container.data();
+				options.save = true;
+				options.oemaxlevel = 1;
+				options.id = options.dataid;
+				var field = options.field;
+				container.keyup(function(evt)
+				{
+					//save as we go?
+					// enter pressed
+					var contents = compoent.innerHTML;
+					options[field + ".value"] = contents;
+					
+					//TODO: use "post" method for larger inputs not "get"
+					$.get(savepath,options,function()
+					{
+						//reset border  
+						//content.setAttribute('contenteditable', 'false'); 
+						container.css("border",oldborder); 				
+					});
 				});
-			});
-			//Capture the enter key
-			
-		}
+				//Capture the enter key
+				
+			}
 	
 	} 
 
+	//onload
+	
 	var editmode = jQuery("#application").data("editmode");
 	if( editmode == "postedit" )
 	{
-		jQuery(".oe-editable").css("border","1px dashed black");
-		jQuery(".oe-editable").css("min-width","50px");
-		jQuery(".oe-editable").css("min-height","50px");
+		jQuery(".oe-editable").css("border","1px dashed black").css("min-width","50px").css("min-height","50px");
 		jQuery(document).on('dblclick',".oe-editable",
 			function(e) 
 			{	
@@ -288,14 +347,15 @@ jQuery(document).ready(function()
 				var id = container.data("dataid");
 				var field = container.data("field");
 				var viewtype = container.data("viewtype");
-				var content = container.get(0);
-				loadHtmlEditor(searchtype,id,field,viewtype,content);
+				
+				loadHtmlEditor(searchtype,id,field,viewtype,container);
 			}
 		);
 	}
 	
 	
 	
+	//THis is a click that enabled something else to edit. Like a pencil icon
 	jQuery(document).on('click',".oe-dataedit",
 		function(e) 
 		{	
@@ -316,13 +376,26 @@ jQuery(document).ready(function()
 				home = "";
 			}
 			e.preventDefault();
-			loadHtmlEditor(searchtype,id,field,viewtype,content);
+			
+			loadHtmlEditor(searchtype,id,field,viewtype,container);
 
 
 		return false;
 	});		
 	
-
+	
+	lQuery(".oehtmlinput").livequery(
+			function(e) 
+			{	
+				var container = $(this);
+				var field = container.data("field");
+				var viewtype = "html";
+				loadHtmlEditor(null,null,field,viewtype,container);
+	
+				return false;
+			});		
+	
+	
 	
 jQuery("form.oeajaxform").bind('submit',	
 		function() 
