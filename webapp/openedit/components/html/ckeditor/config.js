@@ -9,19 +9,27 @@ CKEDITOR.editorConfig = function( config ) {
 	// http://docs.ckeditor.com/#!/api/CKEDITOR.config
 	
 	//config.toolbar = 'Full';
-	 
-	config.toolbar =
-	[
-	 	{ name: 'save', items : [ 'savebtn']},
-		{ name: 'document', items : [ 'Sourcedialog','-','Save','NewPage','DocProps','Preview','Print','Templates' ] },
-		
-		{ name: 'styles', items : [ 'Styles','Format','Font','FontSize' ] },
-		{ name: 'basicstyles', items : [ 'Bold','Italic','Underline' ] },
-		{ name: 'links', items : [ 'Link','Unlink' ] },
-		{ name: 'paragraph', items : [ 'NumberedList','BulletedList','Outdent','Indent',
-			'JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock' ] },
-		{ name: 'colors', items : [ 'TextColor','BGColor','RemoveFormat' ] }
-	];
+	
+	if( config.customtoolbar ) 
+	{
+		config.toolbar = config.customtoolbar;
+	}
+	else
+	{
+		config.toolbar =
+		[
+		 	{ name: 'save', items : [ 'savebtn']},
+			{ name: 'document', items : [ 'Sourcedialog','-','Save','NewPage','DocProps','Preview','Print','Templates' ] },
+			{ name: 'styles', items : [ 'Format' ] },
+			//{ name: 'styles', items : [ 'Styles','Format','Font','FontSize' ] },
+			{ name: 'basicstyles', items : [ 'Bold','Italic','Underline' ] },
+			{ name: 'links', items : [ 'Link','Unlink' ] },
+			{ name: 'paragraph', items : [ 'NumberedList','BulletedList','Outdent','Indent',
+				'JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock' ] },
+			{ name: 'colors', items : [ 'TextColor','BGColor','RemoveFormat' ] }
+		];
+	}
+	
 	 
 	
 	/*
