@@ -222,6 +222,8 @@ jQuery(document).ready(function()
 								'JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock' ] },
 							{ name: 'colors', items : [ 'TextColor','BGColor','RemoveFormat' ] },
 								{ name: 'document', items : [ 'Sourcedialog'] }
+								,
+			{ name: 'images', items: 		['Image','File','entermedia','Table','HorizontalRule','Smiley','SpecialChar','PageBreak']}
 						];
 				}
 				else
@@ -234,7 +236,9 @@ jQuery(document).ready(function()
 							{ name: 'paragraph', items : [ 'NumberedList','BulletedList','Outdent','Indent',
 								'JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock' ] },
 							{ name: 'colors', items : [ 'TextColor','BGColor','RemoveFormat' ] },
-								{ name: 'document', items : [ 'Sourcedialog'] }
+								{ name: 'document', items : [ 'Sourcedialog'] },
+			{ name: 'images', items: 		['Image','File','entermedia','Table','HorizontalRule','Smiley','SpecialChar','PageBreak']}
+								
 						];
 				}
 				
