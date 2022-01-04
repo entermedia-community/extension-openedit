@@ -282,6 +282,10 @@ jQuery(document).ready(function()
 		    					var saveto = container.data("saveto");
 		    					var data = event.editor.getData();
 								$("#" + saveto).val(data);
+								var theform = container.closest('form');
+								if (theform.data("readytosubmit") == "true") {
+									theform.trigger("submit"); //todo validate double submit?
+								}
 		    				}
 		                } ,
 		                savecontentdone: function( event )    
@@ -388,16 +392,16 @@ jQuery(document).ready(function()
 	});		
 	
 	
-	lQuery(".oehtmlinput").livequery(
-			function(e) 
-			{	
-				var container = $(this);
-				var field = container.data("field");
-				var viewtype = "html";
-				loadHtmlEditor(null,null,field,viewtype,container);
-	
-				return false;
-			});		
+lQuery(".oehtmlinput").livequery(
+		function(e) 
+		{	
+			var container = $(this);
+			var field = container.data("field");
+			var viewtype = "html";
+			loadHtmlEditor(null,null,field,viewtype,container);
+
+			return false;
+		});		
 	
 	
 	
@@ -428,14 +432,13 @@ jQuery("form.oeajaxform").bind('submit',
 	
 			}
 			return false;
-		}
-	);
+		});
 
-	
+
+
 });
-	
-	loadToolbar = function()
-	{
+
+loadToolbar = function() {
 		jQuery("#oeselector").mouseenter(
 			function()
 			{
