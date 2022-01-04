@@ -68,7 +68,9 @@ CKEDITOR.editorConfig = function( config ) {
 	config.allowedContent = true; 
 	
 	//config.extraPlugins = 'ajaxsave';//savebtn is the plugin's name
-	config.extraPlugins='savebtn,closebtn,colorbutton,panelbutton,justify';		 	
+	config.extraPlugins='savebtn,closebtn,colorbutton,panelbutton,justify';		 
+	
+	config.baseFloatZIndex = 30000
 	
 	
 };
