@@ -1,5 +1,4 @@
 <page>
 <path-action name="Page.loadInEclipse"/>
-<property name="eclipsepath">/home/ian/eclipse/jee-2019-09/eclipse/eclipse</property>
 <property name="virtual">true</property>
 </page>
