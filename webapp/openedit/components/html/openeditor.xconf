@@ -1,4 +1,4 @@
 <page>
-<path-action name="Page.loadInEclipse"/>
+<path-action name="Page.loadLocalEditor"/>
 <property name="virtual">true</property>
 </page>
