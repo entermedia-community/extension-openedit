@@ -13,13 +13,14 @@
 
 <div class="openedittoolbar" style="z-index: 999999999;"><div class="openedittoolbarcontent">
 	<a href="$home/openedit/components/html/edit/htmledit/index.html?editPath=$editPath&path=$editPath&width=1000&height=680&textheight=480px&origURL=$content.path"  >
-		<img border="0" src="$home/openedit/components/html/theme/images/seo.png" title="[[Base Edit]] $editPath" /></a>
+		<img border="0" src="$home/openedit/components/html/theme/images/seo.png" title="[[Override]] $editPath" /></a>
 
 	#if( $editPage.isDraft() ) $pages.include("/openedit/components/html/workflow/approvetoolbar.html", $context) #end
 		
+		
 #if($mode && $mode == "debug")
 		<a  target="_blank" href="$home/openedit/components/html/edit/text/index.html?path=$editPage.getContentItem().getActualPath()&editPath=$editPage.getContentItem().getActualPath()&textheight=600px&width=1000&height=680">
-		<img border="0" title="[[Base]] $editPath" src="$home/openedit/components/html/theme/images/seo.png"/></a>
+		<img border="0" title="[[Base]] $editPath" src="$home/openedit/components/html/theme/images/text.png"/></a>
 		#if($content.getProperty("localopencommand"))
 		<a  href="$editPage.getContentItem().getActualPath()" onclick="jQuery.get('$home/openedit/components/html/openeditor.html?path=$editPage.getContentItem()'); return false;" id="eclipselaunch" href="#">
 		<img border="0" title="[[Open Localy]] $editPath" src="$home/openedit/components/html/theme/images/properties.png"/></a>
