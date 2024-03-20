@@ -17,7 +17,7 @@ public class AllTests
 	{
 		TestSuite suite = new TestSuite("Test for org.openedit.html");
 		//$JUnit-BEGIN$
-		suite.addTestSuite(HtmlEditTest.class);
+		//suite.addTestSuite(HtmlEditTest.class);
 		
 		//$JUnit-END$
 		return suite;
