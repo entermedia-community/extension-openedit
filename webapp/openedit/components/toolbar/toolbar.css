@@ -99,6 +99,7 @@ background-color: #DDDDDD;
 {
 	position:absolute;
 	top:-20px;
+	min-width: 80px;;
 }
 div.openeditinline
 {
@@ -118,6 +119,7 @@ div.openeditdebug
 	padding: 0px 1px 1px 1px;
 	margin: 18px;
 }
+
 .oeglossymenu li a.oeglossyselected
 {
 	font-weight: bold;
