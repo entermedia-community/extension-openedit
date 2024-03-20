@@ -12,13 +12,14 @@
 }
 #oeadmin td {
     font-family: "Verdana","Arial","Helvetica","Sans-serif";
-    font-size: 9pt;
+    font-size: 0.8rem;
     text-align: left;
+    padding:2px;
 }
 #oeadmin th {
-    font-size: 10pt;
+    font-size: 0.85rem;
     margin: 0 10px 0 0;
-    padding: 10px 10px 10px 0;
+    padding: 4px;
     text-align: left;
     white-space: nowrap;
 }
@@ -477,8 +478,8 @@ td.oetableright {
     text-align: left;
 }
 .oedarktable th {
-    background-color: #EEEEEE;
-    color: #555555;
+    background-color: #555;
+    color: #eee;
     padding: 2px;
 }
 .oeevenrow {

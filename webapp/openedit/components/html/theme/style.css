@@ -6,12 +6,14 @@
 #openedit h2 {font-size: 1em; color: #444444; }
 #openedit h3 {font-size: 1.25em; color: #444444; }
 
+a {text-decoration: none;}
 
 
 #openedit .oeheader
 {
 	color: #666666;
-	font-size: .8em;
+	font-size: .9em;
+	padding:2px 0;
 }
 #openedit .settings_index_link {
 display:table-cell;
@@ -483,5 +485,9 @@ padding:10px;
 	display: block;
 	text-align: center;
 	
+}
+
+.oeeditorarea textarea.form-control {
+	font-size: 0.9rem;;
 }
 
