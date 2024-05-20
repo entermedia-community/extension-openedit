@@ -4,5 +4,7 @@
 	<property name="showToolbar">false</property>
 	<layout />
 	<inner-layout />
+	<page-action name="WorkFlow.checkMode" />
+	
 	<permission name="view"><boolean value="true"/></permission>
 </page>

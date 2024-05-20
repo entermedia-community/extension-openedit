@@ -10,8 +10,7 @@
 
 <script type="text/javascript" defer src="/${applicationid}/components/javascript/index.js" ></script>
 
-##Load Stripe only on pay pages.
-#foreach( $script in $content.getScriptPaths() )
+#foreach( $script in $pageManager.getScriptPathsWithoutApp($content))
 	#if($script.indexOf("stripe") > -1)
 		<script type="text/javascript" src="#if(!$script.startsWith("http"))$home#end$script"></script>
 	#end
@@ -19,7 +18,7 @@
 
 
 
-#foreach( $style in $content.getStylePaths() )
+#foreach( $style in $pageManager.getStylePathsFor($content) )
 	<link rel="stylesheet" type="text/css" href="$style" />
 #end
    
