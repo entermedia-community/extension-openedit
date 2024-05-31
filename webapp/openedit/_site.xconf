@@ -5,7 +5,10 @@
 
 	<property name="filerootpath">/${applicationid}/views/filemanager</property>
 
-  <property name="applicationid">/${module}</property>
+  <property name="catalogid">system</property>
+  <property name="applicationid">openedit</property>
+  
+  
   <property name="themeprefix">/${applicationid}/theme</property>
 
   <path-action name="MediaArchiveModule.loadApplicationId" />
@@ -39,9 +42,6 @@
   <property name="allowspecifiedpath">true</property>
 
   <property name="title">OpenEdit</property>
-  <property name="applicationid">openedit</property>
-  <property name="catalogid">media/catalogs/public</property>
-  <property name="parentapplicationid">media</property>
 <property name="jquery-theme">ui-lightness</property>
   <property name="mastergroup">video</property>
   	<property name="showaddselections">true</property>
