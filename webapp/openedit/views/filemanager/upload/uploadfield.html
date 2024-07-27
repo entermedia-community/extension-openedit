@@ -7,10 +7,10 @@
 <form name="uploadwizard$rowcount" id="uploadwizard$rowcount"  target="uploadwizard${rowcount}target" method="post" enctype="multipart/form-data" action="$home$page.filerootpath/upload/uploadfile-finish.html" >
 
 	<p>
-<label>[[For zip files]]: </label> <input type="checkbox" name="unzip" value="true" checked /> [[Unzip files after uploading]]
+<label>[[For zip files]]: </label> <input type="checkbox" name="unzip" value="true" checked  /> [[Unzip files after uploading]]
 	</p>
 	
-<input type="file" size="50" onchange="startUpload('uploadwizard$rowcount');"  name="file.${rowcount}">
+<input type="file" class="form-control" onchange="startUpload('uploadwizard$rowcount');"  name="file.${rowcount}">
 #set( $destination = $context.getRequestParameter("destination"))
 
 
