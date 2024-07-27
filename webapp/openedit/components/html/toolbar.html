@@ -12,6 +12,12 @@
 
 
 <div class="openedittoolbar" style="z-index: 999999999;"><div class="openedittoolbarcontent">
+	
+	#if($mode && $mode == "editing")
+	<a class="oeinlineedit" href="$home/openedit/views/filemanager/showfile.html?path=$editPath&editPath=$editPath&textheight=600px&width=1000&height=680">
+		<img border="0" title="[[Inline Edit]]" src="$home/openedit/components/html/theme/images/htmledit.png"/></a>
+	#end
+	
 	<a href="$home/openedit/components/html/edit/htmledit/index.html?editPath=$editPath&path=$editPath&width=1000&height=680&textheight=480px&origURL=$content.path"  >
 		<img border="0" src="$home/openedit/components/html/theme/images/seo.png" title="[[Override]] $editPath" /></a>
 
