@@ -86,7 +86,7 @@ jQuery(document).ready(function () {
 			var editpath = container.data("editpath");
 			var app = jQuery("#application");
 
-			var catalogid = app.data("catalogid");
+			// var catalogid = app.data("catalogid");
 			//alert("using " + catalogid);
 			var home = $("#openedit").data("home");
 			if (!home) {
@@ -136,36 +136,11 @@ jQuery(document).ready(function () {
 				},
 			});
 
-			/*
-					if( typeof content.ckeditorGet == "undefined")
-					{
-						CKEDITOR.inline( content,
-						 {
-	        				startupFocus : true
-	        			 }
-	        			);	
-					}
-					*/
-			//				content.focus();
-
-			/*
-	  				jQuery(content).blur( function() {
-		                content.setAttribute('contenteditable', 'false');
-		               
-						for(name in CKEDITOR.instances)
-						{
-						    CKEDITOR.instances[name].destroy()
-						}
-	
-		             } ); 
-	*/
-
 			return false;
 		});
 	}
 
-	loadHtmlEditor = function (searchtype, id, field, viewtype, container) {
-		var catalogid = jQuery("#application").data("catalogid");
+	loadHtmlEditor = function (field, viewtype, container) {
 		var apphome = jQuery("#application").data("apphome");
 
 		var home = $("#openedit").data("home");
@@ -178,171 +153,7 @@ jQuery(document).ready(function () {
 		var component = container.get(0);
 
 		if (viewtype == "html") {
-			if (searchtype != null) {
-				CKEDITOR.config.saveSubmitURL =
-					savepath +
-					"?save=true&searchtype=" +
-					searchtype +
-					"&field=" +
-					field +
-					"&id=" +
-					id +
-					"&catalogid=" +
-					catalogid;
-				CKEDITOR.config.customtoolbar = [
-					{ name: "save", items: ["savebtn"] },
-					{ name: "basicstyles", items: ["Bold", "Italic", "Underline"] },
-					{ name: "links", items: ["Link", "Unlink"] },
-					{
-						name: "paragraph",
-						items: [
-							"NumberedList",
-							"BulletedList",
-							"Outdent",
-							"Indent",
-							"JustifyLeft",
-							"JustifyCenter",
-							"JustifyRight",
-							"JustifyBlock",
-						],
-					},
-					{ name: "colors", items: ["TextColor", "BGColor", "RemoveFormat"] },
-					{ name: "document", items: ["Sourcedialog"] },
-					{
-						name: "images",
-						items: [
-							"Image",
-							"File",
-							"entermedia",
-							"Table",
-							"HorizontalRule",
-							"Smiley",
-							"SpecialChar",
-							"PageBreak",
-						],
-					},
-				];
-			} else {
-				CKEDITOR.config.customtoolbar = [
-					//{ name: 'save', items : [ 'savebtn']},
-					{ name: "basicstyles", items: ["Bold", "Italic", "Underline"] },
-					{ name: "links", items: ["Link", "Unlink"] },
-					{
-						name: "paragraph",
-						items: [
-							"NumberedList",
-							"BulletedList",
-							"Outdent",
-							"Indent",
-							"JustifyLeft",
-							"JustifyCenter",
-							"JustifyRight",
-							"JustifyBlock",
-						],
-					},
-					{ name: "colors", items: ["TextColor", "BGColor", "RemoveFormat"] },
-					{ name: "document", items: ["Sourcedialog"] },
-					{
-						name: "images",
-						items: [
-							"Image",
-							"File",
-							"entermedia",
-							"Table",
-							"HorizontalRule",
-							"Smiley",
-							"SpecialChar",
-							"PageBreak",
-						],
-					},
-				];
-			}
-
-			//TODO: Save this URL specific to this editor
-			CKEDITOR.config.filebrowserBrowseUrl =
-				home + "/openedit/components/html/browse/index.html?editPath=$editPath";
-			CKEDITOR.config.filebrowserUploadUrl =
-				home + "/openedit/components/html/edit/actions/imageupload-finish.html";
-			CKEDITOR.config.filebrowserImageBrowseUrl =
-				home + "/openedit/components/html/browse/index.html?editPath=$editPath";
-			CKEDITOR.config.filebrowserImageUploadUrl =
-				home + "/openedit/components/html/edit/actions/imageupload-finish.html";
-			CKEDITOR.config.entities = false;
-			CKEDITOR.config.basicEntities = true;
-
-			container.attr("contenteditable", "true");
-
-			// var confirmedDiscard = false;
-			// var browserWarned = false;
-			var config = {
-				extraConfig: { oldcontent: "null" },
-				on: {
-					dataReady: function (event) {
-						event.editor.config.extraConfig.oldcontent = event.editor.getData();
-					},
-					focus: function (event) {
-						var placeholder = container.data("placeholder");
-						var data = container.html();
-						//var data = event.editor.getData();
-						if (data == placeholder) {
-							event.editor.setData("");
-						}
-						$(window).on("beforeunload", function () {
-							var enCollator = new Intl.Collator("en");
-							var data = event.editor.getData();
-							if (
-								enCollator.compare(
-									data,
-									editor.config.extraConfig.oldcontent
-								) != 0
-							) {
-								return "You have unsaved changes.  Reloading will loose these changes.";
-							}
-						});
-					},
-					blur: function (event) {
-						// var enCollator = new Intl.Collator("en");
-						// var data = event.editor.getData();
-						// if (
-						//   enCollator.compare(data, editor.config.extraConfig.oldcontent) !=
-						//   0
-						// ) {
-						//   var conf = confirm("Your changes will be lost!");
-						//   if (!conf) {
-						//     confirmedDiscard = false;
-						//     return false;
-						//   } else {
-						//     confirmedDiscard = true;
-						//   }
-						// }
-						if (searchtype != null) {
-							container.attr("contenteditable", "false");
-							event.editor.destroy();
-						} else {
-							var saveto = container.data("saveto");
-							var data = event.editor.getData();
-							$("#" + saveto).val(data);
-							var theform = container.closest("form");
-							if (theform.data("readytosubmit") == "true") {
-								theform.trigger("submit"); //todo validate double submit?
-							}
-						}
-					},
-					savecontentdone: function (event) {
-						if (searchtype != null) {
-							container.attr("contenteditable", "false");
-							event.editor.destroy();
-						}
-					},
-				},
-			};
-			if (searchtype == null) {
-				config.startupFocus = false;
-			} else {
-				config.startupFocus = true;
-			}
-
-			var editor = CKEDITOR.inline(component, config);
+			window.ckLoader(component);
 		} else if (viewtype == "input") {
 			var oldborder = container.css("border");
 			container.css("border", "1px dashed black");
@@ -380,12 +191,12 @@ jQuery(document).ready(function () {
 			.css("min-height", "50px");
 		jQuery(document).on("dblclick", ".oe-editable", function (e) {
 			var container = $(this);
-			var searchtype = container.data("searchtype");
-			var id = container.data("dataid");
+			// var searchtype = container.data("searchtype");
+			// var id = container.data("dataid");
 			var field = container.data("field");
 			var viewtype = container.data("viewtype");
 
-			loadHtmlEditor(searchtype, id, field, viewtype, container);
+			loadHtmlEditor(field, viewtype, container);
 		});
 	}
 
@@ -393,9 +204,9 @@ jQuery(document).ready(function () {
 	jQuery(document).on("click", ".oe-dataedit", function (e) {
 		var container = $(this).data("target");
 		container = $(container);
-		var content = container.get(0);
-		var searchtype = container.data("searchtype");
-		var id = container.data("dataid");
+		// var content = container.get(0);
+		// var searchtype = container.data("searchtype");
+		// var id = container.data("dataid");
 		var field = container.data("field");
 		var viewtype = container.data("viewtype");
 		if (!viewtype) {
@@ -407,7 +218,7 @@ jQuery(document).ready(function () {
 		}
 		e.preventDefault();
 
-		loadHtmlEditor(searchtype, id, field, viewtype, container);
+		loadHtmlEditor(field, viewtype, container);
 
 		return false;
 	});
@@ -416,7 +227,7 @@ jQuery(document).ready(function () {
 		var container = $(this);
 		var field = container.data("field");
 		var viewtype = "html";
-		loadHtmlEditor(null, null, field, viewtype, container);
+		loadHtmlEditor(field, viewtype, container);
 
 		return false;
 	});
