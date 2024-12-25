@@ -151,9 +151,13 @@ jQuery(document).ready(function () {
 		var savepath = home + apphome + "/components/data/save.html";
 
 		var component = container.get(0);
+		var $textarea = $("<textarea></textarea>");
+		$textarea.attr("name", "maincontent.value");
+		$textarea.val(component.innerHTML);
+		$(component).replaceWith($textarea);
 
 		if (viewtype == "html") {
-			window.ckLoader(component);
+			window.ckLoader($textarea.get(0));
 		} else if (viewtype == "input") {
 			var oldborder = container.css("border");
 			container.css("border", "1px dashed black");
