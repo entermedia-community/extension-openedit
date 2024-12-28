@@ -176,26 +176,15 @@ const editorConfig = {
 	},
 };
 
-window.CK5Editor = null;
 
-function createCK5(target) {
-	ClassicEditor.create(target, editorConfig)
+//$(window).trigger("showToast", [form]);
+$(window).on("edithtmlstart", function (event,targetdiv) {
+
+	ClassicEditor.create(targetdiv[0], editorConfig)
 		.then((editor) => {
 			window.CK5Editor = editor;
 		})
 		.catch((error) => {
 			console.error(error);
 		});
-}
-
-window.ckLoader = function (target) {
-	if (CK5Editor) {
-		CK5Editor.destroy()
-			.then(() => createCK5(target))
-			.catch((error) => {
-				console.error(error);
-			});
-	} else {
-		createCK5(target);
-	}
-};
+});

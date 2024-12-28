@@ -81,7 +81,10 @@ jQuery(document).ready(function () {
 
 		//OLD Approach
 		jQuery("a.oeinlineedit").on("click", function (e) {
-			var container = $(this).parent().parent().parent();
+			e.preventDefault();
+			e.stopPropagation();
+
+			var container = $(this).parent().parent().parent(); ///UGH
 			container = $(container);
 			var editpath = container.data("editpath");
 			var app = jQuery("#application");
@@ -93,7 +96,11 @@ jQuery(document).ready(function () {
 				home = "";
 			}
 			var savepath = home + "/openedit/components/html/save.html";
+			container.data("saveurl",savepath);
+			
+			$(window).trigger("edithtmlstart", [container]);
 
+/*
 			CKEDITOR.config.saveSubmitURL = savepath + "?editPath=" + editpath; //TODO: Save this URL specific to this editor
 			CKEDITOR.config.filebrowserBrowseUrl =
 				home + "/openedit/components/html/browse/index.html?editPath=$editPath";
@@ -105,7 +112,6 @@ jQuery(document).ready(function () {
 				home + "/openedit/components/html/edit/actions/imageupload-finish.html";
 			CKEDITOR.config.entities = false;
 			CKEDITOR.config.basicEntities = true;
-			e.preventDefault();
 			var content = container.find(".openediteditcontent").get(0);
 			//var content = jQuery(".openediteditcontent" ).get(0);
 			content.setAttribute("contenteditable", "true");
@@ -135,8 +141,7 @@ jQuery(document).ready(function () {
 					},
 				},
 			});
-
-			return false;
+			*/
 		});
 	}
 

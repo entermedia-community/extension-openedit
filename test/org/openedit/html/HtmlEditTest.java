@@ -7,7 +7,7 @@ public class HtmlEditTest extends BaseTestCase{
 	
 	
 	public void testNothing(){
-		System.out.println("We should add tests");
+		//System.out.println("We should add tests");
 	}
 	
 	
