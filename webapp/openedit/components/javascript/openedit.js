@@ -96,11 +96,13 @@ jQuery(document).ready(function () {
 				home = "";
 			}
 			var savepath = home + "/openedit/components/html/save.html";
-			container.data("saveurl",savepath);
-			
+
+			container.data("savepath", savepath);
+			container.data("editpath", editpath);
+
 			$(window).trigger("edithtmlstart", [container]);
 
-/*
+			/*
 			CKEDITOR.config.saveSubmitURL = savepath + "?editPath=" + editpath; //TODO: Save this URL specific to this editor
 			CKEDITOR.config.filebrowserBrowseUrl =
 				home + "/openedit/components/html/browse/index.html?editPath=$editPath";
@@ -145,6 +147,11 @@ jQuery(document).ready(function () {
 		});
 	}
 
+	var content = $("textarea.oeeditorhtml");
+	if (content.length) {
+		$(window).trigger("edithtmlstart", [content]);
+	}
+
 	loadHtmlEditor = function (field, viewtype, container) {
 		var apphome = jQuery("#application").data("apphome");
 
@@ -160,9 +167,10 @@ jQuery(document).ready(function () {
 		$textarea.attr("name", "maincontent.value");
 		$textarea.val(component.innerHTML);
 		$(component).replaceWith($textarea);
+		$textarea.data("editonly", true);
 
 		if (viewtype == "html") {
-			window.ckLoader($textarea.get(0));
+			$(window).trigger("edithtmlstart", [$textarea]);
 		} else if (viewtype == "input") {
 			var oldborder = container.css("border");
 			container.css("border", "1px dashed black");
