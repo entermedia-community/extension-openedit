@@ -10,13 +10,13 @@ import {
 	Essentials,
 	Heading,
 	SourceEditing,
-	// ImageBlock,
-	// ImageInline,
-	// ImageInsert,
-	// ImageInsertViaUrl,
-	// ImageResize,
-	// ImageStyle,
-	// ImageToolbar,
+	ImageBlock,
+	ImageInline,
+	ImageInsert,
+	ImageInsertViaUrl,
+	ImageResize,
+	ImageStyle,
+	ImageToolbar,
 	// ImageUpload,
 	Indent,
 	IndentBlock,
@@ -154,13 +154,13 @@ const editorConfig = (editOnly = false) => {
 			Essentials,
 			Heading,
 			SourceEditing,
-			// ImageBlock,
-			// ImageInline,
-			// ImageInsert,
-			// ImageInsertViaUrl,
-			// ImageResize,
-			// ImageStyle,
-			// ImageToolbar,
+			ImageBlock,
+			ImageInline,
+			ImageInsert,
+			ImageInsertViaUrl,
+			ImageResize,
+			ImageStyle,
+			ImageToolbar,
 			// ImageUpload,
 			Indent,
 			IndentBlock,
@@ -229,17 +229,17 @@ const editorConfig = (editOnly = false) => {
 				},
 			],
 		},
-		// image: {
-		// 	toolbar: [
-		// 		"imageTextAlternative",
-		// 		"|",
-		// 		"imageStyle:inline",
-		// 		"imageStyle:wrapText",
-		// 		"imageStyle:breakText",
-		// 		"|",
-		// 		"resizeImage",
-		// 	],
-		// },
+		image: {
+			toolbar: [
+				"imageTextAlternative",
+				"|",
+				"imageStyle:inline",
+				"imageStyle:wrapText",
+				"imageStyle:breakText",
+				"|",
+				"resizeImage",
+			],
+		},
 		licenseKey: LICENSE_KEY,
 		link: {
 			addTargetToExternalLinks: true,
@@ -265,7 +265,13 @@ const editorConfig = (editOnly = false) => {
 //$(window).trigger("showToast", [form]);
 $(window).on("edithtmlstart", function (_, targetdiv) {
 	var editonly = targetdiv.data("editonly");
-	ClassicEditor.create(targetdiv[0], editorConfig(editonly)).catch((error) => {
-		console.error(error);
-	});
+	ClassicEditor.create(targetdiv[0], editorConfig(editonly))
+		// .then((editor) => {
+		// 	$(window).on("ajaxsubmitting", function () {
+		// 		editor.updateSourceElement();
+		// 	});
+		// })
+		.catch((error) => {
+			console.error(error);
+		});
 });

@@ -84,10 +84,10 @@ jQuery(document).ready(function () {
 			e.preventDefault();
 			e.stopPropagation();
 
-			var container = $(this).parent().parent().parent(); ///UGH
-			container = $(container);
-			var editpath = container.data("editpath");
-			var app = jQuery("#application");
+			var parent = $(this).closest(".openeditinline");
+			var container = parent.find(".openediteditcontent");
+
+			var editpath = parent.data("editpath");
 
 			// var catalogid = app.data("catalogid");
 			//alert("using " + catalogid);
@@ -160,18 +160,10 @@ jQuery(document).ready(function () {
 			home = "";
 		}
 
-		var savepath = home + apphome + "/components/data/save.html";
-
-		var component = container.get(0);
-		var $textarea = $("<textarea></textarea>");
-		$textarea.attr("name", "maincontent.value");
-		$textarea.val(component.innerHTML);
-		$(component).replaceWith($textarea);
-		$textarea.data("editonly", true);
-
 		if (viewtype == "html") {
-			$(window).trigger("edithtmlstart", [$textarea]);
+			$(window).trigger("edithtmlstart", [container]);
 		} else if (viewtype == "input") {
+			var savepath = home + apphome + "/components/data/save.html";
 			var oldborder = container.css("border");
 			container.css("border", "1px dashed black");
 			content.setAttribute("contenteditable", "true");
@@ -201,20 +193,10 @@ jQuery(document).ready(function () {
 	//onload
 
 	var editmode = jQuery("#application").data("editmode");
-	if (editmode == "postedit") {
-		jQuery(".oe-editable")
-			.css("border", "1px dashed black")
-			.css("min-width", "50px")
-			.css("min-height", "50px");
-		jQuery(document).on("dblclick", ".oe-editable", function (e) {
-			var container = $(this);
-			// var searchtype = container.data("searchtype");
-			// var id = container.data("dataid");
-			var field = container.data("field");
-			var viewtype = container.data("viewtype");
 
-			loadHtmlEditor(field, viewtype, container);
-		});
+	if (editmode == "postedit") {
+		var container = $(".oe-editable");
+		$(window).trigger("edithtmlstart", [container]);
 	}
 
 	//THis is a click that enabled something else to edit. Like a pencil icon
