@@ -123,6 +123,15 @@ class ImagePicker extends Plugin {
 
 			button.on("execute", () => {
 				//TODO: Open image picker dialog
+				var findroot = $("#application").data("findroot");
+				var anchor = document.createElement("a");
+				anchor.href =
+					findroot + "/views/modules/asset/editors/oipickasset/ckpicker.html";
+				anchor.classList.add("emdialog");
+				anchor.dataset.oemaxlevel = 1;
+				document.body.appendChild(anchor);
+				$(anchor).emDialog();
+				anchor.remove();
 			});
 
 			return button;
