@@ -303,15 +303,16 @@ const editorConfig = (editOnly = false) => {
 	};
 };
 
-//$(window).trigger("showToast", [form]);
 $(window).on("edithtmlstart", function (_, targetdiv) {
-	var editonly = targetdiv.data("editonly");
+	const editonly = targetdiv.data("editonly");
 	ClassicEditor.create(targetdiv[0], editorConfig(editonly))
-		// .then((editor) => {
-		// 	$(window).on("ajaxsubmitting", function () {
-		// 		editor.updateSourceElement();
-		// 	});
-		// })
+		.then((editor) => {
+			$(window).on("assetpicked", function (_, imageUrl) {
+				setTimeout(() => {
+					editor.execute("imageInsert", { source: imageUrl });
+				});
+			});
+		})
 		.catch((error) => {
 			console.error(error);
 		});
