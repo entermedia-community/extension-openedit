@@ -317,11 +317,10 @@ $(window).on("edithtmlstart", function (_, targetdiv) {
 });
 
 window.addEventListener("message", function (event) {
-	if (event.origin !== "http://einnovation.localhost.com:8080") return;
-	if (typeof event.data === "string") {
-		console.log(event.data);
+	if (event.origin !== window.location.origin) return;
+	if (typeof event.data === "string" && event.data.startsWith("assetpicked:")) {
+		var url = event.data.substring(12);
+		$(window).trigger("assetpicked", [url]);
+		closeallemdialogs();
 	}
-	// if (event.data.type === "assetpicked") {
-	// 	$(window).trigger("assetpicked", event.data.url);
-	// }
 });
