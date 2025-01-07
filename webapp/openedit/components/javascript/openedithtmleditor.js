@@ -128,7 +128,7 @@ class ImagePicker extends Plugin {
 				anchor.href =
 					findroot + "/views/modules/asset/editors/oipickasset/ckpicker.html";
 				anchor.classList.add("emdialog");
-				anchor.dataset.oemaxlevel = 1;
+				//anchor.dataset.oemaxlevel = 1;
 				document.body.appendChild(anchor);
 				$(anchor).emDialog();
 				anchor.remove();
