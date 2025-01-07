@@ -123,10 +123,12 @@ class ImagePicker extends Plugin {
 
 			button.on("execute", () => {
 				//TODO: Open image picker dialog
-				var apphome = $("#application").data("apphome");
+				var findroot = $("#application").data("findroot");
 				var anchor = document.createElement("a");
-				anchor.href = apphome + "/components/blockfind.html";
+				anchor.href =
+					findroot + "/views/modules/asset/editors/oipickasset/ckpicker.html";
 				anchor.classList.add("emdialog");
+				anchor.dataset.oemaxlevel = 1;
 				document.body.appendChild(anchor);
 				$(anchor).emDialog();
 				anchor.remove();
@@ -314,14 +316,4 @@ $(window).on("edithtmlstart", function (_, targetdiv) {
 		.catch((error) => {
 			console.error(error);
 		});
-});
-
-window.addEventListener("message", function (event) {
-	if (event.origin !== "http://einnovation.localhost.com:8080") return;
-	if (typeof event.data === "string") {
-		console.log(event.data);
-	}
-	// if (event.data.type === "assetpicked") {
-	// 	$(window).trigger("assetpicked", event.data.url);
-	// }
 });
