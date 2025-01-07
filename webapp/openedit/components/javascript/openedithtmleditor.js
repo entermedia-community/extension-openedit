@@ -127,6 +127,10 @@ class ImagePicker extends Plugin {
 				var anchor = document.createElement("a");
 				anchor.href = apphome + "/components/blockfind.html";
 				anchor.classList.add("emdialog");
+<<<<<<< HEAD
+=======
+				//anchor.dataset.oemaxlevel = 1;
+>>>>>>> 91bbe66661c36d524a2870205fb3de5e108caf83
 				document.body.appendChild(anchor);
 				$(anchor).emDialog();
 				anchor.remove();
