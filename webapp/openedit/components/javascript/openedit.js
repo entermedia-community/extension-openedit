@@ -2,9 +2,10 @@ jQuery(document).ready(function () {
 	//insert a chunk of html
 	var body = jQuery("body");
 	var hide = body.data("hidetoolbar");
+	var isBlockfind = $("#application").hasClass("blockfind");
 	//console.log(hide);
 
-	if (hide != true) {
+	if (hide != true && !isBlockfind) {
 		var path = window.location.pathname;
 		if (window.location.search) {
 			path = path + window.location.search;
