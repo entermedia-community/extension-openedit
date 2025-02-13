@@ -56,7 +56,9 @@ jQuery(document).ready(function () {
 			var target = $(this).attr("href");
 			var title = $(this).attr("title");
 			jQuery.get(target, function () {
-				console.log("Fetched:", title);
+				if (title != "DebugMode") {
+					window.location.reload();
+				}
 			});
 		});
 
