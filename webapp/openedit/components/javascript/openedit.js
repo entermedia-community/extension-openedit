@@ -103,7 +103,7 @@ jQuery(document).ready(function () {
 			container.data("savepath", savepath);
 			container.data("editpath", editpath);
 
-			$(window).trigger("edithtmlstart", [container]);
+			$(window).trigger("inlinehtmlstart", [container]);
 
 			/*
 			CKEDITOR.config.saveSubmitURL = savepath + "?editPath=" + editpath; //TODO: Save this URL specific to this editor
