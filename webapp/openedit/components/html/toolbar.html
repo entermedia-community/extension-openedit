@@ -15,7 +15,7 @@
 	
 	#if($mode && $mode == "editing")
 	<a class="oeinlineedit" href="$home/openedit/views/filemanager/showfile.html?path=$editPath&editPath=$editPath&textheight=600px&width=1000&height=680">
-		<img border="0" title="[[Inline Edit]]" src="$home/openedit/components/html/theme/images/htmledit.png"/></a>
+		<img border="0" title="[[Inline Edit]] $editPath" src="$home/openedit/components/html/theme/images/htmledit.png"/></a>
 	#end
 	
 	<a href="$home/openedit/components/html/edit/htmledit/index.html?editPath=$editPath&path=$editPath&width=1000&height=680&textheight=480px&origURL=$content.path"  >
@@ -27,10 +27,8 @@
 #if($mode && $mode == "debug")
 		<a  target="_blank" href="$home/openedit/components/html/edit/text/index.html?path=$editPage.getContentItem().getActualPath()&editPath=$editPage.getContentItem().getActualPath()&textheight=600px&width=1000&height=680">
 		<img border="0" title="[[Base]] $editPath" src="$home/openedit/components/html/theme/images/text.png"/></a>
-		#if($content.getProperty("localopencommand"))
 		<a  href="$editPage.getContentItem().getActualPath()" onclick="jQuery.get('$home/openedit/components/html/openeditor.html?path=$editPage.getContentItem()'); return false;" id="eclipselaunch" href="#">
 		<img border="0" title="[[Open Localy]] $editPath" src="$home/openedit/components/html/theme/images/properties.png"/></a>
-		#end
 		
 	#end
 </div></div>
