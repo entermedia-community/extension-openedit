@@ -56,7 +56,9 @@ jQuery(document).ready(function () {
 			var target = $(this).attr("href");
 			var title = $(this).attr("title");
 			jQuery.get(target, function () {
-				console.log("Fetched:", title);
+				if (title != "DebugMode") {
+					window.location.reload();
+				}
 			});
 		});
 
@@ -101,7 +103,7 @@ jQuery(document).ready(function () {
 			container.data("savepath", savepath);
 			container.data("editpath", editpath);
 
-			$(window).trigger("edithtmlstart", [container]);
+			$(window).trigger("inlinehtmlstart", [container]);
 
 			/*
 			CKEDITOR.config.saveSubmitURL = savepath + "?editPath=" + editpath; //TODO: Save this URL specific to this editor
