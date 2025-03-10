@@ -162,6 +162,12 @@ jQuery(document).ready(function () {
 		}
 
 		if (viewtype == "html") {
+			var savepath = home + apphome + "/components/data/save.html";
+			container.data("savepath", savepath);
+			var dataid = container.data("dataid");
+			if(dataid){
+				container.data("id", dataid);
+			}
 			$(window).trigger("edithtmlstart", [container]);
 		} else if (viewtype == "input") {
 			var savepath = home + apphome + "/components/data/save.html";
@@ -202,6 +208,7 @@ jQuery(document).ready(function () {
 
 	//THis is a click that enabled something else to edit. Like a pencil icon
 	jQuery(document).on("click", ".oe-dataedit", function (e) {
+		console.log("Opening editor");
 		var container = $(this).data("target");
 		container = $(container);
 		// var content = container.get(0);
