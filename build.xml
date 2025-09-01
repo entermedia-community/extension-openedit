@@ -51,8 +51,7 @@
 	    <mkdir dir="${build}"/>
 	    <mkdir dir="${wardir}/WEB-INF/" />
 		<get dest="${build}/install.xml" src="${remotehome}/${branch}_entermedia-server/lastSuccessfulBuild/artifact/deploy/install.xml"/>
-			<ant antfile="${build}/install.xml" inheritAll="false" dir="${wardir}/WEB-INF/" target="default"/> 
-
+		<ant antfile="${build}/install.xml" inheritAll="false" dir="${wardir}/WEB-INF/" target="default"/> 
 	</target>
   
   <target name="compile" depends="clean">
