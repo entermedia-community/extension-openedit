@@ -16,8 +16,8 @@
     <property name="wardir" location="${build}/wartmp"/>
     <property name="webapp" location="${basedir}/webapp"/>
 	<property name="webinf" location="${webapp}/WEB-INF"/>
-	<property name="branch" value="" />
-				<property name="majorversion" value="7" />
+	<property name="branch" value="main" />
+	<property name="majorversion" value="7" />
 	<property name="remotehome" value="http://dev.entermediasoftware.com/jenkins/job" />
 
 	<!-- 
@@ -50,9 +50,8 @@
 	<target name="update-dependencies" depends="clean">
 	    <mkdir dir="${build}"/>
 	    <mkdir dir="${wardir}/WEB-INF/" />
-		<get dest="${build}/install.xml" src="${remotehome}/${branch}entermedia-server/lastSuccessfulBuild/artifact/deploy/install.xml"/>
-			<ant antfile="${build}/install.xml" inheritAll="false" dir="${wardir}/WEB-INF/" target="default"/> 
-
+		<get dest="${build}/install.xml" src="${remotehome}/${branch}_entermedia-server/lastSuccessfulBuild/artifact/deploy/install.xml"/>
+		<ant antfile="${build}/install.xml" inheritAll="false" dir="${wardir}/WEB-INF/" target="default"/> 
 	</target>
   
   <target name="compile" depends="clean">
@@ -85,7 +84,7 @@
 	-->	  
 	<target name="jar" depends="compile">
 		<mkdir dir="${deployDir}/builds/"/>
-		<jar jarfile="${deployDir}/builds/${branch}${appname}-${version}.jar" basedir="${compiled}" >
+		<jar jarfile="${deployDir}/builds/${branch}_${appname}-${version}.jar" basedir="${compiled}" >
 			<exclude name="**/*Test*"/>
 			<manifest>
 		    	<attribute name="Built-By" value="${user.name}"/>
@@ -103,7 +102,7 @@
 		<zip destfile="${deployDir}/builds/${appname}.zip" >			
 			<zipfileset dir="${lib}" prefix="lib" excludes="compile/**"/>
 			
-			<zipfileset dir="${deployDir}/builds/" includes="${branch}${appname}-${version}.jar" prefix="lib"/>
+			<zipfileset dir="${deployDir}/builds/" includes="${branch}_${appname}-${version}.jar" prefix="lib"/>
 			<zipfileset dir="${webapp}/openedit" prefix="base/openedit" />
 
 		</zip>

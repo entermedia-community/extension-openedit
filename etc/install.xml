@@ -28,6 +28,8 @@
   	<!-- A convenience variable for documentation output -->
   	<property name="versionDir" location="${deployDir}/${version}"/>
   	<property name="versionedApp" value="${appname}-${version}"/>
+	
+	<property name="remotehome" value="http://dev.entermediasoftware.com/jenkins/job" />
 
   <target name="clean">
   </target>
@@ -36,7 +38,7 @@
 	<target name="update-dependencies" depends="clean">
 		<mkdir dir="${build}"/>
 
-		<get src="http://dev.entermediasoftware.com/jenkins/job/@BRANCH@extension-openedit/lastSuccessfulBuild/artifact/deploy/extension-openedit.zip" dest="${build}/openedit.zip" />	
+		<get src="${remotehome}/@BRANCH@_extension-openedit/lastSuccessfulBuild/artifact/deploy/extension-openedit.zip" dest="${build}/openedit.zip" />	
 	  
   </target>
     
