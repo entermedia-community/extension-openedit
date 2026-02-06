@@ -18,7 +18,7 @@ jQuery(document).ready(function () {
 				body.prepend(data);
 
 				loadToolbar();
-			}
+			},
 		);
 
 		$(document).on("click", ".oe-enableedit", function () {
@@ -167,7 +167,7 @@ jQuery(document).ready(function () {
 			var savepath = home + apphome + "/components/data/save.html";
 			container.data("savepath", savepath);
 			var dataid = container.data("dataid");
-			if(dataid){
+			if (dataid) {
 				container.data("id", dataid);
 			}
 			$(window).trigger("edithtmlstart", [container]);
@@ -232,14 +232,12 @@ jQuery(document).ready(function () {
 		return false;
 	});
 
-	lQuery(".oehtmlinput").livequery(function (e) {
-		var container = $(this);
-		var field = container.data("field");
+	var htminp = jQuery(".oehtmlinput");
+	if (htminp.length > 0) {
+		var field = htminp.data("field");
 		var viewtype = "html";
-		loadHtmlEditor(field, viewtype, container);
-
-		return false;
-	});
+		loadHtmlEditor(field, viewtype, htminp);
+	}
 
 	jQuery("form.oeajaxform").bind("submit", function () {
 		var targetdiv = jQuery(this).attr("targetdiv");
@@ -303,6 +301,6 @@ refreshFileMenu = function () {
 	$("#fileoptionsmenu").load(
 		home +
 			"/openedit/components/html/edit/menu.html?oemaxlevel=1&editPath=" +
-			editpath
+			editpath,
 	);
 };
