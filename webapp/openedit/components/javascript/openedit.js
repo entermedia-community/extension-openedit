@@ -239,7 +239,7 @@ jQuery(document).ready(function () {
 		loadHtmlEditor(field, viewtype, htminp);
 	}
 
-	jQuery("form.oeajaxform").bind("submit", function () {
+	jQuery("form.oeajaxform").on("submit", function () {
 		var targetdiv = jQuery(this).attr("targetdiv");
 		targetdiv = targetdiv.replace(/\//g, "\\/");
 		//allows for posting to a div in the parent from a fancybox.
@@ -267,7 +267,7 @@ jQuery(document).ready(function () {
 });
 
 loadToolbar = function () {
-	jQuery("#oeselector").mouseenter(function () {
+	jQuery("#oeselector").on("mouseenter", function () {
 		if (jQuery("#oeadmintoolbarlocation").is(":visible")) {
 			return;
 		}
