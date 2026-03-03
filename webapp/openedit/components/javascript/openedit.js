@@ -274,7 +274,7 @@ loadToolbar = function () {
 		var me = jQuery(this);
 		jQuery.get(me.attr("href"), {}, function (data) {
 			me.html(data);
-			jQuery("#oeadmintoolbarlocation").mouseleave(function () {
+			jQuery("#oeadmintoolbarlocation").on("mouseleave", function () {
 				jQuery(this).hide();
 			});
 		});
