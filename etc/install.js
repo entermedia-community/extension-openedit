@@ -6,7 +6,7 @@ importPackage( Packages.org.entermediadb.modules.update );
 
 
 
-var war = "http://dev.entermediasoftware.com/jenkins/job/@BRANCH@extension-openedit/lastSuccessfulBuild/artifact/deploy/extension-openedit.zip";
+var war = "https://dev.entermediadb.org/jenkins/job/@BRANCH@extension-openedit/lastSuccessfulBuild/artifact/deploy/extension-openedit.zip";
 
 var root = moduleManager.getBean("root").getAbsolutePath();
 var web = root + "/WEB-INF";
