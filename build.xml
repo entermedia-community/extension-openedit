@@ -82,6 +82,7 @@
 		Jar classes for the main app, excluding unit tests.
 		========================================================================
 	-->	  
+	
 	<target name="jar" depends="compile">
 		<mkdir dir="${deployDir}/builds/"/>
 		<jar jarfile="${deployDir}/builds/${branch}_${appname}-${version}.jar" basedir="${compiled}" >
