@@ -18,7 +18,7 @@
 	<property name="webinf" location="${webapp}/WEB-INF"/>
 	<property name="branch" value="main" />
 	<property name="majorversion" value="7" />
-	<property name="remotehome" value="http://dev.entermediasoftware.com/jenkins/job" />
+	<property name="remotehome" value="https://dev.entermediadb.org/jenkins/job" />
 
 	<!-- 
 		========================================================================

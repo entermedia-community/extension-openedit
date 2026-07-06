@@ -29,7 +29,7 @@
   	<property name="versionDir" location="${deployDir}/${version}"/>
   	<property name="versionedApp" value="${appname}-${version}"/>
 	
-	<property name="remotehome" value="http://dev.entermediasoftware.com/jenkins/job" />
+	  <property name="remotehome" value="https://dev.entermediadb.org/jenkins/job" />
 
   <target name="clean">
   </target>
