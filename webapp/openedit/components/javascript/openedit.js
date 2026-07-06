@@ -18,7 +18,7 @@ jQuery(document).ready(function () {
 				body.prepend(data);
 
 				loadToolbar();
-			}
+			},
 		);
 
 		$(document).on("click", ".oe-enableedit", function () {
@@ -167,7 +167,7 @@ jQuery(document).ready(function () {
 			var savepath = home + apphome + "/components/data/save.html";
 			container.data("savepath", savepath);
 			var dataid = container.data("dataid");
-			if(dataid){
+			if (dataid) {
 				container.data("id", dataid);
 			}
 			$(window).trigger("edithtmlstart", [container]);
@@ -232,16 +232,14 @@ jQuery(document).ready(function () {
 		return false;
 	});
 
-	lQuery(".oehtmlinput").livequery(function (e) {
-		var container = $(this);
-		var field = container.data("field");
+	var htminp = jQuery(".oehtmlinput");
+	if (htminp.length > 0) {
+		var field = htminp.data("field");
 		var viewtype = "html";
-		loadHtmlEditor(field, viewtype, container);
+		loadHtmlEditor(field, viewtype, htminp);
+	}
 
-		return false;
-	});
-
-	jQuery("form.oeajaxform").bind("submit", function () {
+	jQuery("form.oeajaxform").on("submit", function () {
 		var targetdiv = jQuery(this).attr("targetdiv");
 		targetdiv = targetdiv.replace(/\//g, "\\/");
 		//allows for posting to a div in the parent from a fancybox.
@@ -269,14 +267,14 @@ jQuery(document).ready(function () {
 });
 
 loadToolbar = function () {
-	jQuery("#oeselector").mouseenter(function () {
+	jQuery("#oeselector").on("mouseenter", function () {
 		if (jQuery("#oeadmintoolbarlocation").is(":visible")) {
 			return;
 		}
 		var me = jQuery(this);
 		jQuery.get(me.attr("href"), {}, function (data) {
 			me.html(data);
-			jQuery("#oeadmintoolbarlocation").mouseleave(function () {
+			jQuery("#oeadmintoolbarlocation").on("mouseleave", function () {
 				jQuery(this).hide();
 			});
 		});
@@ -303,6 +301,6 @@ refreshFileMenu = function () {
 	$("#fileoptionsmenu").load(
 		home +
 			"/openedit/components/html/edit/menu.html?oemaxlevel=1&editPath=" +
-			editpath
+			editpath,
 	);
 };
