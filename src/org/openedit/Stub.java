@@ -1,5 +1,6 @@
 package org.openedit;
 
-public class Stub {
+public class Stub
+{
 
 }
